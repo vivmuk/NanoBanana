@@ -3302,7 +3302,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize food appeal and commercial quality. Prioritize steam, glistening surfaces, and high vibrance over natural, documentary food photography. If ambiguous, favor appetizing, styled food presentation with warm lighting over realistic, unappetizing food shots.
 [PROMPT END]`,
-    imageUrl: '/style-previews/p11.webp',
+    imageUrl: 'https://picsum.photos/seed/p11/800/600',
   },
   {
     id: 'p12',
@@ -3340,7 +3340,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize long exposure effects and motion blur. Prioritize light trails and smooth water over frozen, high-speed photography. If ambiguous, favor long exposure showing time passage and motion over sharp, frozen night photography.
 [PROMPT END]`,
-    imageUrl: '/style-previews/p12.webp',
+    imageUrl: 'https://picsum.photos/seed/p12/800/600',
   },
   {
     id: 'p13',
@@ -3378,7 +3378,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize infrared color shift and surreal atmosphere. Prioritize Aerochrome color characteristics (pink foliage, dark blue sky) over natural, visible-light photography. If ambiguous, favor surreal, dreamlike infrared colors over realistic, natural landscape colors.
 [PROMPT END]`,
-    imageUrl: '/style-previews/p13.webp',
+    imageUrl: 'https://picsum.photos/seed/p13/800/600',
   },
   {
     id: 'p14',
@@ -3416,7 +3416,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize frozen action and athletic intensity. Prioritize high shutter speed and sharp, crisp motion over motion blur. If ambiguous, favor frozen, peak-action moments with sharp detail over blurred, motion-heavy sports photography.
 [PROMPT END]`,
-    imageUrl: '/style-previews/p14.webp',
+    imageUrl: 'https://picsum.photos/seed/p14/800/600',
   },
   {
     id: 'p15',
@@ -3454,6 +3454,6 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize raw concrete and massive scale. Prioritize monochromatic grey and imposing presence over colorful, decorative architecture. If ambiguous, favor raw, geometric brutalist forms over ornate, decorative architectural elements.
 [PROMPT END]`,
-    imageUrl: '/style-previews/p15.webp',
+    imageUrl: 'https://picsum.photos/seed/p15/800/600',
   },
 ];
