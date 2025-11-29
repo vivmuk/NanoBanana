@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-previews": "node scripts/generate-style-previews.js"
   },
   "dependencies": {
     "lucide-react": "^0.555.0",

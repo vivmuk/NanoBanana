@@ -102,7 +102,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize mood and atmosphere over action. Prioritize visual storytelling through composition and lighting. If ambiguous, favor subtlety and emotional depth over explicit narrative.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c1/800/600?grayscale',
+    imageUrl: '/style-previews/c1.webp',
   },
   {
     id: 'c2',
@@ -139,7 +139,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize energy, action, and heroism. Prioritize dynamic composition over realism. If ambiguous, favor classic superhero tropes and optimistic tone.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c2/800/600',
+    imageUrl: '/style-previews/c2.webp',
   },
   {
     id: 'c3',
@@ -176,7 +176,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize energy, motion, and impact. Prioritize dynamic composition over static clarity. If ambiguous, favor action and intensity over subtlety.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c3/800/600?grayscale',
+    imageUrl: '/style-previews/c3.webp',
   },
   {
     id: 'c4',
@@ -211,7 +211,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize clarity and simplicity. Prioritize clean composition over complexity. If ambiguous, favor geometric precision and clear boundaries.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c4/800/600',
+    imageUrl: '/style-previews/c4.webp',
   },
   {
     id: 'c5',
@@ -246,7 +246,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize mobile-friendly composition. Prioritize vertical flow and scrolling experience. If ambiguous, favor close-ups and medium shots that work well on small screens.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c5/800/600',
+    imageUrl: '/style-previews/c5.webp',
   },
   {
     id: 'c6',
