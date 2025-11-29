@@ -3112,7 +3112,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize tilt-shift miniature effect and selective focus. Prioritize horizontal focus band and high saturation over full-depth-of-field, natural photography. If ambiguous, favor miniature world appearance and selective blur over sharp, full-focus photography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p6/800/600',
+    imageUrl: '/style-previews/p6.webp',
   },
   {
     id: 'p7',
@@ -3150,7 +3150,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize modern product showcase and hard lighting. Prioritize floating appearance and pastel backgrounds over natural, environmental product photography. If ambiguous, favor contemporary, minimal product photography with hard shadows over soft, natural product shots.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p7/800/600',
+    imageUrl: '/style-previews/p7.webp',
   },
   {
     id: 'p8',
@@ -3188,7 +3188,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize analog film quality and nostalgic atmosphere. Prioritize Polaroid characteristics and vintage artifacts over sharp, modern digital photography. If ambiguous, favor warm, faded vintage aesthetic with light leaks and soft focus over crisp, clean digital photography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p8/800/600',
+    imageUrl: '/style-previews/p8.webp',
   },
   {
     id: 'p9',
@@ -3226,7 +3226,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize underwater atmosphere and caustic light effects. Prioritize refracted sunlight patterns and deep blue gradient over surface-level, shallow water photography. If ambiguous, favor deep underwater environment with caustic patterns over shallow, clear water shots.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p9/800/600',
+    imageUrl: '/style-previews/p9.webp',
   },
   {
     id: 'p10',
@@ -3264,7 +3264,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize thermal imaging technique and heat visualization. Prioritize heat map colors and grainy texture over natural, visible-light photography. If ambiguous, favor thermal camera aesthetic with heat signatures over realistic, color photography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p10/800/600',
+    imageUrl: '/style-previews/p10.webp',
   },
   {
     id: 'p11',
@@ -3302,7 +3302,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize food appeal and commercial quality. Prioritize steam, glistening surfaces, and high vibrance over natural, documentary food photography. If ambiguous, favor appetizing, styled food presentation with warm lighting over realistic, unappetizing food shots.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p11/800/600',
+    imageUrl: '/style-previews/p11.webp',
   },
   {
     id: 'p12',
@@ -3340,7 +3340,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize long exposure effects and motion blur. Prioritize light trails and smooth water over frozen, high-speed photography. If ambiguous, favor long exposure showing time passage and motion over sharp, frozen night photography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p12/800/600',
+    imageUrl: '/style-previews/p12.webp',
   },
   {
     id: 'p13',
@@ -3378,7 +3378,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize infrared color shift and surreal atmosphere. Prioritize Aerochrome color characteristics (pink foliage, dark blue sky) over natural, visible-light photography. If ambiguous, favor surreal, dreamlike infrared colors over realistic, natural landscape colors.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p13/800/600',
+    imageUrl: '/style-previews/p13.webp',
   },
   {
     id: 'p14',
@@ -3416,7 +3416,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize frozen action and athletic intensity. Prioritize high shutter speed and sharp, crisp motion over motion blur. If ambiguous, favor frozen, peak-action moments with sharp detail over blurred, motion-heavy sports photography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p14/800/600',
+    imageUrl: '/style-previews/p14.webp',
   },
   {
     id: 'p15',
@@ -3454,6 +3454,6 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize raw concrete and massive scale. Prioritize monochromatic grey and imposing presence over colorful, decorative architecture. If ambiguous, favor raw, geometric brutalist forms over ornate, decorative architectural elements.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p15/800/600',
+    imageUrl: '/style-previews/p15.webp',
   },
 ];
