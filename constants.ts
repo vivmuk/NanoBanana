@@ -282,7 +282,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize raw, unpolished aesthetic. Prioritize expressive content over technical perfection. If ambiguous, favor bold, provocative imagery over subtlety.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c6/800/600',
+    imageUrl: '/style-previews/c6.webp',
   },
   {
     id: 'c7',
@@ -318,7 +318,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize mood and atmosphere. Prioritize dramatic composition over narrative clarity. If ambiguous, favor shadow and mystery over explicit detail.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c7/800/600?grayscale',
+    imageUrl: '/style-previews/c7.webp',
   },
   {
     id: 'c8',
@@ -354,7 +354,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize nostalgic, optimistic sci-fi vision. Prioritize 1950s aesthetic over modern realism. If ambiguous, favor classic pulp imagery over contemporary sci-fi.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c8/800/600',
+    imageUrl: '/style-previews/c8.webp',
   },
   {
     id: 'c9',
@@ -391,7 +391,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize emotion and beauty. Prioritize character expression over action. If ambiguous, favor romantic, delicate imagery over dramatic action.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c9/800/600?grayscale',
+    imageUrl: '/style-previews/c9.webp',
   },
   {
     id: 'c10',
@@ -427,7 +427,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize clear political message. Prioritize visual communication over aesthetic beauty. If ambiguous, favor clear symbolism and readable labels over subtle imagery.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c10/800/600',
+    imageUrl: '/style-previews/c10.webp',
   },
   {
     id: 'c11',
@@ -464,7 +464,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize atmosphere and suspense. Prioritize horror mood over explicit gore. If ambiguous, favor classic horror imagery and gothic atmosphere over modern horror tropes.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c11/800/600',
+    imageUrl: '/style-previews/c11.webp',
   },
   {
     id: 'c12',
@@ -501,7 +501,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize action and dynamism. Prioritize cinematic composition over static clarity. If ambiguous, favor dramatic, high-energy imagery over subtle storytelling.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c12/800/600',
+    imageUrl: '/style-previews/c12.webp',
   },
   {
     id: 'c13',
@@ -537,7 +537,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize authenticity and emotion. Prioritize personal voice over technical perfection. If ambiguous, favor honest, intimate imagery over dramatic spectacle.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c13/800/600',
+    imageUrl: '/style-previews/c13.webp',
   },
   {
     id: 'c14',
@@ -574,7 +574,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize intricate detail and mechanical complexity. Prioritize steampunk aesthetic consistency. If ambiguous, favor Victorian-era technology and fashion over modern or futuristic elements.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c14/800/600',
+    imageUrl: '/style-previews/c14.webp',
   },
   {
     id: 'c15',
@@ -611,7 +611,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize urban density and technological complexity. Prioritize detail and atmosphere over simplicity. If ambiguous, favor cyberpunk dystopia imagery over utopian futures.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/c15/800/600',
+    imageUrl: '/style-previews/c15.webp',
   },
 
   // --- FINE ART & PAINTERLY ---
@@ -649,7 +649,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize light and atmosphere over detail. Prioritize color and brushwork over precise rendering. If ambiguous, favor natural light effects and painterly technique over photographic accuracy.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a1/800/600',
+    imageUrl: '/style-previews/a1.webp',
   },
   {
     id: 'a2',
@@ -686,7 +686,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize dream logic and visual paradox. Prioritize thought-provoking imagery over decorative beauty. If ambiguous, favor surreal, impossible imagery over realistic representation.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a2/800/600',
+    imageUrl: '/style-previews/a2.webp',
   },
   {
     id: 'a3',
@@ -722,7 +722,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize Japanese aesthetic and flat composition. Prioritize traditional ukiyo-e style over Western realism. If ambiguous, favor nature themes and traditional Japanese imagery over modern subjects.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a3/800/600',
+    imageUrl: '/style-previews/a3.webp',
   },
   {
     id: 'a4',
@@ -759,7 +759,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize repetition and mass production aesthetic. Prioritize bold, graphic imagery over subtle artistry. If ambiguous, favor commercial, popular culture imagery over fine art subjects.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a4/800/600',
+    imageUrl: '/style-previews/a4.webp',
   },
   {
     id: 'a5',
@@ -796,7 +796,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize elegance and organic flow. Prioritize decorative beauty over functional clarity. If ambiguous, favor floral, organic imagery over geometric or industrial elements.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a5/800/600',
+    imageUrl: '/style-previews/a5.webp',
   },
   {
     id: 'a6',
@@ -833,7 +833,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize geometric analysis of form. Prioritize intellectual deconstruction over visual beauty. If ambiguous, favor geometric fragmentation and multiple viewpoints over single perspective representation.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a6/800/600',
+    imageUrl: '/style-previews/a6.webp',
   },
   {
     id: 'a7',
@@ -871,7 +871,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize function and clarity. Prioritize geometric precision over organic beauty. If ambiguous, favor functional, systematic design over decorative elements.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a7/800/600',
+    imageUrl: '/style-previews/a7.webp',
   },
   {
     id: 'a8',
@@ -909,7 +909,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize atmosphere and spontaneity. Prioritize watercolor technique over detailed rendering. If ambiguous, favor loose, fluid brushwork and atmospheric effects over precise detail.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a8/800/600',
+    imageUrl: '/style-previews/a8.webp',
   },
   {
     id: 'a9',
@@ -946,7 +946,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize classical beauty and psychological presence. Prioritize anatomical accuracy and harmonious composition. If ambiguous, favor idealized, classical representation over realistic imperfection.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a9/800/600',
+    imageUrl: '/style-previews/a9.webp',
   },
   {
     id: 'a10',
@@ -983,7 +983,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize raw, immediate impact. Prioritize street art authenticity over technical perfection. If ambiguous, favor bold, provocative imagery over subtle artistry.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a10/800/600',
+    imageUrl: '/style-previews/a10.webp',
   },
   {
     id: 'a11',
@@ -1020,7 +1020,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize color and light through dot technique. Prioritize systematic pointillist application over expressive brushwork. If ambiguous, favor pure color dots and optical mixing over traditional painting techniques.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a11/800/600',
+    imageUrl: '/style-previews/a11.webp',
   },
   {
     id: 'a12',
@@ -1057,7 +1057,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize color expression and emotional impact. Prioritize bold color and brushwork over realistic representation. If ambiguous, favor strident, unnatural colors and wild brushwork over subtle, realistic painting.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a12/800/600',
+    imageUrl: '/style-previews/a12.webp',
   },
   {
     id: 'a13',
@@ -1094,7 +1094,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize process and emotional expression. Prioritize gestural application and color interaction over planned composition. If ambiguous, favor abstract, non-representational imagery over figurative elements.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a13/800/600',
+    imageUrl: '/style-previews/a13.webp',
   },
   {
     id: 'a14',
@@ -1131,7 +1131,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize drama and emotional intensity. Prioritize theatrical lighting and movement over subtle representation. If ambiguous, favor dramatic, emotional imagery over calm, balanced composition.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a14/800/600',
+    imageUrl: '/style-previews/a14.webp',
   },
   {
     id: 'a15',
@@ -1168,7 +1168,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize beauty and natural detail. Prioritize romantic, idealized imagery over harsh realism. If ambiguous, favor detailed, beautiful representation with romantic or medieval subjects over contemporary or abstract imagery.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/a15/800/600',
+    imageUrl: '/style-previews/a15.webp',
   },
 
   // --- EDUCATIONAL & DIAGRAMS ---
@@ -1208,7 +1208,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Prioritize accuracy and clarity above all. Emphasize educational value. If ambiguous, favor scientific precision over aesthetic appeal.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e1/800/600',
+    imageUrl: '/style-previews/e1.webp',
   },
   {
     id: 'e2',
@@ -1246,7 +1246,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize scientific accuracy and educational clarity. Prioritize botanical precision over aesthetic beauty. If ambiguous, favor accurate scientific representation over artistic interpretation.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e2/800/600',
+    imageUrl: '/style-previews/e2.webp',
   },
   {
     id: 'e3',
@@ -1284,7 +1284,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize technical accuracy and clarity. Prioritize precise measurements and standard drawing conventions over aesthetic appeal. If ambiguous, favor engineering accuracy and standard technical drawing practices.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e3/800/600',
+    imageUrl: '/style-previews/e3.webp',
   },
   {
     id: 'e4',
@@ -1322,7 +1322,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize clarity and modern aesthetic. Prioritize consistent isometric perspective and clean design over decorative complexity. If ambiguous, favor clean, professional isometric illustration over realistic 3D rendering.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e4/800/600',
+    imageUrl: '/style-previews/e4.webp',
   },
   {
     id: 'e5',
@@ -1360,7 +1360,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize organization and clarity. Prioritize systematic arrangement and clean composition over artistic complexity. If ambiguous, favor organized, parallel arrangements over random or artistic placement.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e5/800/600',
+    imageUrl: '/style-previews/e5.webp',
   },
   {
     id: 'e6',
@@ -1398,7 +1398,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize clarity and simplicity. Prioritize functional instruction over artistic beauty. If ambiguous, favor clear, simple line art over detailed or decorative illustration.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e6/800/600',
+    imageUrl: '/style-previews/e6.webp',
   },
   {
     id: 'e7',
@@ -1435,7 +1435,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize historical cartographic aesthetic. Prioritize vintage map style and decorative elements over modern geographic accuracy. If ambiguous, favor artistic, decorative cartography over precise modern mapping.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e7/800/600',
+    imageUrl: '/style-previews/e7.webp',
   },
   {
     id: 'e8',
@@ -1473,7 +1473,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize technical clarity and assembly understanding. Prioritize clear part relationships and logical sequence over aesthetic appeal. If ambiguous, favor accurate technical representation over decorative elements.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e8/800/600',
+    imageUrl: '/style-previews/e8.webp',
   },
   {
     id: 'e9',
@@ -1511,7 +1511,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize interior detail and educational value. Prioritize "look inside" clarity and information density over simplified representation. If ambiguous, favor detailed, busy interiors with human scale elements over minimalist cutaways.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e9/800/600',
+    imageUrl: '/style-previews/e9.webp',
   },
   {
     id: 'e10',
@@ -1550,7 +1550,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize scientific accuracy and clarity. Prioritize systematic organization and readability over decorative elements. If ambiguous, favor standard periodic table organization and clear color coding.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e10/800/600',
+    imageUrl: '/style-previews/e10.webp',
   },
   {
     id: 'e11',
@@ -1588,7 +1588,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize route clarity and station connections. Prioritize abstract, simplified geography over realistic representation. If ambiguous, favor clear transit system organization over geographic accuracy.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e11/800/600',
+    imageUrl: '/style-previews/e11.webp',
   },
   {
     id: 'e12',
@@ -1626,7 +1626,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize design process and spatial understanding. Prioritize perspective accuracy and scale relationships over finished rendering. If ambiguous, favor visible construction process and architectural clarity over polished presentation.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e12/800/600',
+    imageUrl: '/style-previews/e12.webp',
   },
   {
     id: 'e13',
@@ -1664,7 +1664,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize scientific accuracy and species identification. Prioritize taxonomic organization and clear species representation over aesthetic appeal. If ambiguous, favor accurate scientific illustration and proper taxonomic labeling.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e13/800/600',
+    imageUrl: '/style-previews/e13.webp',
   },
   {
     id: 'e14',
@@ -1702,7 +1702,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize technical accuracy and legal documentation standards. Prioritize clear part identification and formal presentation over aesthetic appeal. If ambiguous, favor precise patent drawing standards and clear reference numbering.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e14/800/600',
+    imageUrl: '/style-previews/e14.webp',
   },
   {
     id: 'e15',
@@ -1740,7 +1740,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize likeness and mood capture. Prioritize immediate, gestural technique over polished rendering. If ambiguous, favor expressive, documentary style over formal portraiture.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/e15/800/600',
+    imageUrl: '/style-previews/e15.webp',
   },
 
   // --- 3D & CRAFT ---
@@ -1780,7 +1780,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize hand-crafted, tactile quality. Prioritize claymation character and texture over realistic rendering. If ambiguous, favor visible craft process and organic, rounded forms over polished digital aesthetics.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d1/800/600',
+    imageUrl: '/style-previews/d1.webp',
   },
   {
     id: 'd2',
@@ -1818,7 +1818,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize craft technique and dimensional depth. Prioritize visible paper layers and shadows over seamless integration. If ambiguous, favor hand-crafted, layered aesthetic over smooth digital rendering.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d2/800/600',
+    imageUrl: '/style-previews/d2.webp',
   },
   {
     id: 'd3',
@@ -1856,7 +1856,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize geometric simplicity and isometric perspective. Prioritize low poly aesthetic and flat shading over realistic 3D rendering. If ambiguous, favor geometric, angular forms and pastel colors over organic shapes and vibrant palettes.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d3/800/600',
+    imageUrl: '/style-previews/d3.webp',
   },
   {
     id: 'd4',
@@ -1894,7 +1894,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize blocky, cubic aesthetic. Prioritize voxel grid alignment and pixelated textures over smooth 3D rendering. If ambiguous, favor cubic, blocky forms and game-like aesthetics over realistic 3D models.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d4/800/600',
+    imageUrl: '/style-previews/d4.webp',
   },
   {
     id: 'd5',
@@ -1932,7 +1932,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize texture and hand-crafted quality. Prioritize fuzzy, tactile aesthetic over smooth, polished rendering. If ambiguous, favor visible wool texture and soft, organic forms over defined, geometric shapes.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d5/800/600',
+    imageUrl: '/style-previews/d5.webp',
   },
   {
     id: 'd6',
@@ -1970,7 +1970,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize geometric precision and folding technique. Prioritize crisp creases and mathematical folding over organic, curved forms. If ambiguous, favor geometric abstraction and sharp, defined edges over soft, rounded shapes.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d6/800/600',
+    imageUrl: '/style-previews/d6.webp',
   },
   {
     id: 'd7',
@@ -2008,7 +2008,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize toy quality and brick construction. Prioritize LEGO brand aesthetic and visible construction details over realistic rendering. If ambiguous, favor bright, colorful toy photography and visible brick details over realistic, muted aesthetics.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d7/800/600',
+    imageUrl: '/style-previews/d7.webp',
   },
   {
     id: 'd8',
@@ -2046,7 +2046,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize neon glow and glass transparency. Prioritize dramatic lighting and dark background over bright, evenly lit scenes. If ambiguous, favor vibrant neon colors and glass transparency effects over muted, opaque rendering.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d8/800/600',
+    imageUrl: '/style-previews/d8.webp',
   },
   {
     id: 'd9',
@@ -2084,7 +2084,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize textile texture and stitching technique. Prioritize visible thread and fabric details over smooth, polished rendering. If ambiguous, favor hand-stitched, textile craft aesthetic over digital, smooth surfaces.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d9/800/600',
+    imageUrl: '/style-previews/d9.webp',
   },
   {
     id: 'd10',
@@ -2122,7 +2122,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize ceramic form and surface quality. Prioritize glaze details and craft technique over decorative complexity. If ambiguous, favor clean, elegant ceramic aesthetics and visible craft quality over ornate, busy designs.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d10/800/600',
+    imageUrl: '/style-previews/d10.webp',
   },
   {
     id: 'd11',
@@ -2160,7 +2160,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize paper coiling technique and dimensional depth. Prioritize edge-on view and visible paper strips over flat, two-dimensional rendering. If ambiguous, favor intricate spirals and visible paper texture over smooth, simplified forms.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d11/800/600',
+    imageUrl: '/style-previews/d11.webp',
   },
   {
     id: 'd12',
@@ -2198,7 +2198,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize ice transparency and cold atmosphere. Prioritize light refraction and crystalline quality over opaque, solid rendering. If ambiguous, favor cold blue lighting and transparent ice effects over warm, opaque materials.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d12/800/600',
+    imageUrl: '/style-previews/d12.webp',
   },
   {
     id: 'd13',
@@ -2236,7 +2236,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize wood grain and carving technique. Prioritize visible tool marks and natural wood quality over polished, smooth surfaces. If ambiguous, favor rustic, hand-carved aesthetic with visible grain and tool marks over machine-finished, smooth wood.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d13/800/600',
+    imageUrl: '/style-previews/d13.webp',
   },
   {
     id: 'd14',
@@ -2274,7 +2274,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize cute proportions and yarn texture. Prioritize amigurumi character design and visible crochet technique over realistic representation. If ambiguous, favor cute, chibi proportions and visible yarn loops over realistic, smooth rendering.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d14/800/600',
+    imageUrl: '/style-previews/d14.webp',
   },
   {
     id: 'd15',
@@ -2312,7 +2312,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize light transmission and color interaction. Prioritize translucent glass sections and lead line divisions over opaque, solid rendering. If ambiguous, favor traditional stained glass technique with visible lead cames and glowing color sections over modern, seamless glass designs.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/d15/800/600',
+    imageUrl: '/style-previews/d15.webp',
   },
 
   // --- UI & DESIGN ---
@@ -2350,7 +2350,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Prioritize clarity and usability. Emphasize data readability over decorative elements. If ambiguous, favor functional design over aesthetic flourishes.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u1/800/600',
+    imageUrl: '/style-previews/u1.webp',
   },
   {
     id: 'u2',
@@ -2388,7 +2388,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize soft, subtle depth and low contrast. Prioritize extruded appearance and soft shadows over dramatic, high-contrast design. If ambiguous, favor soft, minimal neomorphic aesthetic over bold, high-contrast interfaces.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u2/800/600',
+    imageUrl: '/style-previews/u2.webp',
   },
   {
     id: 'u3',
@@ -2426,7 +2426,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize transparency and blur effects. Prioritize frosted glass appearance and vivid background visibility over solid, opaque design. If ambiguous, favor translucent, glass-like aesthetic over solid, flat interfaces.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u3/800/600',
+    imageUrl: '/style-previews/u3.webp',
   },
   {
     id: 'u4',
@@ -2464,7 +2464,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize retro OS aesthetic and beveled 3D elements. Prioritize Windows 95 visual language and pixel fonts over modern, smooth interfaces. If ambiguous, favor classic 1990s OS design and grey palette over contemporary, colorful interfaces.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u4/800/600',
+    imageUrl: '/style-previews/u4.webp',
   },
   {
     id: 'u5',
@@ -2502,7 +2502,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize neon colors and futuristic interface elements. Prioritize cyberpunk visual language and dark backgrounds over bright, friendly interfaces. If ambiguous, favor neon wireframes, data streams, and holographic effects over solid, opaque UI elements.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u5/800/600',
+    imageUrl: '/style-previews/u5.webp',
   },
   {
     id: 'u6',
@@ -2540,7 +2540,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize typography and systematic organization. Prioritize grid alignment and asymmetric balance over decorative, centered compositions. If ambiguous, favor minimal, functional Swiss Style over ornate, decorative design.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u6/800/600',
+    imageUrl: '/style-previews/u6.webp',
   },
   {
     id: 'u7',
@@ -2578,7 +2578,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize product presentation and marketing appeal. Prioritize tilted perspective and vibrant backgrounds over flat, static presentations. If ambiguous, favor dynamic, 3D product showcase over simple, flat device screenshots.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u7/800/600',
+    imageUrl: '/style-previews/u7.webp',
   },
   {
     id: 'u8',
@@ -2616,7 +2616,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize fantasy aesthetic and game UI functionality. Prioritize decorative fantasy frames and parchment textures over modern, minimal interfaces. If ambiguous, favor rich, detailed fantasy RPG aesthetic over clean, contemporary UI design.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u8/800/600',
+    imageUrl: '/style-previews/u8.webp',
   },
   {
     id: 'u9',
@@ -2654,7 +2654,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize simplicity and scalability. Prioritize minimal design and negative space over complex, detailed logos. If ambiguous, favor clean, geometric vector design over ornate, decorative branding.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u9/800/600',
+    imageUrl: '/style-previews/u9.webp',
   },
   {
     id: 'u10',
@@ -2692,7 +2692,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize typography as image-making tool. Prioritize fluid, organic text arrangement and psychedelic colors over rigid, geometric typography. If ambiguous, favor 70s aesthetic and text-formed imagery over modern, minimal typography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u10/800/600',
+    imageUrl: '/style-previews/u10.webp',
   },
   {
     id: 'u11',
@@ -2730,7 +2730,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize raw, unpolished aesthetic and anti-design approach. Prioritize default browser styling and high contrast over polished, modern web design. If ambiguous, favor intentionally "ugly" or raw appearance over clean, professional interfaces.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u11/800/600',
+    imageUrl: '/style-previews/u11.webp',
   },
   {
     id: 'u12',
@@ -2768,7 +2768,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize realistic material rendering and tactile appearance. Prioritize leather textures, stitching, and glossy overlays over flat, minimal design. If ambiguous, favor rich, detailed skeuomorphic design over clean, flat interfaces.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u12/800/600',
+    imageUrl: '/style-previews/u12.webp',
   },
   {
     id: 'u13',
@@ -2806,7 +2806,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize dark mode aesthetic and data clarity. Prioritize neon data lines and glowing effects over muted, subtle visualizations. If ambiguous, favor dark backgrounds with neon accents and sleek modern design over light, colorful dashboards.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u13/800/600',
+    imageUrl: '/style-previews/u13.webp',
   },
   {
     id: 'u14',
@@ -2844,7 +2844,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize print-making aesthetic and artisanal quality. Prioritize grainy texture and slight misalignment over perfect, digital precision. If ambiguous, favor Risograph printing characteristics and limited color palette over smooth, full-color digital design.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u14/800/600',
+    imageUrl: '/style-previews/u14.webp',
   },
   {
     id: 'u15',
@@ -2882,7 +2882,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize friendly, approachable design and diversity. Prioritize exaggerated proportions and pastel colors over realistic, detailed illustration. If ambiguous, favor joyful, positive Corporate Memphis style over serious, realistic character design.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/u15/800/600',
+    imageUrl: '/style-previews/u15.webp',
   },
 
   // --- PHOTOGRAPHY & REALISM ---
@@ -2922,7 +2922,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize cinematic quality and dramatic storytelling. Prioritize anamorphic format and teal/orange grading over natural, documentary photography. If ambiguous, favor dramatic, movie-quality presentation over realistic, ungraded photography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p1/800/600',
+    imageUrl: '/style-previews/p1.webp',
   },
   {
     id: 'p2',
@@ -2960,7 +2960,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize extreme detail and macro technique. Prioritize sharp focus on compound eyes and textures over environmental context. If ambiguous, favor extreme close-up with shallow depth of field over wider shots with more background.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p2/800/600',
+    imageUrl: '/style-previews/p2.webp',
   },
   {
     id: 'p3',
@@ -2998,7 +2998,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize professional portrait quality and Rembrandt lighting. Prioritize sharp focus on eyes and neutral background over environmental context. If ambiguous, favor classic studio portrait with Rembrandt lighting over natural, environmental portraits.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p3/800/600',
+    imageUrl: '/style-previews/p3.webp',
   },
   {
     id: 'p4',
@@ -3036,7 +3036,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize geometric patterns and abstract aerial view. Prioritize top-down 90-degree angle and pattern recognition over narrative or dramatic perspective. If ambiguous, favor high-altitude, pattern-focused aerial view over low-level, perspective-heavy aerial photography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p4/800/600',
+    imageUrl: '/style-previews/p4.webp',
   },
   {
     id: 'p5',
@@ -3074,7 +3074,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 **INTERPRETATION:** Emphasize artistic double exposure technique and dreamy atmosphere. Prioritize seamless integration of two images and silhouette clarity over realistic, single-exposure photography. If ambiguous, favor creative, artistic double exposure over documentary, realistic photography.
 [PROMPT END]`,
-    imageUrl: 'https://picsum.photos/seed/p5/800/600',
+    imageUrl: '/style-previews/p5.webp',
   },
   {
     id: 'p6',

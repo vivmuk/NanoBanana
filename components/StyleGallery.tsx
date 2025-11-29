@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { GALLERY_ITEMS } from '../constants';
 import { Copy, ArrowRight, Search, Filter } from 'lucide-react';
+import { ImagePreviewModal } from './ImagePreviewModal';
 
 interface StyleGalleryProps {
   onSelectPrompt: (prompt: string) => void;
@@ -9,6 +10,12 @@ interface StyleGalleryProps {
 export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [previewImage, setPreviewImage] = useState<{
+    imageUrl: string;
+    title: string;
+    description: string;
+    category: string;
+  } | null>(null);
 
   // Extract unique categories
   const categories = useMemo(() => {
@@ -102,7 +109,15 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
                   className="group relative bg-obsidian-900 border border-gray-800 rounded-xl overflow-hidden hover:border-banana-400/40 transition-all duration-300 hover:shadow-xl flex flex-col h-[320px]"
                 >
                   {/* Image Area */}
-                  <div className="relative h-40 overflow-hidden bg-gray-900 flex-shrink-0">
+                  <div 
+                    className="relative h-40 overflow-hidden bg-gray-900 flex-shrink-0 cursor-pointer"
+                    onClick={() => setPreviewImage({
+                      imageUrl: item.imageUrl,
+                      title: item.title,
+                      description: item.description,
+                      category: item.category
+                    })}
+                  >
                     <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 to-transparent z-10 opacity-60" />
                     <img 
                       src={item.imageUrl} 
@@ -113,6 +128,11 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
                     <div className="absolute top-3 left-3 z-20">
                        <span className="text-[10px] font-bold font-mono text-obsidian-950 bg-banana-400/90 px-2 py-0.5 rounded shadow-sm">
                         {item.category}
+                      </span>
+                    </div>
+                    <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+                      <span className="text-xs font-semibold text-white bg-banana-400/90 text-obsidian-950 px-3 py-1.5 rounded-lg shadow-lg">
+                        Click to preview
                       </span>
                     </div>
                   </div>
@@ -154,6 +174,17 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
           )}
         </div>
       </div>
+
+      {/* Image Preview Modal */}
+      {previewImage && (
+        <ImagePreviewModal
+          imageUrl={previewImage.imageUrl}
+          title={previewImage.title}
+          description={previewImage.description}
+          category={previewImage.category}
+          onClose={() => setPreviewImage(null)}
+        />
+      )}
     </div>
   );
 };

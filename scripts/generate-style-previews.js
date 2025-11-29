@@ -22,47 +22,43 @@ if (!galleryItemsMatch) {
 
 const itemsContent = galleryItemsMatch[1];
 
-// Parse first 5 items (c1-c5) - simpler approach
+// Parse ALL gallery items
 const items = [];
-const targetIds = ['c1', 'c2', 'c3', 'c4', 'c5'];
 
-for (const targetId of targetIds) {
-  // Find the item block starting with this ID
-  const idPattern = new RegExp(`id:\\s*['"]${targetId}['"]`, 'm');
+// Helper to extract a full item block (from opening { to matching })
+function getItemBlock(id) {
+  // Find the occurrence of this id
+  const idPattern = new RegExp(`id:\\s*['"]${id}['"]`, 'm');
   const idMatch = itemsContent.match(idPattern);
-  
-  if (!idMatch) {
-    console.warn(`Could not find item ${targetId}`);
-    continue;
+  if (!idMatch || typeof idMatch.index !== 'number') {
+    console.warn(`Could not find item ${id}`);
+    return null;
   }
-  
+
   const idPosition = idMatch.index;
-  if (idPosition === -1) continue;
-  
-  // Find the opening brace before the id (go backwards)
+
+  // Walk backwards to find the opening brace for this object
   let itemStart = idPosition;
-  for (let i = idPosition - 1; i >= 0; i--) {
-    if (itemsContent[i] === '{') {
+  for (let i = idPosition; i >= 0; i--) {
+    const ch = itemsContent[i];
+    if (ch === '{') {
       itemStart = i;
       break;
     }
-    if (itemsContent[i] === '}' || itemsContent[i] === ']') {
-      // We've gone too far back
-      break;
-    }
+    if (ch === ']') break; // safety
   }
-  
-  // Find the matching closing brace for this item
+
+  // Now walk forward to find the matching closing brace
   let braceCount = 0;
   let inString = false;
   let stringChar = '';
   let itemEnd = itemStart;
-  
+
   for (let i = itemStart; i < itemsContent.length; i++) {
     const char = itemsContent[i];
     const prevChar = i > 0 ? itemsContent[i - 1] : '';
-    
-    // Track string state (including template literals with backticks)
+
+    // Track string state (handles ', ", and ` template literals)
     if ((char === '"' || char === "'" || char === '`') && prevChar !== '\\') {
       if (!inString) {
         inString = true;
@@ -72,11 +68,9 @@ for (const targetId of targetIds) {
         stringChar = '';
       }
     }
-    
+
     if (!inString) {
-      if (char === '{') {
-        braceCount++;
-      }
+      if (char === '{') braceCount++;
       if (char === '}') {
         braceCount--;
         if (braceCount === 0) {
@@ -86,55 +80,67 @@ for (const targetId of targetIds) {
       }
     }
   }
-  
+
   if (itemEnd === itemStart) {
-    console.warn(`Could not parse item block for ${targetId}`);
-    continue;
+    console.warn(`Could not parse block for ${id}`);
+    return null;
   }
-  
-  const itemBlock = itemsContent.substring(itemStart, itemEnd);
-  
-  // Extract fields using regex
-  const idMatch2 = itemBlock.match(/id:\s*['"]([^'"]+)['"]/);
+
+  return itemsContent.substring(itemStart, itemEnd);
+}
+
+// Collect all IDs first
+const idRegex = /id:\s*['"]([^'"]+)['"]/g;
+let m;
+const allIds = [];
+while ((m = idRegex.exec(itemsContent)) !== null) {
+  allIds.push(m[1]);
+}
+
+// Build items array
+for (const id of allIds) {
+  const itemBlock = getItemBlock(id);
+  if (!itemBlock) continue;
+
   const titleMatch = itemBlock.match(/title:\s*['"]([^'"]+)['"]/);
   const categoryMatch = itemBlock.match(/category:\s*['"]([^'"]+)['"]/);
   const descMatch = itemBlock.match(/description:\s*['"]([^'"]+)['"]/);
-  
-  // For promptSnippet, we need to handle the template literal with backticks
-  // Find the content between promptSnippet: ` and the closing `
+
+  // Extract promptSnippet content between backticks after "promptSnippet: `"
   const promptStart = itemBlock.indexOf('promptSnippet: `');
   let promptSnippet = '';
   if (promptStart !== -1) {
     const promptContentStart = promptStart + 'promptSnippet: `'.length;
-    // Find the closing backtick that's not escaped
     let promptEnd = promptContentStart;
+    let inStr = true; // we're inside the template literal now
     for (let i = promptContentStart; i < itemBlock.length; i++) {
-      if (itemBlock[i] === '`' && itemBlock[i - 1] !== '\\') {
+      const ch = itemBlock[i];
+      const prev = i > 0 ? itemBlock[i - 1] : '';
+      if (ch === '`' && prev !== '\\') {
         promptEnd = i;
         break;
       }
     }
     promptSnippet = itemBlock.substring(promptContentStart, promptEnd);
   }
-  
+
   const imageMatch = itemBlock.match(/imageUrl:\s*['"]([^'"]+)['"]/);
-  
-  if (idMatch2 && promptSnippet) {
+
+  if (promptSnippet) {
     items.push({
-      id: idMatch2[1],
+      id,
       title: titleMatch ? titleMatch[1] : '',
       category: categoryMatch ? categoryMatch[1] : '',
       description: descMatch ? descMatch[1] : '',
-      promptSnippet: promptSnippet,
+      promptSnippet,
       imageUrl: imageMatch ? imageMatch[1] : ''
     });
   } else {
-    console.warn(`Could not extract all fields for ${targetId}`);
+    console.warn(`No promptSnippet found for ${id}`);
   }
 }
 
-console.log(`\nFound ${items.length} items to process:`);
-items.forEach(item => console.log(`  - ${item.id}: ${item.title}`));
+console.log(`Found ${items.length} total gallery items`);
 
 // Create output directory
 const outputDir = path.join(__dirname, '..', 'public', 'style-previews');
@@ -156,9 +162,6 @@ function cleanPrompt(prompt) {
 // Function to generate image
 async function generateImage(prompt, outputPath) {
   const cleanPromptText = cleanPrompt(prompt);
-  
-  console.log(`\nGenerating image for: ${outputPath}`);
-  console.log(`Prompt length: ${cleanPromptText.length} characters`);
   
   try {
     const response = await fetch(`${VENICE_API_BASE}/image/generate`, {
@@ -200,11 +203,11 @@ async function generateImage(prompt, outputPath) {
     // Decode base64 and save
     const imageBuffer = Buffer.from(imageBase64, 'base64');
     fs.writeFileSync(outputPath, imageBuffer);
-    console.log(`✓ Saved: ${outputPath}`);
+    console.log(`  ✅ Saved: ${path.basename(outputPath)}`);
     
     return true;
   } catch (error) {
-    console.error(`✗ Error generating image: ${error.message}`);
+    console.error(`  ❌ Error: ${error.message}`);
     return false;
   }
 }
@@ -212,12 +215,39 @@ async function generateImage(prompt, outputPath) {
 // Process each item
 async function processItems() {
   const updates = [];
+  let processedCount = 0;
+  let skippedCount = 0;
+  let errorCount = 0;
+  const totalItems = items.length;
   
-  for (const item of items) {
+  // Load current constants content for incremental updates
+  let currentConstantsContent = constantsContent;
+  
+  console.log(`\n🚀 Starting to process ${totalItems} items...\n`);
+  
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
     const filename = `${item.id}.webp`;
     const outputPath = path.join(outputDir, filename);
     const relativePath = `/style-previews/${filename}`;
-    
+
+    // Skip if the preview image file already exists in the folder
+    if (fs.existsSync(outputPath)) {
+      console.log(`[${i + 1}/${totalItems}] ⏭️  Skipping ${item.id} - ${item.title} (preview already exists)`);
+      skippedCount++;
+      
+      // If constants.ts doesn't point to this local file, update it
+      if (!item.imageUrl || !item.imageUrl.startsWith('/style-previews/')) {
+        updates.push({
+          oldUrl: item.imageUrl,
+          newUrl: relativePath,
+          id: item.id
+        });
+      }
+      continue;
+    }
+
+    console.log(`[${i + 1}/${totalItems}] 🎨 Processing: ${item.id} - ${item.title}`);
     const success = await generateImage(item.promptSnippet, outputPath);
     
     if (success) {
@@ -226,26 +256,45 @@ async function processItems() {
         newUrl: relativePath,
         id: item.id
       });
+      processedCount++;
       
-      // Wait a bit between requests to avoid rate limiting
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Update constants.ts incrementally (every 5 items or at the end)
+      if (updates.length >= 5 || i === items.length - 1) {
+        for (const update of updates) {
+          const regex = new RegExp(`(id:\\s*['"]${update.id}['"][\\s\\S]*?imageUrl:\\s*['"])${update.oldUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(['"])`, 'g');
+          currentConstantsContent = currentConstantsContent.replace(regex, `$1${update.newUrl}$2`);
+        }
+        fs.writeFileSync(constantsPath, currentConstantsContent, 'utf-8');
+        console.log(`  💾 Saved progress: ${updates.length} items updated in constants.ts`);
+        updates.length = 0; // Clear the updates array
+      }
+      
+      // Wait a bit between requests to avoid rate limiting (2 seconds)
+      if (i < items.length - 1) {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+    } else {
+      errorCount++;
+      console.log(`  ⚠️  Failed to generate image for ${item.id}, continuing...`);
+      // Still wait a bit even on error to avoid hammering the API
+      await new Promise(resolve => setTimeout(resolve, 1000));
     }
   }
   
-  // Update constants.ts with new image URLs
+  // Final update if there are any remaining updates
   if (updates.length > 0) {
-    let updatedContent = constantsContent;
     for (const update of updates) {
-      // Replace the imageUrl for this specific item
       const regex = new RegExp(`(id:\\s*['"]${update.id}['"][\\s\\S]*?imageUrl:\\s*['"])${update.oldUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(['"])`, 'g');
-      updatedContent = updatedContent.replace(regex, `$1${update.newUrl}$2`);
+      currentConstantsContent = currentConstantsContent.replace(regex, `$1${update.newUrl}$2`);
     }
-    
-    fs.writeFileSync(constantsPath, updatedContent, 'utf-8');
-    console.log(`\n✓ Updated constants.ts with ${updates.length} new image URLs`);
+    fs.writeFileSync(constantsPath, currentConstantsContent, 'utf-8');
   }
   
-  console.log('\n✓ Done!');
+  console.log(`\n✅ Done! Summary:`);
+  console.log(`   📸 Generated: ${processedCount} images`);
+  console.log(`   ⏭️  Skipped: ${skippedCount} (already exist)`);
+  console.log(`   ❌ Errors: ${errorCount}`);
+  console.log(`   📝 Total processed: ${processedCount + skippedCount + errorCount}/${totalItems}`);
 }
 
 // Run the script
