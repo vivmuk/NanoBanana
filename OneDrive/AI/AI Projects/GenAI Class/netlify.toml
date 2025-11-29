@@ -1,0 +1,10 @@
+[build]
+  publish = "genai-tutorial"
+  command = "echo 'No build step required'"
+
+[[redirects]]
+  from = "/kinderquill"
+  to = "https://kinderquill.up.railway.app/"
+  status = 301
+  force = true
+

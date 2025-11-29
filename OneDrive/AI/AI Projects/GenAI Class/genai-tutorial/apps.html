@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Chutney Apps - GenAI Chutney</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Explore GenAI Chutney Apps - A collection of AI-powered applications and tools.">
+    <style>
+        .apps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        .apps-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .apps-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .apps-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .app-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(110, 86, 207, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--grad-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(110, 86, 207, 0.3);
+            border-color: var(--accent-primary);
+        }
+
+        .app-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--grad-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .app-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .app-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .app-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .app-link:hover {
+            color: var(--accent-secondary);
+            gap: 0.75rem;
+        }
+
+        .app-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .app-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .app-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(110, 86, 207, 0.2);
+            color: var(--accent-primary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .apps-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <nav>
+                <div class="logo">GenAI <span>Chutney</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="image-generator.html">Image Generator</a></li>
+                    <li><a href="prompt-optimizer.html">Prompting Lab</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="apps.html" class="active">GenAI Chutney Apps</a></li>
+                </ul>
+            </nav>
+            <div class="blog-hero">
+                <h1 class="fade-in">GenAI Chutney Apps</h1>
+                <p class="fade-in delay-200">Discover our collection of AI-powered applications and tools designed to enhance your creative and professional workflows.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog-main">
+        <div class="apps-container">
+            <div class="apps-grid">
+                <!-- KinderQuill Card -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <span class="app-badge">New</span>
+                    <h3>KinderQuill</h3>
+                    <p>An AI-powered children's story creation platform that helps you craft engaging, age-appropriate stories for kids. Create personalized narratives with beautiful illustrations and interactive elements.</p>
+                    <a href="/kinderquill" class="app-link">
+                        Launch App <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Placeholder for future apps -->
+                <div class="app-card" style="opacity: 0.6;">
+                    <div class="app-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <span class="app-badge">Coming Soon</span>
+                    <h3>More Apps</h3>
+                    <p>We're constantly developing new AI-powered applications. Check back soon for more exciting tools!</p>
+                    <a href="#" class="app-link" style="pointer-events: none;">
+                        Coming Soon <i class="fas fa-clock"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2025 GenAI Chutney. All rights reserved.</p>
+                </div>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="image-generator.html">Image Generator</a>
+                    <a href="prompt-optimizer.html">Prompting Lab</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="apps.html">GenAI Chutney Apps</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/blog.js"></script>
+</body>
+</html>
+

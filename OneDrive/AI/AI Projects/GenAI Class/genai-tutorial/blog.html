@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Blog - GenAI Chutney</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Stay updated with the latest insights on AI, machine learning, and generative AI technologies. Expert analysis and practical guides for AI enthusiasts.">
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <nav>
+                <div class="logo">GenAI <span>Chutney</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="image-generator.html">Image Generator</a></li>
+                    <li><a href="prompt-optimizer.html">Prompting Lab</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="apps.html">GenAI Chutney Apps</a></li>
+                </ul>
+            </nav>
+            <div class="blog-hero">
+                <h1 class="fade-in">AI Insights & Updates</h1>
+                <p class="fade-in delay-200">Expert analysis, tutorials, and the latest developments in artificial intelligence and generative AI technologies.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog-main">
+        <div class="container">
+            <!-- Featured Post -->
+            <section class="featured-post">
+                <div class="featured-content">
+                    <div class="featured-badge">Coming Soon</div>
+                    <h2>Featured AI Articles Coming Soon</h2>
+                    <p class="featured-excerpt">We're working on bringing you the latest insights, tutorials, and expert analysis in artificial intelligence and generative AI technologies. Stay tuned for exciting content!</p>
+                    <div class="post-meta">
+                        <span class="author"><i class="fas fa-clock"></i> Content in development</span>
+                        <span class="date"><i class="fas fa-calendar"></i> Launch soon</span>
+                        <span class="read-time"><i class="fas fa-info"></i> Updates coming</span>
+                    </div>
+                    <a href="#" class="read-more-btn disabled">Coming Soon</a>
+                </div>
+                <div class="featured-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Categories -->
+            <section class="blog-categories">
+                <h3>Browse by Category</h3>
+                <div class="category-grid">
+                    <div class="category-card active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        <span>All Posts</span>
+                        <div class="post-count">4</div>
+                    </div>
+                    <div class="category-card" data-category="tutorials">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Tutorials</span>
+                        <div class="post-count">1</div>
+                    </div>
+                    <div class="category-card" data-category="research">
+                        <i class="fas fa-flask"></i>
+                        <span>Research</span>
+                        <div class="post-count">1</div>
+                    </div>
+                    <div class="category-card" data-category="industry">
+                        <i class="fas fa-building"></i>
+                        <span>Industry News</span>
+                        <div class="post-count">1</div>
+                    </div>
+                    <div class="category-card" data-category="tools">
+                        <i class="fas fa-tools"></i>
+                        <span>Tools & Tips</span>
+                        <div class="post-count">1</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Posts Grid -->
+            <section class="blog-posts">
+                <div class="posts-header">
+                    <h3>Latest Articles</h3>
+                    <div class="sort-options">
+                        <select id="sortPosts">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="posts-grid" id="postsGrid">
+                    <!-- Coming Soon Posts -->
+                    <article class="blog-post" data-category="tutorials">
+                        <div class="post-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <div class="category-tag tutorials">Tutorial</div>
+                        </div>
+                        <div class="post-content">
+                            <h4>AI Tutorial Content Coming Soon</h4>
+                            <p>We're preparing comprehensive tutorials to help you learn AI concepts, implementation techniques, and best practices. Stay tuned for exciting educational content!</p>
+                            <div class="post-meta">
+                                <span class="author">Coming Soon</span>
+                                <span class="date">Launch Soon</span>
+                                <span class="read-time">TBD</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-post" data-category="research">
+                        <div class="post-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <div class="category-tag research">Research</div>
+                        </div>
+                        <div class="post-content">
+                            <h4>AI Research Articles Coming Soon</h4>
+                            <p>We're curating the latest research findings, breakthrough discoveries, and cutting-edge developments in artificial intelligence. Check back soon!</p>
+                            <div class="post-meta">
+                                <span class="author">Coming Soon</span>
+                                <span class="date">Launch Soon</span>
+                                <span class="read-time">TBD</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-post" data-category="industry">
+                        <div class="post-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <div class="category-tag industry">Industry</div>
+                        </div>
+                        <div class="post-content">
+                            <h4>Industry News Coming Soon</h4>
+                            <p>Stay informed about the latest industry trends, company updates, and market developments in the AI space. Content launching soon!</p>
+                            <div class="post-meta">
+                                <span class="author">Coming Soon</span>
+                                <span class="date">Launch Soon</span>
+                                <span class="read-time">TBD</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-post" data-category="tools">
+                        <div class="post-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <div class="category-tag tools">Tools</div>
+                        </div>
+                        <div class="post-content">
+                            <h4>AI Tools & Tips Coming Soon</h4>
+                            <p>Discover powerful AI tools, helpful tips, and practical resources to enhance your AI journey. We're preparing valuable content for you!</p>
+                            <div class="post-meta">
+                                <span class="author">Coming Soon</span>
+                                <span class="date">Launch Soon</span>
+                                <span class="read-time">TBD</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-section">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        <i class="fas fa-plus"></i>
+                        Load More Articles
+                    </button>
+                </div>
+            </section>
+
+            <!-- Newsletter Signup -->
+            <section class="newsletter-signup">
+                <div class="newsletter-content">
+                    <div class="newsletter-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Stay Updated with AI Insights</h3>
+                    <p>Get the latest AI news, tutorials, and research insights delivered to your inbox weekly.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2025 GenAI Chutney. All rights reserved.</p>
+                </div>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="image-generator.html">Image Generator</a>
+                    <a href="prompt-optimizer.html">Prompting Lab</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="apps.html">GenAI Chutney Apps</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/blog.js"></script>
+</body>
+</html> 
