@@ -3456,4 +3456,1814 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 [PROMPT END]`,
     imageUrl: '/style-previews/p15.webp',
   },
+  // --- ANIMATION & CARTOONS ---
+  {
+    id: 'an1',
+    title: 'Classic Disney Animation',
+    category: 'Animation',
+    description: 'Smooth cel animation, vibrant colors, expressive characters.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A single animation cel frame in classic Disney style (standard animation format, approximately 16:9 aspect ratio).
+
+**LAYOUT:** Central character in expressive pose. Background elements arranged to support character action. Clear foreground, midground, and background separation. Composition follows animation principles with clear focal point.
+
+**COMPONENTS:**
+• Main character in dynamic, expressive pose
+• Background elements (environment, props, or setting)
+• Secondary characters or elements supporting the scene
+• Clear separation between character and background layers
+• Expressive facial features and body language
+• Smooth, flowing lines
+• Vibrant color palette
+
+**STYLE:** Classic Disney animation aesthetic (1930s-1950s golden age). Smooth, flowing linework with expressive character design. Vibrant, saturated colors with clear color separation. Soft shading with gentle gradients. Exaggerated expressions and poses. Warm, inviting color palette. Traditional cel animation look.
+
+**CONSTRAINTS:**
+• Smooth, flowing lines - no jagged edges
+• Vibrant colors - saturated and clear
+• Expressive character design - exaggerated but appealing
+• Clear layer separation - character distinct from background
+• Soft shading - gentle gradients, no harsh edges
+• Maintain animation aesthetic - not photorealistic
+• Warm, inviting mood
+
+**SOURCE MATERIAL:** Classic Disney animation (Snow White, Pinocchio, Bambi era), traditional cel animation, golden age animation aesthetics.
+
+**INTERPRETATION:** Emphasize character expression and animation appeal. Prioritize smooth, flowing motion and vibrant colors over realistic detail. If ambiguous, favor expressive, appealing character design over realistic proportions.
+[PROMPT END]`,
+    imageUrl: '/style-previews/an1.webp',
+  },
+  {
+    id: 'an2',
+    title: 'Studio Ghibli Watercolor',
+    category: 'Animation',
+    description: 'Soft watercolor backgrounds, detailed characters, nature-focused.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A scene in Studio Ghibli watercolor style (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Wide landscape composition with character integrated into environment. Background painted in soft watercolor style. Foreground elements with more detail. Natural composition following rule of thirds. Sky, middle ground, and foreground clearly separated.
+
+**COMPONENTS:**
+• Detailed character design in foreground or midground
+• Soft watercolor-painted background (sky, clouds, landscape)
+• Natural elements (trees, grass, flowers, water)
+• Atmospheric elements (wind, light rays, particles)
+• Detailed foreground elements
+• Environmental storytelling elements
+
+**STYLE:** Studio Ghibli aesthetic (Miyazaki style). Soft watercolor backgrounds with visible brush strokes and color bleeding. Detailed character design with clean lines. Natural, organic color palette (greens, blues, warm earth tones). Atmospheric lighting with soft shadows. Nature-focused composition. Hand-painted watercolor aesthetic.
+
+**CONSTRAINTS:**
+• Soft watercolor backgrounds - visible brush strokes
+• Detailed characters - clean lines, expressive design
+• Natural color palette - greens, blues, earth tones
+• Atmospheric lighting - soft, natural light
+• Nature-focused - emphasize natural elements
+• Maintain hand-painted aesthetic
+• Balance detail and softness
+
+**SOURCE MATERIAL:** Studio Ghibli films (Spirited Away, My Neighbor Totoro, Princess Mononoke), Miyazaki artwork, Japanese animation aesthetics.
+
+**INTERPRETATION:** Emphasize natural beauty and atmospheric mood. Prioritize soft, organic backgrounds and detailed character design. If ambiguous, favor nature-focused, peaceful scenes over action-heavy compositions.
+[PROMPT END]`,
+    imageUrl: '/style-previews/an2.webp',
+  },
+  {
+    id: 'an3',
+    title: 'Looney Tunes Slapstick',
+    category: 'Animation',
+    description: 'Exaggerated physics, rubber hose animation, comedic timing.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A single animation frame in classic Looney Tunes style (standard animation format, approximately 4:3 aspect ratio).
+
+**LAYOUT:** Character in exaggerated comedic pose. Background elements supporting the gag. Clear focal point on the comedic action. Simple, readable composition emphasizing the joke or physical comedy.
+
+**COMPONENTS:**
+• Character in exaggerated, comedic pose
+• Physical comedy elements (stretching, squashing, bouncing)
+• Background elements (simple environment supporting the gag)
+• Motion lines or speed effects
+• Comedic props or elements
+• Expressive facial features
+• Clear visual gag or joke
+
+**STYLE:** Classic Looney Tunes animation (Warner Bros. style). Rubber hose animation with exaggerated physics. Stretch and squash principles. Bold, simple character design. Vibrant, saturated colors. Comedic timing and visual gags. Exaggerated expressions and poses. Classic cartoon aesthetic.
+
+**CONSTRAINTS:**
+• Exaggerated physics - stretch and squash
+• Rubber hose style - flexible, bouncy characters
+• Bold, simple design - readable at small sizes
+• Vibrant colors - saturated and clear
+• Comedic focus - emphasize the gag
+• Exaggerated expressions - over-the-top emotions
+• Maintain classic cartoon aesthetic
+
+**SOURCE MATERIAL:** Looney Tunes cartoons, Warner Bros. animation, classic American cartoon comedy, Tex Avery style.
+
+**INTERPRETATION:** Emphasize comedy and physical humor. Prioritize exaggerated poses and comedic timing over realistic physics. If ambiguous, favor slapstick comedy and visual gags over subtle humor.
+[PROMPT END]`,
+    imageUrl: '/style-previews/an3.webp',
+  },
+  {
+    id: 'an4',
+    title: 'Anime Keyframe Art',
+    category: 'Animation',
+    description: 'Detailed linework, dramatic lighting, cinematic composition.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A keyframe illustration in modern anime style (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Cinematic composition with dramatic camera angle. Character positioned following rule of thirds. Background elements supporting the mood. Strong visual hierarchy with character as focal point. Dynamic composition with depth.
+
+**COMPONENTS:**
+• Detailed character design with expressive features
+• Dramatic lighting (rim lighting, dramatic shadows)
+• Background elements (environment, atmosphere, effects)
+• Atmospheric effects (particles, light rays, depth of field)
+• Detailed linework and rendering
+• Cinematic framing
+• Emotional or dramatic moment
+
+**STYLE:** Modern anime keyframe aesthetic. Detailed linework with varied line weights. Dramatic lighting with strong contrast. Cinematic composition and camera angles. Rich color palette with atmospheric colors. Professional keyframe illustration quality. High detail and rendering.
+
+**CONSTRAINTS:**
+• Detailed linework - varied line weights
+• Dramatic lighting - strong contrast and shadows
+• Cinematic composition - dynamic angles
+• Rich colors - atmospheric and moody
+• High detail - professional keyframe quality
+• Maintain anime aesthetic - stylized but detailed
+• Emphasize mood and atmosphere
+
+**SOURCE MATERIAL:** Modern anime keyframes (Studio Ufotable, MAPPA, Production I.G. style), anime illustration, cinematic anime aesthetics.
+
+**INTERPRETATION:** Emphasize dramatic mood and cinematic quality. Prioritize detailed rendering and atmospheric lighting over simple, flat designs. If ambiguous, favor dramatic, emotional moments over casual scenes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/an4.webp',
+  },
+  {
+    id: 'an5',
+    title: 'Pixar 3D Animation',
+    category: 'Animation',
+    description: 'Volumetric lighting, smooth surfaces, appealing character design.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A 3D rendered frame in Pixar animation style (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Character or scene with clear focal point. Three-dimensional space with depth. Background elements supporting the main subject. Balanced composition with visual hierarchy. Environmental storytelling.
+
+**COMPONENTS:**
+• Appealing 3D character design
+• Volumetric lighting and shadows
+• Detailed environment or background
+• Atmospheric elements (particles, fog, light rays)
+• Smooth surface materials
+• Three-dimensional depth
+• Environmental details
+
+**STYLE:** Pixar 3D animation aesthetic. Volumetric lighting with soft shadows. Smooth, appealing character design. Rich, saturated colors. Detailed environments with depth. Professional 3D rendering quality. Warm, inviting atmosphere. Clean, polished surfaces.
+
+**CONSTRAINTS:**
+• Volumetric lighting - soft, natural shadows
+• Smooth surfaces - clean, polished materials
+• Appealing design - stylized but believable
+• Rich colors - saturated and vibrant
+• Three-dimensional depth - clear spatial relationships
+• Maintain 3D aesthetic - not flat illustration
+• Warm, inviting atmosphere
+
+**SOURCE MATERIAL:** Pixar films (Toy Story, Finding Nemo, Inside Out), 3D animation aesthetics, computer-generated animation.
+
+**INTERPRETATION:** Emphasize appeal and three-dimensional quality. Prioritize smooth, polished rendering and volumetric lighting over flat, stylized designs. If ambiguous, favor warm, inviting scenes over dark, moody atmospheres.
+[PROMPT END]`,
+    imageUrl: '/style-previews/an5.webp',
+  },
+  {
+    id: 'an6',
+    title: 'South Park Cutout',
+    category: 'Animation',
+    description: 'Simple geometric shapes, flat colors, satirical humor.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A scene in South Park cutout animation style (standard format, approximately 16:9).
+
+**LAYOUT:** Simple composition with characters and background elements. Flat, two-dimensional layout. Clear separation between elements. Geometric shapes and simple forms. Readable, straightforward composition.
+
+**COMPONENTS:**
+• Simple geometric character designs
+• Flat background elements
+• Minimal props or environmental details
+• Simple shapes and forms
+• Clear, readable composition
+• Satirical or comedic elements
+• Text elements (if applicable)
+
+**STYLE:** South Park cutout animation aesthetic. Simple geometric shapes (circles, rectangles, triangles). Flat colors with no shading or gradients. Minimal detail and simple forms. Bold, saturated colors. Satirical, comedic tone. Paper cutout appearance.
+
+**CONSTRAINTS:**
+• Simple geometric shapes - circles, rectangles, triangles
+• Flat colors - no shading or gradients
+• Minimal detail - keep it simple
+• Bold colors - saturated and clear
+• Two-dimensional - no depth or perspective
+• Maintain cutout aesthetic - paper-like appearance
+• Clear, readable composition
+
+**SOURCE MATERIAL:** South Park animation style, cutout animation, simple geometric design, satirical comedy.
+
+**INTERPRETATION:** Emphasize simplicity and satirical humor. Prioritize clear, readable composition and bold colors over detailed rendering. If ambiguous, favor simple, geometric forms over complex, detailed designs.
+[PROMPT END]`,
+    imageUrl: '/style-previews/an6.webp',
+  },
+  {
+    id: 'an7',
+    title: 'Rick and Morty Sci-Fi',
+    category: 'Animation',
+    description: 'Bold outlines, trippy colors, interdimensional chaos.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A scene in Rick and Morty animation style (standard format, approximately 16:9).
+
+**LAYOUT:** Dynamic composition with sci-fi elements. Character positioned in foreground. Background with interdimensional or sci-fi elements. Bold, energetic composition. Visual chaos and complexity.
+
+**COMPONENTS:**
+• Character design with bold outlines
+• Sci-fi or interdimensional background elements
+• Trippy color effects and patterns
+• Energy effects or portals
+• Detailed linework
+• Complex, layered composition
+• Sci-fi props or technology
+
+**STYLE:** Rick and Morty animation aesthetic. Bold, black outlines with varied weights. Trippy, saturated color palette (neon colors, psychedelic patterns). Detailed linework and rendering. Sci-fi and interdimensional themes. Energetic, chaotic composition. High contrast and vibrant colors.
+
+**CONSTRAINTS:**
+• Bold outlines - black, varied line weights
+• Trippy colors - neon, saturated, psychedelic
+• Detailed linework - complex rendering
+• Sci-fi elements - technology, portals, dimensions
+• High contrast - vibrant and energetic
+• Maintain animation aesthetic - stylized, not realistic
+• Emphasize chaos and energy
+
+**SOURCE MATERIAL:** Rick and Morty animation style, sci-fi animation, interdimensional themes, psychedelic aesthetics.
+
+**INTERPRETATION:** Emphasize sci-fi chaos and trippy visuals. Prioritize bold outlines and vibrant colors over subtle, muted palettes. If ambiguous, favor interdimensional, sci-fi elements over mundane, everyday scenes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/an7.webp',
+  },
+  {
+    id: 'an8',
+    title: 'Adventure Time Whimsical',
+    category: 'Animation',
+    description: 'Soft pastels, rounded shapes, whimsical fantasy world.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A scene in Adventure Time animation style (standard format, approximately 16:9).
+
+**LAYOUT:** Whimsical composition with fantasy elements. Character and environment integrated. Soft, organic shapes. Balanced composition with playful elements. Fantasy world setting.
+
+**COMPONENTS:**
+• Character design with rounded, soft shapes
+• Fantasy environment elements
+• Soft pastel color palette
+• Whimsical props or magical elements
+• Organic, flowing forms
+• Fantasy creatures or elements
+• Playful, lighthearted mood
+
+**STYLE:** Adventure Time animation aesthetic. Soft pastel color palette (pinks, blues, yellows, greens). Rounded, organic shapes with no sharp edges. Whimsical, fantasy world aesthetic. Soft shading with gentle gradients. Playful, lighthearted tone. Hand-drawn, sketchy linework.
+
+**CONSTRAINTS:**
+• Soft pastels - gentle, muted colors
+• Rounded shapes - no sharp edges
+• Organic forms - flowing, natural shapes
+• Soft shading - gentle gradients
+• Whimsical mood - playful and lighthearted
+• Maintain hand-drawn aesthetic - sketchy, organic lines
+• Fantasy world elements
+
+**SOURCE MATERIAL:** Adventure Time animation style, whimsical fantasy, pastel aesthetics, playful animation.
+
+**INTERPRETATION:** Emphasize whimsy and fantasy. Prioritize soft, rounded shapes and pastel colors over bold, angular designs. If ambiguous, favor playful, lighthearted scenes over dark, serious themes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/an8.webp',
+  },
+  // --- SCI-FI & FANTASY ---
+  {
+    id: 'sf1',
+    title: 'Cyberpunk Neon Noir',
+    category: 'Sci-Fi',
+    description: 'Neon lights, rain-soaked streets, high-tech low-life aesthetic.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A cyberpunk scene in neon noir style (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Urban night scene with neon-lit streets. Character or subject in foreground. Rain-soaked surfaces reflecting neon lights. Vertical composition emphasizing city height. Atmospheric depth with fog and haze.
+
+**COMPONENTS:**
+• Neon signs and advertisements (holographic displays)
+• Rain-soaked streets and surfaces
+• Urban architecture (towering buildings, narrow alleys)
+• Atmospheric fog and haze
+• Neon light reflections on wet surfaces
+• Sci-fi technology elements
+• High-tech, low-life aesthetic
+
+**STYLE:** Cyberpunk neon noir aesthetic. Neon lights (pink, cyan, purple, orange) against dark backgrounds. Rain-soaked surfaces with reflections. High contrast lighting. Urban decay mixed with advanced technology. Film noir influence with sci-fi elements. Atmospheric, moody lighting.
+
+**CONSTRAINTS:**
+• Neon lights - vibrant, saturated colors
+• Rain-soaked surfaces - visible reflections
+• High contrast - bright neons against dark backgrounds
+• Urban decay - gritty, lived-in aesthetic
+• Atmospheric fog - depth and mood
+• Maintain cyberpunk aesthetic - high-tech, low-life
+• Emphasize mood and atmosphere
+
+**SOURCE MATERIAL:** Blade Runner, Cyberpunk 2077, neon noir aesthetics, cyberpunk visual style.
+
+**INTERPRETATION:** Emphasize atmosphere and mood. Prioritize neon lighting and urban decay over clean, pristine sci-fi. If ambiguous, favor dark, rain-soaked streets over bright, sunny futuristic cities.
+[PROMPT END]`,
+    imageUrl: '/style-previews/sf1.webp',
+  },
+  {
+    id: 'sf2',
+    title: 'Space Opera Epic',
+    category: 'Sci-Fi',
+    description: 'Vast cosmic vistas, starships, epic scale, dramatic lighting.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A space opera scene (cinematic aspect ratio, approximately 21:9 or 16:9).
+
+**LAYOUT:** Wide, epic composition emphasizing scale. Starship or space station as focal point. Cosmic background with stars, nebulae, and planets. Dramatic lighting from stars or explosions. Deep space perspective.
+
+**COMPONENTS:**
+• Massive starship or space station
+• Cosmic background (stars, nebulae, planets, galaxies)
+• Dramatic lighting (star light, explosions, energy)
+• Space phenomena (nebula clouds, asteroid fields)
+• Epic scale elements
+• Space battle or dramatic moment
+• Vast cosmic perspective
+
+**STYLE:** Space opera aesthetic. Vast cosmic vistas with deep space perspective. Dramatic lighting with high contrast. Rich, vibrant colors (blues, purples, oranges from nebulae). Epic scale emphasizing grandeur. Cinematic composition. Professional sci-fi illustration quality.
+
+**CONSTRAINTS:**
+• Epic scale - emphasize vastness and grandeur
+• Dramatic lighting - high contrast, cinematic
+• Rich colors - vibrant cosmic colors
+• Deep space perspective - sense of scale
+• Maintain sci-fi aesthetic - futuristic, advanced
+• Emphasize grandeur and epic quality
+• Professional illustration quality
+
+**SOURCE MATERIAL:** Star Wars, Dune, space opera aesthetics, epic sci-fi illustration.
+
+**INTERPRETATION:** Emphasize epic scale and grandeur. Prioritize vast cosmic vistas and dramatic lighting over small, intimate scenes. If ambiguous, favor epic, dramatic moments over quiet, contemplative scenes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/sf2.webp',
+  },
+  {
+    id: 'sf3',
+    title: 'Retro Futurism 1950s',
+    category: 'Sci-Fi',
+    description: 'Atomic age optimism, streamlined design, pastel colors.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A retro-futuristic scene in 1950s style (standard format, approximately 16:9).
+
+**LAYOUT:** Optimistic, clean composition. Futuristic elements with 1950s design aesthetic. Balanced composition with clear focal point. Bright, optimistic atmosphere. Streamlined, geometric forms.
+
+**COMPONENTS:**
+• Retro-futuristic technology (flying cars, atomic age tech)
+• 1950s design aesthetic (streamlined, geometric)
+• Pastel color palette (mint green, pink, sky blue)
+• Atomic age symbols and motifs
+• Clean, optimistic environment
+• Futuristic architecture with retro styling
+• Bright, cheerful atmosphere
+
+**STYLE:** 1950s retro-futurism aesthetic. Atomic age optimism with streamlined design. Pastel color palette (mint green, soft pink, sky blue, yellow). Clean, geometric forms. Bright, optimistic atmosphere. Mid-century modern influence. Cheerful, hopeful tone.
+
+**CONSTRAINTS:**
+• Pastel colors - soft, muted, optimistic
+• Streamlined design - clean, geometric forms
+• Atomic age aesthetic - 1950s influence
+• Bright atmosphere - optimistic and cheerful
+• Clean composition - no clutter or decay
+• Maintain retro-futuristic aesthetic - 1950s vision of future
+• Emphasize optimism and hope
+
+**SOURCE MATERIAL:** 1950s sci-fi illustration, atomic age design, retro-futurism, The Jetsons aesthetic.
+
+**INTERPRETATION:** Emphasize optimism and clean design. Prioritize pastel colors and streamlined forms over dark, gritty sci-fi. If ambiguous, favor bright, cheerful futuristic scenes over dark, dystopian themes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/sf3.webp',
+  },
+  {
+    id: 'sf4',
+    title: 'Alien World Ecosystem',
+    category: 'Sci-Fi',
+    description: 'Bioluminescent flora, exotic creatures, otherworldly landscapes.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** An alien world ecosystem scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Natural landscape composition with alien elements. Bioluminescent flora and fauna. Exotic, otherworldly environment. Natural composition following landscape principles. Atmospheric lighting from bioluminescence.
+
+**COMPONENTS:**
+• Bioluminescent plants and flora
+• Exotic alien creatures
+• Otherworldly landscape (alien terrain, strange formations)
+• Atmospheric bioluminescent lighting
+• Alien ecosystem elements
+• Natural, organic forms
+• Exotic color palette
+
+**STYLE:** Alien world ecosystem aesthetic. Bioluminescent lighting (glowing blues, greens, purples). Exotic, otherworldly forms and shapes. Rich, vibrant colors from alien life. Natural, organic composition. Atmospheric, mysterious mood. Professional sci-fi illustration quality.
+
+**CONSTRAINTS:**
+• Bioluminescent lighting - glowing, atmospheric
+• Exotic forms - otherworldly, alien shapes
+• Rich colors - vibrant, alien color palette
+• Natural composition - organic, flowing forms
+• Atmospheric mood - mysterious, otherworldly
+• Maintain sci-fi aesthetic - alien, not earthly
+• Emphasize exotic, otherworldly quality
+
+**SOURCE MATERIAL:** Avatar, alien world concepts, bioluminescent aesthetics, exotic ecosystem illustration.
+
+**INTERPRETATION:** Emphasize exotic, otherworldly quality. Prioritize bioluminescent lighting and alien forms over familiar, earthly elements. If ambiguous, favor mysterious, atmospheric alien worlds over bright, sunny landscapes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/sf4.webp',
+  },
+  {
+    id: 'sf5',
+    title: 'Dieselpunk Industrial',
+    category: 'Sci-Fi',
+    description: 'Heavy machinery, steam and diesel tech, industrial aesthetic.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A dieselpunk industrial scene (standard format, approximately 16:9).
+
+**LAYOUT:** Industrial composition with heavy machinery. Steam and diesel technology elements. Gritty, industrial environment. Strong vertical and horizontal lines. Mechanical, structured composition.
+
+**COMPONENTS:**
+• Heavy industrial machinery
+• Steam and diesel technology (pipes, gears, engines)
+• Industrial architecture (factories, warehouses)
+• Mechanical details and components
+• Steam and smoke effects
+• Gritty, industrial environment
+• Mechanical aesthetic
+
+**STYLE:** Dieselpunk industrial aesthetic. Heavy machinery with visible mechanical components. Steam and diesel technology. Gritty, industrial color palette (browns, grays, rust colors). Strong, angular forms. Industrial decay and wear. Mechanical, structured composition.
+
+**CONSTRAINTS:**
+• Heavy machinery - visible mechanical components
+• Steam and diesel tech - pipes, gears, engines
+• Gritty palette - browns, grays, rust
+• Industrial aesthetic - mechanical, structured
+• Visible wear and decay - lived-in, used
+• Maintain dieselpunk aesthetic - 1920s-1940s tech
+• Emphasize mechanical, industrial quality
+
+**SOURCE MATERIAL:** Dieselpunk aesthetics, industrial design, 1920s-1940s technology, mechanical illustration.
+
+**INTERPRETATION:** Emphasize mechanical, industrial quality. Prioritize heavy machinery and diesel technology over clean, high-tech sci-fi. If ambiguous, favor gritty, industrial scenes over pristine, futuristic environments.
+[PROMPT END]`,
+    imageUrl: '/style-previews/sf5.webp',
+  },
+  {
+    id: 'sf6',
+    title: 'Fantasy Medieval Epic',
+    category: 'Fantasy',
+    description: 'Castles, dragons, knights, epic fantasy landscapes.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A fantasy medieval epic scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Epic landscape composition with fantasy elements. Castle or fortress as focal point. Dramatic sky and landscape. Character or creature in foreground. Wide, sweeping composition emphasizing scale.
+
+**COMPONENTS:**
+• Medieval castle or fortress
+• Fantasy creatures (dragons, mythical beasts)
+• Knights or fantasy characters
+• Epic landscape (mountains, forests, dramatic terrain)
+• Dramatic sky (clouds, storms, magical effects)
+• Fantasy elements (magic, mystical atmosphere)
+• Epic scale and grandeur
+
+**STYLE:** Fantasy medieval epic aesthetic. Rich, vibrant colors (deep blues, greens, purples). Dramatic lighting with high contrast. Detailed rendering of architecture and creatures. Epic scale emphasizing grandeur. Cinematic composition. Professional fantasy illustration quality.
+
+**CONSTRAINTS:**
+• Epic scale - emphasize grandeur and vastness
+• Dramatic lighting - high contrast, cinematic
+• Rich colors - vibrant fantasy palette
+• Detailed rendering - architecture and creatures
+• Maintain fantasy aesthetic - medieval, mythical
+• Emphasize epic, dramatic quality
+• Professional illustration quality
+
+**SOURCE MATERIAL:** Lord of the Rings, Game of Thrones, fantasy illustration, medieval epic aesthetics.
+
+**INTERPRETATION:** Emphasize epic scale and fantasy grandeur. Prioritize dramatic landscapes and mythical creatures over small, intimate scenes. If ambiguous, favor epic, dramatic moments over quiet, peaceful scenes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/sf6.webp',
+  },
+  {
+    id: 'sf7',
+    title: 'Magical Realism',
+    category: 'Fantasy',
+    description: 'Everyday scenes with subtle magic, dreamlike quality, soft lighting.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A magical realism scene (standard format, approximately 16:9).
+
+**LAYOUT:** Everyday scene with subtle magical elements. Natural composition with magical touches. Soft, dreamlike atmosphere. Balanced composition. Gentle, flowing forms.
+
+**COMPONENTS:**
+• Everyday environment (home, street, nature)
+• Subtle magical elements (floating objects, light effects)
+• Soft, dreamlike atmosphere
+• Natural, familiar setting
+• Gentle magical effects
+• Soft lighting
+• Dreamlike quality
+
+**STYLE:** Magical realism aesthetic. Everyday scenes with subtle magical elements. Soft, dreamlike lighting. Gentle, flowing forms. Natural color palette with magical touches. Soft focus and atmospheric quality. Dreamlike, ethereal mood.
+
+**CONSTRAINTS:**
+• Subtle magic - gentle, not overwhelming
+• Soft lighting - dreamlike, atmospheric
+• Natural setting - familiar, everyday
+• Gentle effects - flowing, organic
+• Dreamlike quality - ethereal, soft
+• Maintain realism - believable, not cartoonish
+• Emphasize subtle, magical quality
+
+**SOURCE MATERIAL:** Magical realism literature, Studio Ghibli everyday scenes, dreamlike aesthetics, subtle fantasy.
+
+**INTERPRETATION:** Emphasize subtle magic and dreamlike quality. Prioritize soft, gentle magical effects over dramatic, epic fantasy. If ambiguous, favor everyday scenes with subtle magic over grand, epic fantasy landscapes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/sf7.webp',
+  },
+  {
+    id: 'sf8',
+    title: 'Post-Apocalyptic Wasteland',
+    category: 'Sci-Fi',
+    description: 'Desolate landscapes, ruins, survival aesthetic, muted colors.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A post-apocalyptic wasteland scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Desolate landscape composition. Ruins and decay as focal points. Wide, empty spaces. Muted, desaturated color palette. Atmospheric haze and dust. Survival elements integrated.
+
+**COMPONENTS:**
+• Ruined buildings or structures
+• Desolate landscape (barren, empty terrain)
+• Survival elements (makeshift shelters, scavenged materials)
+• Atmospheric haze and dust
+• Muted, desaturated colors
+• Decay and destruction
+• Empty, lonely atmosphere
+
+**STYLE:** Post-apocalyptic wasteland aesthetic. Desaturated, muted color palette (browns, grays, tans). Ruins and decay with visible wear. Atmospheric haze and dust. Empty, desolate atmosphere. Survival aesthetic with makeshift elements. Gritty, realistic rendering.
+
+**CONSTRAINTS:**
+• Muted colors - desaturated, earthy palette
+• Visible decay - ruins, destruction, wear
+• Atmospheric haze - dust, fog, desolation
+• Empty atmosphere - lonely, desolate
+• Survival aesthetic - makeshift, scavenged
+• Maintain post-apocalyptic aesthetic - desolate, not thriving
+• Emphasize desolation and survival
+
+**SOURCE MATERIAL:** Mad Max, The Last of Us, post-apocalyptic aesthetics, wasteland illustration.
+
+**INTERPRETATION:** Emphasize desolation and survival. Prioritize muted colors and decay over vibrant, thriving environments. If ambiguous, favor empty, desolate scenes over populated, active environments.
+[PROMPT END]`,
+    imageUrl: '/style-previews/sf8.webp',
+  },
+  // --- HORROR & DARK ---
+  {
+    id: 'h1',
+    title: 'Gothic Horror',
+    category: 'Horror',
+    description: 'Victorian architecture, shadows, fog, eerie atmosphere.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A gothic horror scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Dark, atmospheric composition. Gothic architecture as focal point. Heavy shadows and dramatic lighting. Fog and mist creating depth. Eerie, foreboding atmosphere.
+
+**COMPONENTS:**
+• Gothic architecture (spires, gargoyles, pointed arches)
+• Heavy shadows and dramatic lighting
+• Fog and mist effects
+• Eerie atmosphere elements
+• Victorian or medieval structures
+• Dark, moody palette
+• Foreboding, ominous mood
+
+**STYLE:** Gothic horror aesthetic. Dark, moody color palette (blacks, grays, deep purples). Heavy shadows with dramatic lighting. Fog and mist creating atmospheric depth. Victorian gothic architecture. Eerie, foreboding atmosphere. High contrast lighting.
+
+**CONSTRAINTS:**
+• Dark palette - blacks, grays, deep colors
+• Heavy shadows - dramatic, high contrast
+• Atmospheric fog - depth and mood
+• Gothic architecture - spires, pointed arches
+• Eerie mood - foreboding, ominous
+• Maintain horror aesthetic - dark, not bright
+• Emphasize atmosphere and mood
+
+**SOURCE MATERIAL:** Gothic horror literature, Victorian gothic architecture, horror aesthetics, eerie atmosphere.
+
+**INTERPRETATION:** Emphasize atmosphere and foreboding mood. Prioritize dark shadows and fog over bright, clear lighting. If ambiguous, favor eerie, ominous scenes over cheerful, bright environments.
+[PROMPT END]`,
+    imageUrl: '/style-previews/h1.webp',
+  },
+  {
+    id: 'h2',
+    title: 'Body Horror Surreal',
+    category: 'Horror',
+    description: 'Distorted forms, organic mutations, unsettling transformations.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A body horror surreal scene (standard format, approximately 16:9).
+
+**LAYOUT:** Distorted, unsettling composition. Organic, mutated forms as focal point. Surreal, dreamlike quality. Uncomfortable, disorienting perspective. Biological, organic aesthetic.
+
+**COMPONENTS:**
+• Distorted, mutated forms
+• Organic transformations
+• Biological, organic elements
+• Unsettling, surreal details
+• Flesh and organic materials
+• Distorted anatomy
+• Uncomfortable, disorienting elements
+
+**STYLE:** Body horror surreal aesthetic. Distorted, mutated forms with organic transformations. Biological, organic color palette (flesh tones, reds, pinks). Unsettling, surreal quality. Detailed rendering of organic materials. Uncomfortable, disorienting composition. High detail, realistic rendering.
+
+**CONSTRAINTS:**
+• Distorted forms - unsettling, mutated
+• Organic materials - flesh, biological
+• Surreal quality - dreamlike, disorienting
+• Uncomfortable composition - unsettling perspective
+• Detailed rendering - realistic organic materials
+• Maintain horror aesthetic - disturbing, not pleasant
+• Emphasize transformation and mutation
+
+**SOURCE MATERIAL:** David Cronenberg films, body horror aesthetics, surreal horror, organic transformation.
+
+**INTERPRETATION:** Emphasize unsettling transformation and mutation. Prioritize distorted, organic forms over normal, recognizable shapes. If ambiguous, favor uncomfortable, disorienting scenes over pleasant, familiar compositions.
+[PROMPT END]`,
+    imageUrl: '/style-previews/h2.webp',
+  },
+  {
+    id: 'h3',
+    title: 'Psychological Horror',
+    category: 'Horror',
+    description: 'Unsettling ambiguity, distorted reality, mind-bending visuals.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A psychological horror scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Unsettling, ambiguous composition. Distorted reality elements. Mind-bending perspective. Uncomfortable, disorienting space. Psychological unease through visual distortion.
+
+**COMPONENTS:**
+• Distorted reality elements
+• Impossible geometry or perspective
+• Unsettling, ambiguous details
+• Psychological unease elements
+• Mind-bending visuals
+• Distorted space or perspective
+• Uncomfortable, disorienting composition
+
+**STYLE:** Psychological horror aesthetic. Unsettling ambiguity with distorted reality. Mind-bending visuals and impossible geometry. Muted, desaturated color palette. Uncomfortable, disorienting composition. Psychological unease through visual distortion. Surreal, dreamlike quality.
+
+**CONSTRAINTS:**
+• Distorted reality - impossible, unsettling
+• Ambiguous details - unclear, confusing
+• Mind-bending visuals - disorienting perspective
+• Muted palette - desaturated, uneasy
+• Uncomfortable composition - disorienting space
+• Maintain horror aesthetic - psychological, not gory
+• Emphasize unease and distortion
+
+**SOURCE MATERIAL:** Psychological horror films, surreal horror, mind-bending aesthetics, psychological unease.
+
+**INTERPRETATION:** Emphasize psychological unease and distorted reality. Prioritize ambiguous, disorienting visuals over clear, straightforward compositions. If ambiguous, favor uncomfortable, mind-bending scenes over normal, recognizable spaces.
+[PROMPT END]`,
+    imageUrl: '/style-previews/h3.webp',
+  },
+  {
+    id: 'h4',
+    title: 'Lovecraftian Cosmic',
+    category: 'Horror',
+    description: 'Eldritch geometry, impossible forms, cosmic dread, deep colors.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A Lovecraftian cosmic horror scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Cosmic, otherworldly composition. Impossible geometry and eldritch forms. Deep, dark color palette. Cosmic scale emphasizing insignificance. Unsettling, incomprehensible elements.
+
+**COMPONENTS:**
+• Eldritch, impossible geometry
+• Cosmic, otherworldly elements
+• Deep, dark color palette (blacks, deep purples, dark blues)
+• Unsettling, incomprehensible forms
+• Cosmic scale and perspective
+• Non-Euclidean geometry
+• Cosmic dread and insignificance
+
+**STYLE:** Lovecraftian cosmic horror aesthetic. Eldritch, impossible geometry with non-Euclidean forms. Deep, dark color palette (blacks, deep purples, dark blues). Cosmic scale emphasizing human insignificance. Unsettling, incomprehensible forms. Atmospheric, moody lighting. Professional horror illustration quality.
+
+**CONSTRAINTS:**
+• Impossible geometry - non-Euclidean, eldritch
+• Deep colors - dark, cosmic palette
+• Cosmic scale - vast, incomprehensible
+• Unsettling forms - incomprehensible, alien
+• Atmospheric lighting - moody, dark
+• Maintain horror aesthetic - cosmic dread, not gore
+• Emphasize insignificance and incomprehensibility
+
+**SOURCE MATERIAL:** H.P. Lovecraft stories, cosmic horror aesthetics, eldritch geometry, cosmic dread.
+
+**INTERPRETATION:** Emphasize cosmic dread and incomprehensibility. Prioritize impossible geometry and cosmic scale over familiar, recognizable forms. If ambiguous, favor unsettling, incomprehensible scenes over clear, understandable compositions.
+[PROMPT END]`,
+    imageUrl: '/style-previews/h4.webp',
+  },
+  {
+    id: 'h5',
+    title: 'Haunted Mansion',
+    category: 'Horror',
+    description: 'Creepy interiors, ghostly apparitions, Victorian decay, candlelight.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A haunted mansion interior scene (standard format, approximately 16:9).
+
+**LAYOUT:** Interior composition with Victorian architecture. Candlelight and shadows creating atmosphere. Ghostly apparitions or supernatural elements. Decay and neglect visible. Eerie, foreboding atmosphere.
+
+**COMPONENTS:**
+• Victorian interior architecture
+• Candlelight and dramatic shadows
+• Ghostly apparitions or supernatural elements
+• Decay and neglect (dust, cobwebs, peeling wallpaper)
+• Creepy details and atmosphere
+• Dark, moody palette
+• Foreboding, eerie mood
+
+**STYLE:** Haunted mansion aesthetic. Victorian interior architecture with decay and neglect. Candlelight creating dramatic shadows. Ghostly, ethereal elements. Dark, moody color palette (browns, grays, deep reds). Atmospheric, foreboding mood. Detailed rendering of decay and atmosphere.
+
+**CONSTRAINTS:**
+• Victorian architecture - period-appropriate details
+• Candlelight - dramatic shadows and lighting
+• Visible decay - dust, cobwebs, neglect
+• Dark palette - moody, atmospheric
+• Ghostly elements - ethereal, supernatural
+• Maintain horror aesthetic - eerie, not cheerful
+• Emphasize atmosphere and decay
+
+**SOURCE MATERIAL:** Haunted house aesthetics, Victorian gothic interiors, ghost stories, horror atmosphere.
+
+**INTERPRETATION:** Emphasize atmosphere and decay. Prioritize candlelight and shadows over bright, clear lighting. If ambiguous, favor eerie, foreboding scenes over cheerful, well-maintained interiors.
+[PROMPT END]`,
+    imageUrl: '/style-previews/h5.webp',
+  },
+  // --- ABSTRACT & SURREAL ---
+  {
+    id: 'ab1',
+    title: 'Geometric Abstraction',
+    category: 'Abstract',
+    description: 'Bold shapes, primary colors, clean lines, minimalist composition.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A geometric abstraction (square format, approximately 1:1).
+
+**LAYOUT:** Clean, minimalist composition. Geometric shapes arranged with balance. Bold, primary colors. Clear, precise lines. Balanced, harmonious arrangement.
+
+**COMPONENTS:**
+• Geometric shapes (circles, squares, triangles, rectangles)
+• Bold, primary colors (red, blue, yellow, black, white)
+• Clean, precise lines
+• Minimalist composition
+• Balanced arrangement
+• Clear, simple forms
+• Harmonious color relationships
+
+**STYLE:** Geometric abstraction aesthetic. Bold, primary colors with high saturation. Clean, precise lines with no variation. Minimalist composition with balanced arrangement. Simple, clear geometric forms. High contrast. Professional abstract art quality.
+
+**CONSTRAINTS:**
+• Bold colors - primary, high saturation
+• Clean lines - precise, no variation
+• Minimalist - simple, uncluttered
+• Geometric forms - circles, squares, triangles
+• Balanced arrangement - harmonious composition
+• High contrast - clear, defined shapes
+• Maintain abstract aesthetic - non-representational
+
+**SOURCE MATERIAL:** Piet Mondrian, geometric abstraction, De Stijl movement, minimalist abstract art.
+
+**INTERPRETATION:** Emphasize clarity and balance. Prioritize bold colors and clean lines over subtle, organic forms. If ambiguous, favor simple, geometric compositions over complex, organic arrangements.
+[PROMPT END]`,
+    imageUrl: '/style-previews/ab1.webp',
+  },
+  {
+    id: 'ab2',
+    title: 'Fluid Organic Abstraction',
+    category: 'Abstract',
+    description: 'Flowing forms, organic shapes, gradient colors, dynamic movement.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A fluid organic abstraction (standard format, approximately 16:9).
+
+**LAYOUT:** Dynamic, flowing composition. Organic shapes with movement. Gradient colors creating depth. Balanced but energetic arrangement. Flowing, organic forms.
+
+**COMPONENTS:**
+• Flowing, organic shapes
+• Gradient colors (smooth color transitions)
+• Dynamic movement and flow
+• Organic, natural forms
+• Smooth, curved lines
+• Color gradients and transitions
+• Energetic, dynamic composition
+
+**STYLE:** Fluid organic abstraction aesthetic. Flowing, organic shapes with smooth curves. Gradient colors with smooth transitions. Dynamic movement and flow. Natural, organic forms. Smooth, fluid lines. Rich, vibrant color palette. Energetic, dynamic composition.
+
+**CONSTRAINTS:**
+• Flowing forms - smooth, organic curves
+• Gradient colors - smooth transitions
+• Dynamic movement - energetic, flowing
+• Organic shapes - natural, not geometric
+• Smooth lines - fluid, no sharp edges
+• Rich colors - vibrant, saturated palette
+• Maintain abstract aesthetic - non-representational
+
+**SOURCE MATERIAL:** Organic abstraction, fluid art, gradient aesthetics, dynamic abstract art.
+
+**INTERPRETATION:** Emphasize flow and movement. Prioritize organic, curved forms over geometric, angular shapes. If ambiguous, favor dynamic, energetic compositions over static, balanced arrangements.
+[PROMPT END]`,
+    imageUrl: '/style-previews/ab2.webp',
+  },
+  {
+    id: 'ab3',
+    title: 'Surreal Dreamscape',
+    category: 'Surreal',
+    description: 'Impossible scenes, dream logic, floating elements, ethereal atmosphere.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A surreal dreamscape scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Impossible, dreamlike composition. Floating elements defying gravity. Surreal, illogical arrangements. Ethereal, dreamlike atmosphere. Unreal, fantastical space.
+
+**COMPONENTS:**
+• Floating, defying gravity elements
+• Impossible, surreal arrangements
+• Dreamlike, ethereal atmosphere
+• Surreal, illogical elements
+• Fantastical, unreal space
+• Dream logic and impossible scenes
+• Ethereal, otherworldly quality
+
+**STYLE:** Surreal dreamscape aesthetic. Impossible scenes with dream logic. Floating elements defying gravity. Ethereal, dreamlike atmosphere. Soft, muted color palette with magical touches. Surreal, illogical arrangements. Dreamlike, fantastical quality.
+
+**CONSTRAINTS:**
+• Impossible scenes - dream logic, surreal
+• Floating elements - defying gravity
+• Ethereal atmosphere - dreamlike, soft
+• Surreal arrangements - illogical, fantastical
+• Soft palette - muted, magical colors
+• Dreamlike quality - unreal, fantastical
+• Maintain surreal aesthetic - impossible, not realistic
+
+**SOURCE MATERIAL:** Surrealism art movement, Salvador Dalí, René Magritte, dream aesthetics, surreal art.
+
+**INTERPRETATION:** Emphasize dream logic and impossible scenes. Prioritize floating, surreal elements over realistic, grounded compositions. If ambiguous, favor fantastical, dreamlike scenes over realistic, logical arrangements.
+[PROMPT END]`,
+    imageUrl: '/style-previews/ab3.webp',
+  },
+  {
+    id: 'ab4',
+    title: 'Kaleidoscopic Pattern',
+    category: 'Abstract',
+    description: 'Symmetrical patterns, vibrant colors, repeating motifs, psychedelic.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A kaleidoscopic pattern (square format, approximately 1:1).
+
+**LAYOUT:** Radial symmetrical composition. Repeating patterns creating kaleidoscopic effect. Vibrant, saturated colors. Balanced, harmonious arrangement. Centered, radial design.
+
+**COMPONENTS:**
+• Radial symmetrical patterns
+• Repeating motifs and elements
+• Vibrant, saturated colors
+• Kaleidoscopic, mirrored effects
+• Symmetrical arrangement
+• Pattern repetition
+• Centered, radial composition
+
+**STYLE:** Kaleidoscopic pattern aesthetic. Radial symmetrical patterns with repeating motifs. Vibrant, saturated colors (rainbow spectrum). Psychedelic, trippy quality. Balanced, harmonious arrangement. Professional pattern design quality.
+
+**CONSTRAINTS:**
+• Radial symmetry - centered, mirrored
+• Repeating patterns - consistent motifs
+• Vibrant colors - saturated, rainbow spectrum
+• Kaleidoscopic effect - mirrored, repeating
+• Balanced arrangement - harmonious composition
+• Psychedelic quality - trippy, vibrant
+• Maintain pattern aesthetic - symmetrical, repeating
+
+**SOURCE MATERIAL:** Kaleidoscope patterns, mandala designs, psychedelic art, symmetrical patterns.
+
+**INTERPRETATION:** Emphasize symmetry and pattern repetition. Prioritize vibrant colors and radial symmetry over asymmetrical, organic compositions. If ambiguous, favor centered, symmetrical patterns over off-center, asymmetrical arrangements.
+[PROMPT END]`,
+    imageUrl: '/style-previews/ab4.webp',
+  },
+  {
+    id: 'ab5',
+    title: 'Minimalist Color Field',
+    category: 'Abstract',
+    description: 'Large color blocks, subtle gradients, serene atmosphere, simple forms.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A minimalist color field painting (standard format, approximately 16:9 or 4:3).
+
+**LAYOUT:** Simple, minimal composition. Large color blocks or fields. Subtle gradients creating depth. Balanced, serene arrangement. Clean, uncluttered space.
+
+**COMPONENTS:**
+• Large color blocks or fields
+• Subtle gradients (gentle color transitions)
+• Minimal, simple forms
+• Clean, uncluttered space
+• Balanced composition
+• Serene, peaceful atmosphere
+• Simple, elegant arrangement
+
+**STYLE:** Minimalist color field aesthetic. Large color blocks with subtle gradients. Simple, minimal composition. Serene, peaceful atmosphere. Clean, uncluttered space. Muted, sophisticated color palette. Professional abstract art quality.
+
+**CONSTRAINTS:**
+• Large color blocks - simple, minimal
+• Subtle gradients - gentle transitions
+• Minimal composition - uncluttered, simple
+• Serene atmosphere - peaceful, calm
+• Clean space - no unnecessary elements
+• Muted palette - sophisticated, not vibrant
+• Maintain minimalist aesthetic - simple, elegant
+
+**SOURCE MATERIAL:** Color field painting, Mark Rothko, minimalist abstraction, serene abstract art.
+
+**INTERPRETATION:** Emphasize simplicity and serenity. Prioritize large color blocks and subtle gradients over complex, detailed compositions. If ambiguous, favor minimal, serene arrangements over busy, energetic designs.
+[PROMPT END]`,
+    imageUrl: '/style-previews/ab5.webp',
+  },
+  // --- NATURE & WILDLIFE ---
+  {
+    id: 'n1',
+    title: 'Botanical Illustration',
+    category: 'Nature',
+    description: 'Detailed plant studies, scientific accuracy, clean linework, natural colors.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A botanical illustration (standard format, approximately 4:3 or square).
+
+**LAYOUT:** Scientific illustration composition. Plant or botanical subject as focal point. Clean, detailed rendering. Natural, accurate colors. Balanced, centered composition.
+
+**COMPONENTS:**
+• Detailed plant or botanical subject
+• Scientific accuracy and detail
+• Clean, precise linework
+• Natural, accurate color palette
+• Botanical details (leaves, flowers, stems)
+• Scientific illustration style
+• Accurate, detailed rendering
+
+**STYLE:** Botanical illustration aesthetic. Scientific accuracy with detailed rendering. Clean, precise linework. Natural, accurate color palette (greens, browns, natural plant colors). Professional scientific illustration quality. Clear, readable composition.
+
+**CONSTRAINTS:**
+• Scientific accuracy - detailed, accurate
+• Clean linework - precise, clear
+• Natural colors - accurate plant colors
+• Detailed rendering - professional quality
+• Clear composition - readable, balanced
+• Maintain scientific aesthetic - accurate, not stylized
+• Emphasize botanical detail and accuracy
+
+**SOURCE MATERIAL:** Botanical illustration, scientific plant studies, natural history illustration, detailed plant art.
+
+**INTERPRETATION:** Emphasize scientific accuracy and detail. Prioritize natural, accurate colors and clean linework over stylized, artistic interpretations. If ambiguous, favor detailed, scientific rendering over abstract, stylized plant art.
+[PROMPT END]`,
+    imageUrl: '/style-previews/n1.webp',
+  },
+  {
+    id: 'n2',
+    title: 'Wildlife Photography',
+    category: 'Nature',
+    description: 'Natural habitat, animal behavior, documentary style, authentic moments.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A wildlife photography scene (standard photography format, approximately 3:2 or 16:9).
+
+**LAYOUT:** Natural habitat composition. Animal as focal point in natural environment. Documentary photography style. Authentic, candid moment. Natural lighting and atmosphere.
+
+**COMPONENTS:**
+• Wildlife animal in natural habitat
+• Natural environment and background
+• Documentary photography style
+• Authentic, candid moment
+• Natural lighting (sunlight, natural conditions)
+• Environmental context
+• Wildlife behavior captured naturally
+
+**STYLE:** Wildlife photography aesthetic. Natural habitat with authentic environment. Documentary photography style. Natural lighting with realistic conditions. Authentic, candid moments. Realistic color palette. Professional wildlife photography quality.
+
+**CONSTRAINTS:**
+• Natural habitat - authentic environment
+• Documentary style - realistic, not staged
+• Natural lighting - realistic conditions
+• Authentic moments - candid, natural behavior
+• Realistic colors - natural, not enhanced
+• Maintain photography aesthetic - realistic, not illustrated
+• Emphasize authenticity and natural behavior
+
+**SOURCE MATERIAL:** National Geographic photography, wildlife documentaries, natural history photography, authentic wildlife scenes.
+
+**INTERPRETATION:** Emphasize authenticity and natural behavior. Prioritize natural habitat and documentary style over staged, artificial scenes. If ambiguous, favor candid, authentic moments over posed, artificial compositions.
+[PROMPT END]`,
+    imageUrl: '/style-previews/n2.webp',
+  },
+  {
+    id: 'n3',
+    title: 'Underwater Marine Life',
+    category: 'Nature',
+    description: 'Coral reefs, tropical fish, blue water, vibrant ocean colors.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** An underwater marine life scene (standard format, approximately 16:9).
+
+**LAYOUT:** Underwater composition with marine life. Coral reef or ocean environment. Blue water creating atmosphere. Marine creatures as focal points. Natural underwater lighting.
+
+**COMPONENTS:**
+• Coral reef or ocean environment
+• Tropical fish and marine creatures
+• Blue water and underwater atmosphere
+• Vibrant ocean colors (blues, greens, coral colors)
+• Underwater lighting (caustic light, depth)
+• Marine ecosystem elements
+• Natural underwater scene
+
+**STYLE:** Underwater marine life aesthetic. Vibrant ocean colors (blues, greens, coral pinks, yellows). Underwater lighting with caustic light effects. Coral reef environment. Tropical fish and marine creatures. Natural underwater atmosphere. Professional underwater photography quality.
+
+**CONSTRAINTS:**
+• Vibrant ocean colors - blues, greens, coral
+• Underwater lighting - caustic light, depth
+• Coral reef environment - natural, detailed
+• Marine creatures - tropical fish, sea life
+• Natural atmosphere - underwater, not surface
+• Maintain underwater aesthetic - blue, aquatic
+• Emphasize vibrant marine life and coral
+
+**SOURCE MATERIAL:** Underwater photography, coral reef ecosystems, marine life, tropical ocean scenes.
+
+**INTERPRETATION:** Emphasize vibrant marine life and underwater atmosphere. Prioritize coral reefs and tropical fish over deep ocean, dark scenes. If ambiguous, favor colorful, vibrant underwater scenes over dark, deep ocean environments.
+[PROMPT END]`,
+    imageUrl: '/style-previews/n3.webp',
+  },
+  {
+    id: 'n4',
+    title: 'Mountain Landscape',
+    category: 'Nature',
+    description: 'Majestic peaks, dramatic skies, natural grandeur, epic scale.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A mountain landscape scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Epic landscape composition. Mountain peaks as focal point. Dramatic sky and atmosphere. Wide, sweeping composition. Natural grandeur and scale.
+
+**COMPONENTS:**
+• Majestic mountain peaks
+• Dramatic sky (clouds, storms, clear blue)
+• Natural landscape elements (valleys, forests, rivers)
+• Epic scale and grandeur
+• Natural lighting (sunlight, atmospheric)
+• Landscape depth and perspective
+• Natural, untouched environment
+
+**STYLE:** Mountain landscape aesthetic. Majestic peaks with dramatic scale. Natural color palette (blues, greens, browns, grays). Dramatic sky and atmosphere. Epic, sweeping composition. Natural lighting with realistic conditions. Professional landscape photography quality.
+
+**CONSTRAINTS:**
+• Epic scale - emphasize grandeur and vastness
+• Natural colors - realistic landscape palette
+• Dramatic sky - clouds, atmosphere, weather
+• Natural lighting - realistic, atmospheric
+• Landscape depth - clear perspective and scale
+• Maintain landscape aesthetic - natural, not urban
+• Emphasize natural grandeur and epic scale
+
+**SOURCE MATERIAL:** Mountain photography, landscape art, natural grandeur, epic landscape scenes.
+
+**INTERPRETATION:** Emphasize natural grandeur and epic scale. Prioritize dramatic skies and mountain peaks over flat, simple landscapes. If ambiguous, favor epic, sweeping mountain scenes over small, intimate nature details.
+[PROMPT END]`,
+    imageUrl: '/style-previews/n4.webp',
+  },
+  {
+    id: 'n5',
+    title: 'Forest Canopy',
+    category: 'Nature',
+    description: 'Dappled sunlight, green foliage, natural textures, peaceful atmosphere.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A forest canopy scene (standard format, approximately 16:9 or 4:3).
+
+**LAYOUT:** Forest interior composition. Canopy and foliage as main elements. Dappled sunlight creating atmosphere. Natural, organic composition. Peaceful, serene atmosphere.
+
+**COMPONENTS:**
+• Forest canopy and foliage
+• Dappled sunlight filtering through leaves
+• Natural textures (bark, leaves, branches)
+• Green color palette (various shades)
+• Natural, organic forms
+• Peaceful, serene atmosphere
+• Forest interior environment
+
+**STYLE:** Forest canopy aesthetic. Green color palette with various shades. Dappled sunlight creating atmospheric lighting. Natural textures and organic forms. Peaceful, serene atmosphere. Natural, realistic rendering. Professional nature photography quality.
+
+**CONSTRAINTS:**
+• Green palette - various shades of green
+• Dappled sunlight - atmospheric, filtered light
+• Natural textures - bark, leaves, organic
+• Peaceful atmosphere - serene, calm
+• Natural forms - organic, not geometric
+• Maintain forest aesthetic - natural, not urban
+• Emphasize peaceful, natural atmosphere
+
+**SOURCE MATERIAL:** Forest photography, nature scenes, canopy views, peaceful natural environments.
+
+**INTERPRETATION:** Emphasize peaceful, natural atmosphere. Prioritize dappled sunlight and green foliage over dark, shadowy forest scenes. If ambiguous, favor serene, peaceful forest interiors over dramatic, stormy forest scenes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/n5.webp',
+  },
+  // --- FOOD & CULINARY ---
+  {
+    id: 'f1',
+    title: 'Food Photography',
+    category: 'Food',
+    description: 'Appetizing presentation, natural lighting, professional styling, vibrant colors.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A food photography scene (standard photography format, approximately 3:2 or 4:3).
+
+**LAYOUT:** Food presentation composition. Dish as focal point. Natural or styled lighting. Appetizing arrangement. Professional food styling. Clear, appetizing composition.
+
+**COMPONENTS:**
+• Food dish as main subject
+• Professional food styling and arrangement
+• Natural or styled lighting (soft, appetizing)
+• Vibrant, appetizing colors
+• Props and background elements
+• Appetizing presentation
+• Professional photography quality
+
+**STYLE:** Food photography aesthetic. Appetizing presentation with professional styling. Natural or soft lighting creating appetizing atmosphere. Vibrant, saturated colors (fresh, appealing). Professional food photography quality. Clear, appetizing composition.
+
+**CONSTRAINTS:**
+• Appetizing presentation - fresh, appealing
+• Natural lighting - soft, appetizing
+• Vibrant colors - fresh, saturated
+• Professional styling - well-arranged, appealing
+• Clear composition - readable, appetizing
+• Maintain photography aesthetic - realistic, not illustrated
+• Emphasize freshness and appeal
+
+**SOURCE MATERIAL:** Food photography, culinary styling, appetizing food presentation, professional food photography.
+
+**INTERPRETATION:** Emphasize freshness and appetizing appeal. Prioritize vibrant colors and natural lighting over dark, moody food scenes. If ambiguous, favor fresh, appealing food presentation over artistic, abstract food compositions.
+[PROMPT END]`,
+    imageUrl: '/style-previews/f1.webp',
+  },
+  {
+    id: 'f2',
+    title: 'Gourmet Plating',
+    category: 'Food',
+    description: 'Fine dining presentation, artistic arrangement, elegant composition, sophisticated.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A gourmet plating scene (standard format, approximately 3:2 or square).
+
+**LAYOUT:** Fine dining composition. Artistically arranged dish. Elegant, sophisticated presentation. Balanced, artistic composition. Professional fine dining styling.
+
+**COMPONENTS:**
+• Artistically arranged gourmet dish
+• Fine dining presentation elements
+• Elegant, sophisticated styling
+• Artistic composition and arrangement
+• Sophisticated color palette
+• Professional fine dining quality
+• Elegant, refined atmosphere
+
+**STYLE:** Gourmet plating aesthetic. Fine dining presentation with artistic arrangement. Elegant, sophisticated styling. Sophisticated color palette (refined, not vibrant). Professional fine dining quality. Artistic, balanced composition.
+
+**CONSTRAINTS:**
+• Artistic arrangement - elegant, sophisticated
+• Fine dining presentation - refined, elegant
+• Sophisticated palette - refined, not vibrant
+• Elegant styling - professional, artistic
+• Balanced composition - harmonious, refined
+• Maintain fine dining aesthetic - elegant, not casual
+• Emphasize sophistication and elegance
+
+**SOURCE MATERIAL:** Fine dining photography, gourmet plating, Michelin-starred restaurant presentation, elegant food styling.
+
+**INTERPRETATION:** Emphasize sophistication and elegance. Prioritize artistic arrangement and refined presentation over casual, simple food scenes. If ambiguous, favor elegant, sophisticated gourmet plating over vibrant, casual food photography.
+[PROMPT END]`,
+    imageUrl: '/style-previews/f2.webp',
+  },
+  {
+    id: 'f3',
+    title: 'Street Food Culture',
+    category: 'Food',
+    description: 'Vibrant markets, authentic cuisine, cultural atmosphere, lively scenes.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A street food culture scene (standard format, approximately 16:9).
+
+**LAYOUT:** Lively market or street scene. Street food vendors and stalls. Cultural atmosphere and environment. Vibrant, energetic composition. Authentic, cultural setting.
+
+**COMPONENTS:**
+• Street food vendors and stalls
+• Vibrant market or street environment
+• Cultural atmosphere and details
+• Authentic cuisine and presentation
+• Lively, energetic scene
+• Cultural elements and context
+• Authentic, real atmosphere
+
+**STYLE:** Street food culture aesthetic. Vibrant, energetic atmosphere. Authentic cultural setting. Lively, bustling scene. Rich, saturated colors. Documentary photography style. Authentic, real atmosphere.
+
+**CONSTRAINTS:**
+• Vibrant atmosphere - energetic, lively
+• Authentic setting - cultural, real
+• Lively scene - bustling, active
+• Rich colors - saturated, vibrant
+• Documentary style - realistic, authentic
+• Maintain cultural aesthetic - authentic, not staged
+• Emphasize authenticity and cultural atmosphere
+
+**SOURCE MATERIAL:** Street food photography, market scenes, cultural food photography, authentic street food culture.
+
+**INTERPRETATION:** Emphasize authenticity and cultural atmosphere. Prioritize vibrant, lively scenes over quiet, empty market settings. If ambiguous, favor authentic, cultural street food scenes over staged, artificial food photography.
+[PROMPT END]`,
+    imageUrl: '/style-previews/f3.webp',
+  },
+  {
+    id: 'f4',
+    title: 'Dessert Art',
+    category: 'Food',
+    description: 'Colorful sweets, artistic presentation, playful composition, vibrant palette.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A dessert art scene (standard format, approximately 3:2 or square).
+
+**LAYOUT:** Artistic dessert composition. Colorful, vibrant presentation. Playful, creative arrangement. Balanced, artistic composition. Appetizing, appealing presentation.
+
+**COMPONENTS:**
+• Colorful desserts and sweets
+• Artistic, creative presentation
+• Playful, vibrant composition
+• Vibrant color palette (pinks, blues, yellows, pastels)
+• Creative arrangement and styling
+• Appetizing, appealing presentation
+• Artistic, playful atmosphere
+
+**STYLE:** Dessert art aesthetic. Colorful, vibrant presentation with playful composition. Vibrant color palette (pinks, blues, yellows, pastels). Creative, artistic arrangement. Appetizing, appealing presentation. Professional food photography quality.
+
+**CONSTRAINTS:**
+• Vibrant colors - colorful, appealing
+• Playful composition - creative, artistic
+• Artistic presentation - creative, appealing
+• Appetizing appeal - fresh, appealing
+• Creative arrangement - artistic, playful
+• Maintain dessert aesthetic - sweet, appealing
+• Emphasize color and playfulness
+
+**SOURCE MATERIAL:** Dessert photography, pastry art, colorful sweets, playful food styling.
+
+**INTERPRETATION:** Emphasize color and playfulness. Prioritize vibrant, colorful desserts over simple, monochromatic sweet scenes. If ambiguous, favor creative, artistic dessert presentations over simple, traditional dessert photography.
+[PROMPT END]`,
+    imageUrl: '/style-previews/f4.webp',
+  },
+  // --- FASHION & STYLE ---
+  {
+    id: 'fa1',
+    title: 'High Fashion Editorial',
+    category: 'Fashion',
+    description: 'Dramatic poses, avant-garde styling, artistic composition, sophisticated.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A high fashion editorial scene (standard photography format, approximately 3:2 or 16:9).
+
+**LAYOUT:** Dramatic, artistic composition. Model or subject in avant-garde pose. Sophisticated styling and presentation. Artistic, editorial composition. Professional fashion photography quality.
+
+**COMPONENTS:**
+• Model or subject in dramatic pose
+• Avant-garde fashion styling
+• Artistic, editorial composition
+• Sophisticated color palette
+• Professional fashion photography quality
+• Dramatic lighting and atmosphere
+• High fashion aesthetic
+
+**STYLE:** High fashion editorial aesthetic. Dramatic poses with avant-garde styling. Artistic, sophisticated composition. Sophisticated color palette (refined, not vibrant). Professional fashion photography quality. Dramatic lighting creating atmosphere.
+
+**CONSTRAINTS:**
+• Dramatic poses - avant-garde, artistic
+• Sophisticated styling - refined, elegant
+• Artistic composition - editorial, creative
+• Sophisticated palette - refined, not vibrant
+• Professional quality - high fashion, not casual
+• Maintain editorial aesthetic - artistic, not commercial
+• Emphasize sophistication and artistry
+
+**SOURCE MATERIAL:** Vogue editorials, high fashion photography, avant-garde fashion, sophisticated fashion styling.
+
+**INTERPRETATION:** Emphasize sophistication and artistry. Prioritize dramatic, avant-garde styling over casual, everyday fashion. If ambiguous, favor artistic, editorial fashion photography over commercial, product-focused fashion scenes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/fa1.webp',
+  },
+  {
+    id: 'fa2',
+    title: 'Street Style Photography',
+    category: 'Fashion',
+    description: 'Urban fashion, candid moments, authentic style, documentary approach.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A street style photography scene (standard photography format, approximately 3:2 or 16:9).
+
+**LAYOUT:** Urban street composition. Subject in natural, candid pose. Authentic street style and fashion. Documentary photography approach. Natural, authentic atmosphere.
+
+**COMPONENTS:**
+• Subject in natural, candid pose
+• Urban street environment
+• Authentic street style and fashion
+• Documentary photography style
+• Natural lighting and atmosphere
+• Authentic, real moment
+• Street style aesthetic
+
+**STYLE:** Street style photography aesthetic. Urban fashion with authentic style. Candid, natural moments. Documentary photography approach. Natural lighting with realistic conditions. Authentic, real atmosphere. Professional street style photography quality.
+
+**CONSTRAINTS:**
+• Authentic style - real, not staged
+• Candid moments - natural, not posed
+• Documentary approach - realistic, authentic
+• Natural lighting - realistic conditions
+• Urban environment - street, not studio
+• Maintain street style aesthetic - authentic, not high fashion
+• Emphasize authenticity and real style
+
+**SOURCE MATERIAL:** Street style photography, urban fashion, candid fashion photography, authentic street style.
+
+**INTERPRETATION:** Emphasize authenticity and real style. Prioritize candid, natural moments over posed, staged fashion photography. If ambiguous, favor authentic, urban street style over high fashion, editorial scenes.
+[PROMPT END]`,
+    imageUrl: '/style-previews/fa2.webp',
+  },
+  {
+    id: 'fa3',
+    title: 'Vintage Fashion Retro',
+    category: 'Fashion',
+    description: 'Period clothing, nostalgic atmosphere, retro styling, classic elegance.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A vintage fashion retro scene (standard photography format, approximately 3:2 or 4:3).
+
+**LAYOUT:** Vintage composition with period styling. Subject in retro fashion. Nostalgic atmosphere and setting. Classic, elegant presentation. Period-appropriate details.
+
+**COMPONENTS:**
+• Period clothing and fashion
+• Nostalgic atmosphere and setting
+• Retro styling and details
+• Classic, elegant presentation
+• Period-appropriate props and environment
+• Vintage aesthetic and mood
+• Classic elegance
+
+**STYLE:** Vintage fashion retro aesthetic. Period clothing with nostalgic atmosphere. Retro styling and details. Classic, elegant presentation. Period-appropriate color palette. Nostalgic, warm atmosphere. Professional vintage fashion photography quality.
+
+**CONSTRAINTS:**
+• Period clothing - authentic, period-appropriate
+• Nostalgic atmosphere - warm, nostalgic
+• Retro styling - period-appropriate details
+• Classic elegance - refined, elegant
+• Period palette - appropriate to era
+• Maintain vintage aesthetic - nostalgic, not modern
+• Emphasize nostalgia and classic elegance
+
+**SOURCE MATERIAL:** Vintage fashion photography, retro styling, period fashion, nostalgic fashion aesthetics.
+
+**INTERPRETATION:** Emphasize nostalgia and classic elegance. Prioritize period-appropriate styling and nostalgic atmosphere over modern, contemporary fashion. If ambiguous, favor classic, elegant vintage fashion over edgy, modern street style.
+[PROMPT END]`,
+    imageUrl: '/style-previews/fa3.webp',
+  },
+  {
+    id: 'fa4',
+    title: 'Avant-Garde Couture',
+    category: 'Fashion',
+    description: 'Experimental designs, artistic expression, bold creativity, unconventional.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** An avant-garde couture scene (standard photography format, approximately 3:2 or 16:9).
+
+**LAYOUT:** Artistic, experimental composition. Bold, unconventional fashion design. Creative, artistic presentation. Avant-garde, experimental aesthetic. Professional fashion photography quality.
+
+**COMPONENTS:**
+• Experimental, unconventional fashion design
+• Bold, creative presentation
+• Artistic, avant-garde composition
+• Unconventional styling and details
+• Creative, experimental elements
+• Avant-garde aesthetic
+• Bold, artistic expression
+
+**STYLE:** Avant-garde couture aesthetic. Experimental, unconventional fashion design. Bold, creative presentation. Artistic, avant-garde composition. Unconventional styling and details. Professional fashion photography quality. Bold, artistic expression.
+
+**CONSTRAINTS:**
+• Experimental design - unconventional, creative
+• Bold presentation - artistic, avant-garde
+• Unconventional styling - creative, experimental
+• Artistic composition - creative, avant-garde
+• Maintain avant-garde aesthetic - experimental, not traditional
+• Emphasize creativity and experimentation
+• Professional fashion photography quality
+
+**SOURCE MATERIAL:** Avant-garde fashion, experimental couture, artistic fashion photography, unconventional fashion design.
+
+**INTERPRETATION:** Emphasize creativity and experimentation. Prioritize unconventional, experimental designs over traditional, classic fashion. If ambiguous, favor bold, artistic avant-garde fashion over safe, commercial fashion photography.
+[PROMPT END]`,
+    imageUrl: '/style-previews/fa4.webp',
+  },
+  // --- ARCHITECTURE & URBAN ---
+  {
+    id: 'ar1',
+    title: 'Modernist Architecture',
+    category: 'Architecture',
+    description: 'Clean lines, geometric forms, minimalist design, functional beauty.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A modernist architecture scene (standard format, approximately 16:9 or 3:2).
+
+**LAYOUT:** Architectural composition with clean lines. Geometric forms and minimalist design. Functional beauty and simplicity. Balanced, harmonious composition. Professional architectural photography quality.
+
+**COMPONENTS:**
+• Modernist architecture (clean lines, geometric forms)
+• Minimalist design elements
+• Functional beauty and simplicity
+• Geometric composition
+• Clean, uncluttered space
+• Modern architectural details
+• Professional architectural quality
+
+**STYLE:** Modernist architecture aesthetic. Clean lines with geometric forms. Minimalist design with functional beauty. Simple, uncluttered composition. Professional architectural photography quality. Balanced, harmonious arrangement.
+
+**CONSTRAINTS:**
+• Clean lines - precise, geometric
+• Minimalist design - simple, uncluttered
+• Geometric forms - clear, defined
+• Functional beauty - simple, elegant
+• Professional quality - architectural photography
+• Maintain modernist aesthetic - clean, not ornate
+• Emphasize simplicity and functional beauty
+
+**SOURCE MATERIAL:** Modernist architecture, Bauhaus design, minimalist architecture, functional architecture.
+
+**INTERPRETATION:** Emphasize simplicity and functional beauty. Prioritize clean lines and minimalist design over ornate, decorative architecture. If ambiguous, favor simple, geometric modernist architecture over complex, ornate historical buildings.
+[PROMPT END]`,
+    imageUrl: '/style-previews/ar1.webp',
+  },
+  {
+    id: 'ar2',
+    title: 'Urban Street Photography',
+    category: 'Architecture',
+    description: 'City life, candid moments, urban environment, documentary style.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** An urban street photography scene (standard photography format, approximately 3:2 or 16:9).
+
+**LAYOUT:** Urban street composition. City life and environment. Candid, authentic moments. Documentary photography style. Natural, authentic atmosphere.
+
+**COMPONENTS:**
+• Urban street environment
+• City life and activity
+• Candid, authentic moments
+• Urban architecture and details
+• Documentary photography style
+• Natural lighting and atmosphere
+• Authentic, real urban scene
+
+**STYLE:** Urban street photography aesthetic. City life with authentic moments. Documentary photography style. Natural lighting with realistic conditions. Urban environment and architecture. Authentic, real atmosphere. Professional street photography quality.
+
+**CONSTRAINTS:**
+• Authentic moments - candid, not staged
+• Documentary style - realistic, authentic
+• Natural lighting - realistic conditions
+• Urban environment - city, not rural
+• Authentic atmosphere - real, not artificial
+• Maintain street photography aesthetic - candid, not posed
+• Emphasize authenticity and city life
+
+**SOURCE MATERIAL:** Urban street photography, city life photography, documentary street photography, authentic urban scenes.
+
+**INTERPRETATION:** Emphasize authenticity and city life. Prioritize candid, natural moments over posed, staged urban scenes. If ambiguous, favor authentic, documentary street photography over artistic, stylized urban compositions.
+[PROMPT END]`,
+    imageUrl: '/style-previews/ar2.webp',
+  },
+  {
+    id: 'ar3',
+    title: 'Futuristic Cityscape',
+    category: 'Architecture',
+    description: 'Skyscrapers, neon lights, vertical city, sci-fi urban aesthetic.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A futuristic cityscape scene (cinematic aspect ratio, approximately 16:9 or 21:9).
+
+**LAYOUT:** Vertical city composition. Skyscrapers and futuristic architecture. Neon lights and urban atmosphere. Sci-fi urban aesthetic. Dramatic, epic scale.
+
+**COMPONENTS:**
+• Futuristic skyscrapers and architecture
+• Neon lights and urban atmosphere
+• Vertical city composition
+• Sci-fi urban aesthetic
+• Dramatic scale and perspective
+• Futuristic technology elements
+• Urban sci-fi atmosphere
+
+**STYLE:** Futuristic cityscape aesthetic. Vertical city with skyscrapers. Neon lights creating urban atmosphere. Sci-fi urban aesthetic. Dramatic scale and perspective. Rich, vibrant colors (neon, urban). Professional sci-fi illustration quality.
+
+**CONSTRAINTS:**
+• Vertical composition - emphasize height and scale
+• Neon lights - vibrant, urban atmosphere
+• Sci-fi aesthetic - futuristic, advanced
+• Dramatic scale - epic, grand
+• Rich colors - vibrant, neon urban palette
+• Maintain sci-fi aesthetic - futuristic, not historical
+• Emphasize vertical city and urban scale
+
+**SOURCE MATERIAL:** Futuristic cityscapes, sci-fi urban design, cyberpunk cities, vertical city aesthetics.
+
+**INTERPRETATION:** Emphasize vertical city and urban scale. Prioritize futuristic architecture and neon lights over historical, traditional cityscapes. If ambiguous, favor dramatic, sci-fi urban scenes over quiet, peaceful city views.
+[PROMPT END]`,
+    imageUrl: '/style-previews/ar3.webp',
+  },
+  // --- VINTAGE & RETRO ---
+  {
+    id: 'v1',
+    title: '1950s Americana',
+    category: 'Vintage',
+    description: 'Mid-century nostalgia, pastel colors, suburban ideal, optimistic mood.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A 1950s Americana scene (standard format, approximately 4:3 or 16:9).
+
+**LAYOUT:** Mid-century composition. Suburban or American ideal setting. Pastel color palette. Optimistic, nostalgic mood. Classic, period-appropriate details.
+
+**COMPONENTS:**
+• Mid-century American setting
+• Pastel color palette (mint green, pink, sky blue, yellow)
+• Suburban ideal elements
+• 1950s period details and styling
+• Optimistic, nostalgic atmosphere
+• Classic American iconography
+• Mid-century modern aesthetic
+
+**STYLE:** 1950s Americana aesthetic. Mid-century nostalgia with pastel colors. Suburban ideal with optimistic mood. Classic American iconography. Period-appropriate color palette. Warm, nostalgic atmosphere. Professional vintage photography quality.
+
+**CONSTRAINTS:**
+• Pastel colors - soft, muted, optimistic
+• Mid-century details - period-appropriate
+• Suburban ideal - optimistic, nostalgic
+• Optimistic mood - cheerful, hopeful
+• Period palette - 1950s appropriate
+• Maintain vintage aesthetic - nostalgic, not modern
+• Emphasize nostalgia and optimism
+
+**SOURCE MATERIAL:** 1950s Americana, mid-century nostalgia, suburban ideal, vintage American aesthetics.
+
+**INTERPRETATION:** Emphasize nostalgia and optimism. Prioritize pastel colors and suburban ideal over dark, gritty scenes. If ambiguous, favor cheerful, optimistic 1950s scenes over dramatic, serious period photography.
+[PROMPT END]`,
+    imageUrl: '/style-previews/v1.webp',
+  },
+  {
+    id: 'v2',
+    title: 'Art Deco Elegance',
+    category: 'Vintage',
+    description: 'Geometric patterns, luxurious materials, 1920s glamour, sophisticated.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** An Art Deco elegance scene (standard format, approximately 16:9 or 4:3).
+
+**LAYOUT:** Art Deco composition. Geometric patterns and luxurious materials. 1920s glamour and sophistication. Elegant, refined presentation. Professional vintage photography quality.
+
+**COMPONENTS:**
+• Art Deco geometric patterns
+• Luxurious materials and details
+• 1920s glamour and sophistication
+• Geometric composition
+• Elegant, refined presentation
+• Art Deco architectural or design elements
+• Sophisticated, luxurious aesthetic
+
+**STYLE:** Art Deco elegance aesthetic. Geometric patterns with luxurious materials. 1920s glamour and sophistication. Elegant, refined presentation. Sophisticated color palette (golds, blacks, rich colors). Professional vintage photography quality.
+
+**CONSTRAINTS:**
+• Geometric patterns - Art Deco style
+• Luxurious materials - rich, elegant
+• 1920s glamour - sophisticated, elegant
+• Elegant presentation - refined, sophisticated
+• Sophisticated palette - rich, luxurious colors
+• Maintain Art Deco aesthetic - 1920s, not modern
+• Emphasize elegance and sophistication
+
+**SOURCE MATERIAL:** Art Deco design, 1920s glamour, luxurious aesthetics, sophisticated vintage design.
+
+**INTERPRETATION:** Emphasize elegance and sophistication. Prioritize geometric patterns and luxurious materials over simple, minimal designs. If ambiguous, favor elegant, sophisticated Art Deco scenes over casual, everyday vintage photography.
+[PROMPT END]`,
+    imageUrl: '/style-previews/v2.webp',
+  },
+  {
+    id: 'v3',
+    title: 'Polaroid Nostalgia',
+    category: 'Vintage',
+    description: 'Instant film aesthetic, warm tones, nostalgic mood, authentic moments.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A Polaroid nostalgia scene (square format, approximately 1:1, Polaroid frame).
+
+**LAYOUT:** Square Polaroid composition. Instant film aesthetic. Warm, nostalgic tones. Authentic, candid moments. Classic Polaroid frame and presentation.
+
+**COMPONENTS:**
+• Polaroid frame and aesthetic
+• Warm, nostalgic color tones
+• Authentic, candid moments
+• Instant film look and feel
+• Classic Polaroid presentation
+• Nostalgic, warm atmosphere
+• Authentic, real moments
+
+**STYLE:** Polaroid nostalgia aesthetic. Instant film look with warm, nostalgic tones. Authentic, candid moments. Classic Polaroid frame and presentation. Warm color palette (yellows, oranges, warm tones). Nostalgic, authentic atmosphere. Professional vintage photography quality.
+
+**CONSTRAINTS:**
+• Polaroid frame - classic instant film look
+• Warm tones - nostalgic, yellow-orange cast
+• Authentic moments - candid, real
+• Instant film aesthetic - vintage, not digital
+• Nostalgic atmosphere - warm, nostalgic
+• Maintain Polaroid aesthetic - instant film, not modern
+• Emphasize nostalgia and authenticity
+
+**SOURCE MATERIAL:** Polaroid photography, instant film aesthetics, nostalgic photography, authentic vintage moments.
+
+**INTERPRETATION:** Emphasize nostalgia and authenticity. Prioritize warm tones and candid moments over cool, staged photography. If ambiguous, favor authentic, nostalgic Polaroid scenes over modern, digital photography aesthetics.
+[PROMPT END]`,
+    imageUrl: '/style-previews/v3.webp',
+  },
+  // --- CYBERPUNK & FUTURISTIC ---
+  {
+    id: 'cy1',
+    title: 'Neon Tokyo Night',
+    category: 'Cyberpunk',
+    description: 'Vibrant neon signs, crowded streets, urban energy, Japanese aesthetic.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A neon Tokyo night scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Urban night composition. Vibrant neon signs and crowded streets. Japanese urban aesthetic. Energetic, vibrant atmosphere. Vertical composition with urban density.
+
+**COMPONENTS:**
+• Vibrant neon signs (Japanese characters, colorful displays)
+• Crowded urban streets
+• Japanese urban aesthetic and details
+• Urban energy and atmosphere
+• Neon light reflections
+• Dense urban environment
+• Vibrant, energetic scene
+
+**STYLE:** Neon Tokyo night aesthetic. Vibrant neon signs with Japanese characters. Crowded, energetic streets. Japanese urban aesthetic. Rich, saturated colors (neon pinks, blues, greens, oranges). Urban energy and atmosphere. Professional urban photography quality.
+
+**CONSTRAINTS:**
+• Vibrant neons - saturated, colorful
+• Crowded streets - energetic, active
+• Japanese aesthetic - authentic, cultural
+• Urban energy - vibrant, energetic
+• Rich colors - saturated, neon palette
+• Maintain urban aesthetic - dense, not empty
+• Emphasize energy and vibrancy
+
+**SOURCE MATERIAL:** Tokyo night photography, neon aesthetics, Japanese urban culture, vibrant city scenes.
+
+**INTERPRETATION:** Emphasize energy and vibrancy. Prioritize crowded, neon-lit streets over quiet, empty urban scenes. If ambiguous, favor vibrant, energetic Tokyo night scenes over dark, moody cyberpunk aesthetics.
+[PROMPT END]`,
+    imageUrl: '/style-previews/cy1.webp',
+  },
+  {
+    id: 'cy2',
+    title: 'Holographic Interface',
+    category: 'Cyberpunk',
+    description: 'Futuristic UI, holographic displays, digital aesthetics, tech-forward.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A holographic interface scene (standard format, approximately 16:9).
+
+**LAYOUT:** Futuristic UI composition. Holographic displays and digital interfaces. Tech-forward aesthetic. Digital, high-tech atmosphere. Clean, technological composition.
+
+**COMPONENTS:**
+• Holographic displays and interfaces
+• Futuristic UI elements
+• Digital aesthetics and effects
+• Tech-forward design
+• Holographic light effects
+• Digital, high-tech atmosphere
+• Clean, technological composition
+
+**STYLE:** Holographic interface aesthetic. Futuristic UI with holographic displays. Digital aesthetics and effects. Tech-forward design. Clean, technological composition. Vibrant, digital colors (cyans, magentas, bright colors). Professional digital art quality.
+
+**CONSTRAINTS:**
+• Holographic displays - futuristic, digital
+• Tech-forward design - advanced, high-tech
+• Digital aesthetics - clean, technological
+• Vibrant colors - digital, bright palette
+• Clean composition - organized, technological
+• Maintain digital aesthetic - futuristic, not analog
+• Emphasize technology and digital quality
+
+**SOURCE MATERIAL:** Holographic interfaces, futuristic UI design, digital aesthetics, tech-forward design.
+
+**INTERPRETATION:** Emphasize technology and digital quality. Prioritize clean, futuristic interfaces over analog, retro technology. If ambiguous, favor advanced, high-tech holographic displays over simple, basic digital interfaces.
+[PROMPT END]`,
+    imageUrl: '/style-previews/cy2.webp',
+  },
+  {
+    id: 'cy3',
+    title: 'Biomechanical Fusion',
+    category: 'Cyberpunk',
+    description: 'Organic meets machine, cybernetic enhancements, hybrid aesthetics.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A biomechanical fusion scene (standard format, approximately 16:9).
+
+**LAYOUT:** Hybrid composition. Organic and mechanical elements integrated. Cybernetic enhancements and fusion. Biomechanical aesthetic. Detailed, complex composition.
+
+**COMPONENTS:**
+• Organic and mechanical elements integrated
+• Cybernetic enhancements
+• Biomechanical fusion details
+• Hybrid aesthetic and design
+• Detailed mechanical components
+• Organic, biological elements
+• Complex, integrated composition
+
+**STYLE:** Biomechanical fusion aesthetic. Organic and mechanical elements seamlessly integrated. Cybernetic enhancements with detailed components. Hybrid aesthetic combining biological and technological. Rich, complex rendering. Professional sci-fi illustration quality.
+
+**CONSTRAINTS:**
+• Organic-mechanical fusion - seamless integration
+• Cybernetic details - detailed, complex
+• Hybrid aesthetic - biological and technological
+• Complex rendering - detailed, professional
+• Maintain sci-fi aesthetic - futuristic, not historical
+• Emphasize fusion and integration
+• Professional illustration quality
+
+**SOURCE MATERIAL:** Biomechanical art, cybernetic aesthetics, hybrid design, sci-fi fusion concepts.
+
+**INTERPRETATION:** Emphasize fusion and integration. Prioritize seamless organic-mechanical fusion over separate, distinct elements. If ambiguous, favor complex, detailed biomechanical designs over simple, basic cybernetic enhancements.
+[PROMPT END]`,
+    imageUrl: '/style-previews/cy3.webp',
+  },
+  // --- STEAMPUNK ---
+  {
+    id: 'st1',
+    title: 'Victorian Steampunk',
+    category: 'Steampunk',
+    description: 'Brass and copper, gears and cogs, Victorian era, mechanical elegance.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A Victorian steampunk scene (standard format, approximately 16:9).
+
+**LAYOUT:** Victorian composition with steampunk elements. Brass and copper mechanical details. Gears and cogs integrated. Victorian era aesthetic. Mechanical elegance and detail.
+
+**COMPONENTS:**
+• Brass and copper mechanical elements
+• Gears, cogs, and mechanical details
+• Victorian era architecture and styling
+• Steampunk technology and devices
+• Mechanical elegance and craftsmanship
+• Victorian period details
+• Steampunk aesthetic
+
+**STYLE:** Victorian steampunk aesthetic. Brass and copper with warm, metallic colors. Gears, cogs, and mechanical details. Victorian era architecture and styling. Mechanical elegance with detailed craftsmanship. Warm, rich color palette (brass, copper, browns). Professional steampunk illustration quality.
+
+**CONSTRAINTS:**
+• Brass and copper - warm, metallic colors
+• Mechanical details - gears, cogs, visible
+• Victorian era - period-appropriate styling
+• Mechanical elegance - detailed, crafted
+• Warm palette - brass, copper, browns
+• Maintain steampunk aesthetic - Victorian tech, not modern
+• Emphasize mechanical elegance and craftsmanship
+
+**SOURCE MATERIAL:** Steampunk aesthetics, Victorian technology, mechanical design, brass and copper aesthetics.
+
+**INTERPRETATION:** Emphasize mechanical elegance and craftsmanship. Prioritize brass, copper, and visible mechanical details over clean, hidden technology. If ambiguous, favor detailed, crafted steampunk devices over simple, basic mechanical elements.
+[PROMPT END]`,
+    imageUrl: '/style-previews/st1.webp',
+  },
+  {
+    id: 'st2',
+    title: 'Steampunk Airship',
+    category: 'Steampunk',
+    description: 'Flying machines, brass construction, Victorian engineering, sky adventure.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A steampunk airship scene (cinematic aspect ratio, approximately 16:9).
+
+**LAYOUT:** Sky composition with steampunk airship. Brass construction and Victorian engineering. Flying machine as focal point. Dramatic sky and atmosphere. Adventure and exploration mood.
+
+**COMPONENTS:**
+• Steampunk airship (brass construction, Victorian engineering)
+• Sky and atmospheric elements
+• Flying machine details and mechanics
+• Victorian engineering aesthetic
+• Adventure and exploration mood
+• Dramatic sky composition
+• Steampunk flying technology
+
+**STYLE:** Steampunk airship aesthetic. Brass construction with Victorian engineering. Flying machine with detailed mechanics. Dramatic sky and atmosphere. Adventure and exploration mood. Warm, rich colors (brass, sky blues, clouds). Professional steampunk illustration quality.
+
+**CONSTRAINTS:**
+• Brass construction - warm, metallic
+• Victorian engineering - period-appropriate tech
+• Flying machine - detailed, mechanical
+• Dramatic sky - atmospheric, adventurous
+• Adventure mood - exploration, discovery
+• Maintain steampunk aesthetic - Victorian tech, not modern
+• Emphasize adventure and mechanical detail
+
+**SOURCE MATERIAL:** Steampunk airships, flying machines, Victorian engineering, adventure aesthetics.
+
+**INTERPRETATION:** Emphasize adventure and mechanical detail. Prioritize detailed brass construction and Victorian engineering over simple, modern flying machines. If ambiguous, favor dramatic, adventurous sky scenes over quiet, peaceful airship views.
+[PROMPT END]`,
+    imageUrl: '/style-previews/st2.webp',
+  },
 ];
