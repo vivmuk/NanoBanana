@@ -19,4 +19,5 @@ export enum AppView {
   GALLERY = 'GALLERY',
   INFO = 'INFO',
   PROMPT_TESTER = 'PROMPT_TESTER',
+  SETTINGS = 'SETTINGS',
 }

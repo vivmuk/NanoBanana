@@ -5,9 +5,27 @@ const VENICE_API_BASE = 'https://api.venice.ai/api/v1';
 const TEXT_MODEL = 'qwen3-4b';
 const IMAGE_MODEL = 'nano-banana-pro';
 
+// Helper function to check if API key exists
+export const hasApiKey = (): boolean => {
+  const storedKey = localStorage.getItem('VENICE_API_KEY');
+  if (storedKey && storedKey.trim()) {
+    return true;
+  }
+  const envKey = import.meta.env.VITE_VENICE_API_KEY || 
+                 import.meta.env.VITE_API_KEY ||
+                 (window as any).__VENICE_API_KEY__ ||
+                 (window as any).__API_KEY__;
+  return !!envKey;
+};
+
 const getApiKey = (): string => {
-  // In Vite, only VITE_* prefixed env vars are exposed to client
-  // Check all possible variations
+  // First, check localStorage (user-provided API key)
+  const storedKey = localStorage.getItem('VENICE_API_KEY');
+  if (storedKey && storedKey.trim()) {
+    return storedKey.trim();
+  }
+
+  // Fallback to environment variables (for deployment/development)
   const apiKey = import.meta.env.VITE_VENICE_API_KEY || 
                  import.meta.env.VITE_API_KEY ||
                  // Fallback for Railway/deployment (might be injected differently)
@@ -15,10 +33,8 @@ const getApiKey = (): string => {
                  (window as any).__API_KEY__;
   
   if (!apiKey) {
-    console.error("API_KEY is missing from environment variables.");
-    console.error("Available import.meta.env keys:", Object.keys(import.meta.env).filter(k => k.includes('API') || k.includes('KEY')));
-    console.error("Looking for: VITE_VENICE_API_KEY or VITE_API_KEY");
-    throw new Error("API Key not found. Please set VITE_VENICE_API_KEY environment variable in Railway.");
+    console.error("API_KEY is missing. Please set your API key in Settings.");
+    throw new Error("API Key not found. Please go to Settings and add your Venice AI API key.");
   }
   return apiKey;
 };

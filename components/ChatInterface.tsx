@@ -1,20 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Message } from '../types';
 import { ChatMessage } from './ChatMessage';
-import { sendMessage, initializeChat, resetChat, generateImage } from '../services/veniceService';
-import { Send, RefreshCw, StopCircle, Image as ImageIcon, Loader2 } from 'lucide-react';
+import { sendMessage, initializeChat, resetChat, generateImage, hasApiKey } from '../services/veniceService';
+import { Send, RefreshCw, StopCircle, Image as ImageIcon, Loader2, AlertCircle, Settings } from 'lucide-react';
+import { AppView } from '../types';
 
 interface ChatInterfaceProps {
   initialPrompt?: string;
   onClearInitialPrompt: () => void;
+  onNavigateToSettings?: () => void;
 }
 
-export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onClearInitialPrompt }) => {
+export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onClearInitialPrompt, onNavigateToSettings }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [showApiKeyWarning, setShowApiKeyWarning] = useState(!hasApiKey());
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const shouldAutoScrollRef = useRef(true);
@@ -78,6 +81,33 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
   useEffect(() => {
     scrollToBottom(false, false);
   }, [messages, isLoading, isGeneratingImage]);
+
+  // Check API key status when component mounts or when storage changes
+  useEffect(() => {
+    const checkApiKey = () => {
+      setShowApiKeyWarning(!hasApiKey());
+    };
+
+    // Check on mount
+    checkApiKey();
+
+    // Listen for storage changes (when API key is saved in Settings)
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'VENICE_API_KEY') {
+        checkApiKey();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    
+    // Also check periodically (in case of same-tab updates)
+    const interval = setInterval(checkApiKey, 1000);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   // Initialize chat on mount or if prompt passed from gallery
   useEffect(() => {
@@ -233,6 +263,38 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
   return (
     <div className="flex flex-col h-full w-full max-w-5xl mx-auto relative font-sans">
       
+      {/* API Key Warning Banner */}
+      {showApiKeyWarning && !hasApiKey() && (
+        <div className="mx-4 md:mx-8 mt-4 bg-yellow-900/20 border border-yellow-800/50 rounded-lg p-4 flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <p className="text-sm text-yellow-200 font-semibold mb-1">API Key Required</p>
+            <p className="text-xs text-yellow-300/80 mb-3">
+              Please add your Venice AI API key in Settings to use the Architect and generate images.
+            </p>
+            {onNavigateToSettings && (
+              <button
+                onClick={() => {
+                  onNavigateToSettings();
+                  setShowApiKeyWarning(false);
+                }}
+                className="flex items-center gap-2 px-3 py-1.5 bg-yellow-400/20 hover:bg-yellow-400/30 text-yellow-300 rounded-lg text-xs font-semibold transition-colors border border-yellow-400/30"
+              >
+                <Settings className="w-3 h-3" />
+                Go to Settings
+              </button>
+            )}
+          </div>
+          <button
+            onClick={() => setShowApiKeyWarning(false)}
+            className="text-yellow-400/60 hover:text-yellow-300 transition-colors"
+            title="Dismiss"
+          >
+            <StopCircle className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
       {/* Messages Area */}
       <div 
         ref={messagesContainerRef} 

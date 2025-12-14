@@ -4,6 +4,7 @@ import { ChatInterface } from './components/ChatInterface';
 import { StyleGallery } from './components/StyleGallery';
 import { InfoSection } from './components/InfoSection';
 import { PromptTester } from './components/PromptTester';
+import { ApiKeySettings } from './components/ApiKeySettings';
 import { AppView } from './types';
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
     setInitialPrompt(undefined);
   };
 
+  const handleNavigateToSettings = () => {
+    setCurrentView(AppView.SETTINGS);
+  };
+
   const renderContent = () => {
     switch (currentView) {
       case AppView.CHAT:
@@ -27,6 +32,7 @@ function App() {
             <ChatInterface 
                 initialPrompt={initialPrompt} 
                 onClearInitialPrompt={handleClearInitialPrompt}
+                onNavigateToSettings={handleNavigateToSettings}
             />
           </div>
         );
@@ -46,6 +52,12 @@ function App() {
         return (
           <div className="flex-1 h-full w-full animate-in fade-in slide-in-from-left-4 duration-300">
             <PromptTester />
+          </div>
+        );
+      case AppView.SETTINGS:
+        return (
+          <div className="flex-1 h-full w-full animate-in fade-in zoom-in-95 duration-300">
+            <ApiKeySettings />
           </div>
         );
       default:

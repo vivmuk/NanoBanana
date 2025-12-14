@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppView } from '../types';
-import { MessageSquare, LayoutGrid, Zap, BookOpen, Play } from 'lucide-react';
+import { MessageSquare, LayoutGrid, Zap, BookOpen, Play, Settings } from 'lucide-react';
 
 interface SidebarProps {
   currentView: AppView;
@@ -73,6 +73,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onChangeView }) =
         >
           <Play className="w-6 h-6 shrink-0" />
           <span className="hidden lg:block font-medium">Test Prompt</span>
+        </button>
+
+        <button
+          onClick={() => onChangeView(AppView.SETTINGS)}
+          className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 w-full ${
+            currentView === AppView.SETTINGS
+              ? 'bg-gray-800 text-banana-400 shadow-inner'
+              : 'text-gray-400 hover:bg-gray-800/50 hover:text-gray-200'
+          }`}
+          title="Settings"
+        >
+          <Settings className="w-6 h-6 shrink-0" />
+          <span className="hidden lg:block font-medium">Settings</span>
         </button>
       </nav>
 
