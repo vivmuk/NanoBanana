@@ -1,0 +1,7 @@
+OneDrive/
+venice-multi-chat/
+scripts/
+*.md
+.git/
+node_modules/
+dist/
