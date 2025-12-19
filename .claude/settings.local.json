@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node scripts/generate-style-previews.js:*)"
+      "Bash(node scripts/generate-style-previews.js:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
