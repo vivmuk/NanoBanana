@@ -5266,4 +5266,1069 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 [PROMPT END]`,
     imageUrl: '/style-previews/st2.webp',
   },
+
+  // --- INFOGRAPHICS ---
+  {
+    id: 'info1',
+    title: 'Clinical Trial Phases',
+    category: 'Infographics',
+    description: 'Medical research pathway showing Phase I-IV clinical trial stages with patient icons and success rates.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A vertical medical infographic (portrait format, 1080x1920 pixels, social media optimized).
+
+**LAYOUT:** Top-to-bottom flow showing clinical trial phases as a vertical pipeline. Phase icons connected by arrows/pathways. Statistics and timelines alongside each phase. Header with title, footer with source attribution. Clear visual progression from Phase I to Phase IV.
+
+**COMPONENTS:**
+• Bold title header: "The Clinical Trial Journey"
+• Phase I block: Discovery icon, "20-100 participants", safety focus badge
+• Phase II block: Efficacy testing icon, "100-300 participants", dosage indicators
+• Phase III block: Large-scale icon, "1000-3000 participants", comparison charts
+• Phase IV block: Post-market surveillance, real-world evidence indicators
+• Success rate percentages between phases (with funnel narrowing visual)
+• Timeline indicators (months/years for each phase)
+• Patient silhouette icons representing participant numbers
+• FDA approval checkpoint marker
+• Color-coded risk/benefit indicators
+
+**STYLE:** Clean medical illustration style. Professional healthcare color palette (navy blue, teal, white, coral accents). Flat design with subtle gradients. Sans-serif typography (Helvetica/Arial family). Icons in consistent line weight. Minimal shadows, maximum clarity. Trustworthy, scientific aesthetic.
+
+**CONSTRAINTS:**
+• All text must be readable at mobile viewing size
+• No overlapping elements between phases
+• Consistent icon sizing throughout
+• Color blind accessible palette
+• Maximum 3 font sizes for hierarchy
+• White space between sections for scannability
+• Statistics must appear data-driven and credible
+
+**SOURCE MATERIAL:** FDA clinical trial guidelines, pharmaceutical research methodology, medical regulatory pathway documentation.
+
+**INTERPRETATION:** Emphasize the rigorous, multi-stage nature of drug development. Prioritize clarity and educational value over visual complexity. If ambiguous, favor patient-centric messaging and accessible medical terminology.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info1.webp',
+  },
+  {
+    id: 'info2',
+    title: 'Human Body Systems',
+    category: 'Infographics',
+    description: 'Anatomical overview showing interconnected organ systems with callouts and health statistics.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A large educational medical poster (landscape format, 1920x1080 pixels, presentation-ready).
+
+**LAYOUT:** Central human body silhouette with radiating information panels. Organ systems highlighted with connecting lines to callout boxes. Left side: cardiovascular, respiratory, digestive. Right side: nervous, muscular, skeletal. Header with main title, footer with key health statistics.
+
+**COMPONENTS:**
+• Central anatomical human figure (gender-neutral silhouette)
+• Cardiovascular system highlight with heart icon and blood flow indicators
+• Respiratory system with lung capacity statistics
+• Digestive system pathway with nutrient absorption data
+• Nervous system with brain-body connection visualization
+• Muscular system with strength/flexibility indicators
+• Skeletal system with bone density information
+• Color-coded organ system overlays
+• Statistical callout boxes with health metrics
+• Interconnection lines showing system relationships
+• Legend explaining color coding
+• QR code placeholder for additional resources
+
+**STYLE:** Modern medical illustration meets data visualization. Clean, professional healthcare aesthetic. Color palette: deep blue base, organ-specific accent colors (red for cardio, blue for respiratory, green for digestive, purple for nervous, orange for muscular, white for skeletal). Flat design with subtle 3D depth. Professional medical typography.
+
+**CONSTRAINTS:**
+• Anatomically accurate proportions
+• No cluttered overlapping labels
+• All callout lines must clearly connect to correct organs
+• Maintain professional medical credibility
+• Text readable at presentation distance
+• Color coding must be intuitive and consistent
+• Accessible for non-medical audiences
+
+**SOURCE MATERIAL:** Medical anatomy references, WHO health statistics, human biology educational materials.
+
+**INTERPRETATION:** Balance scientific accuracy with visual accessibility. Prioritize educational clarity over artistic interpretation. If ambiguous, favor simplified representations that enhance understanding.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info2.webp',
+  },
+  {
+    id: 'info3',
+    title: 'Medication Adherence Flowchart',
+    category: 'Infographics',
+    description: 'Patient decision tree for medication compliance with reminders, side effects, and doctor consultation triggers.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A patient-facing medication guide infographic (portrait format, 1080x1350 pixels, printable and digital).
+
+**LAYOUT:** Decision tree flowchart starting from top center. Diamond decision nodes with yes/no branches. Action boxes for each pathway. Color-coded zones for: normal adherence (green), caution (yellow), seek help (red). Footer with emergency contact information.
+
+**COMPONENTS:**
+• Header: "Your Medication Journey: A Daily Guide"
+• Starting node: "Did you take your medication today?"
+• Decision diamonds: timing questions, side effect checks, missed dose scenarios
+• Action boxes: what to do for each situation
+• Warning indicators for dangerous combinations
+• "Call your doctor" emergency pathway (red zone)
+• Pill reminder icon checkboxes
+• Time-of-day indicators (morning/evening dosing)
+• Side effect symptom checklist
+• "Feeling better? Don't stop!" reminder callout
+• Pharmacy refill reminder section
+• Emergency phone number placeholder
+
+**STYLE:** Friendly, approachable healthcare design. Warm color palette (soft greens, calming blues, gentle yellows, alert reds). Rounded corners on all boxes. Friendly iconography (pills, clocks, phone, doctor). Large, readable sans-serif fonts. Encouraging, supportive visual tone.
+
+**CONSTRAINTS:**
+• Maximum 3 decision levels to avoid complexity
+• All pathways must lead to clear actions
+• Text must be readable for elderly patients (larger fonts)
+• No medical jargon - patient-friendly language
+• Emergency pathway must be visually prominent
+• Color blind safe with shape differentiation
+• Printable on standard letter paper
+
+**SOURCE MATERIAL:** Patient medication guides, pharmacy counseling materials, CDC medication adherence resources.
+
+**INTERPRETATION:** Prioritize patient safety and clarity over comprehensive medical detail. If ambiguous, always err toward "consult your healthcare provider" messaging. Design for the most vulnerable patient populations.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info3.webp',
+  },
+  {
+    id: 'info4',
+    title: 'Hospital Patient Journey',
+    category: 'Infographics',
+    description: 'End-to-end patient experience map from admission to discharge with touchpoints and care team roles.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A horizontal patient journey map (landscape format, 1920x800 pixels, hospital display-ready).
+
+**LAYOUT:** Left-to-right timeline showing patient journey stages. Swimlanes for: Patient Experience, Care Team, Administrative Tasks. Icons and touchpoints along the journey. Emotional curve overlay showing patient satisfaction. Clear stage divisions with transition markers.
+
+**COMPONENTS:**
+• Journey stages: Pre-admission → Admission → Treatment → Recovery → Discharge → Follow-up
+• Patient experience lane with emotional state indicators
+• Care team lane showing: nurses, doctors, specialists, social workers
+• Administrative lane: registration, insurance, billing, scheduling
+• Key touchpoints marked with icons (check-in, vitals, procedures, meals, discharge)
+• Wait time indicators at critical junctures
+• Patient satisfaction curve (emotional highs and lows)
+• Care team handoff markers
+• Communication touchpoints (family updates, care discussions)
+• Discharge checklist preview
+• Post-discharge support indicators
+
+**STYLE:** Modern healthcare service design aesthetic. Clean, professional color palette (hospital white, medical blue, compassionate purple, action orange). Journey map visualization conventions. Sans-serif typography for clarity. Subtle iconography representing care activities. Professional yet empathetic visual tone.
+
+**CONSTRAINTS:**
+• Journey must flow logically left-to-right
+• Swimlanes clearly separated but visually connected
+• No more than 8 major touchpoints to avoid clutter
+• Text readable at wall-display distance
+• Consistent icon style throughout
+• Timeline must show relative duration of stages
+• Accessible for patients, families, and staff
+
+**SOURCE MATERIAL:** Healthcare patient experience research, hospital service design, patient satisfaction surveys, care coordination protocols.
+
+**INTERPRETATION:** Balance operational accuracy with emotional empathy. Prioritize the patient perspective while acknowledging care team complexity. If ambiguous, favor humanizing the healthcare experience.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info4.webp',
+  },
+  {
+    id: 'info5',
+    title: 'Vaccine Efficacy Comparison',
+    category: 'Infographics',
+    description: 'Side-by-side vaccine comparison chart with efficacy rates, dosing schedules, and side effect profiles.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A comparative vaccine infographic (square format, 1080x1080 pixels, social media optimized).
+
+**LAYOUT:** Grid comparison layout with vaccines as columns and attributes as rows. Header row with vaccine names/logos. Comparison rows for: efficacy, dosing, storage, side effects, age groups. Visual indicators (bars, icons, checkmarks) for easy scanning. Footer with data source and date.
+
+**COMPONENTS:**
+• Title header: "Vaccine Comparison Guide"
+• Column headers for 3-4 different vaccines
+• Efficacy row with percentage bars and confidence intervals
+• Dosing schedule row with timeline icons (1-dose, 2-dose, boosters)
+• Storage requirements with temperature icons
+• Common side effects with severity indicators
+• Recommended age groups with demographic icons
+• Contraindications warning row
+• Availability status indicators
+• Data source citation with date
+• "Consult your healthcare provider" disclaimer
+• QR code for official health resources
+
+**STYLE:** Scientific data visualization meets accessible design. Trustworthy color palette (navy, white, clinical green, alert amber). Clean grid layout with alternating row backgrounds. Professional medical typography. Icon-based indicators for quick scanning. Authoritative yet accessible visual tone.
+
+**CONSTRAINTS:**
+• All data must appear scientifically credible
+• No promotional bias toward any vaccine
+• Efficacy numbers must include context (study conditions)
+• Color coding consistent across all vaccines
+• Text readable on mobile devices
+• Must include date stamp (data currency)
+• Disclaimer visible but not alarmist
+
+**SOURCE MATERIAL:** CDC vaccine data, WHO immunization resources, peer-reviewed vaccine efficacy studies, public health communications.
+
+**INTERPRETATION:** Prioritize balanced, factual presentation. Avoid sensationalism while maintaining engagement. If ambiguous, defer to official public health messaging and encourage professional consultation.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info5.webp',
+  },
+  {
+    id: 'info6',
+    title: 'Mental Health Symptom Checker',
+    category: 'Infographics',
+    description: 'Interactive-style guide showing common mental health symptoms, severity levels, and when to seek help.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A supportive mental health resource infographic (portrait format, 1080x1920 pixels, shareable digital format).
+
+**LAYOUT:** Top section with reassuring header message. Middle section with symptom categories in expandable-style cards. Severity spectrum from mild to crisis. Bottom section with resources and hotline information. Calming visual flow from awareness to action.
+
+**COMPONENTS:**
+• Supportive header: "Checking In With Your Mental Health"
+• Anxiety symptoms card with physical and emotional indicators
+• Depression symptoms card with duration and intensity markers
+• Stress symptoms card with work/life balance indicators
+• Sleep disruption category with quality metrics
+• Severity spectrum: "Having a tough day" → "Need support" → "Crisis"
+• Self-care suggestions for mild symptoms
+• Professional help recommendations for moderate symptoms
+• Crisis hotline numbers prominently displayed
+• "You are not alone" messaging throughout
+• Breathing exercise mini-guide
+• Local resource placeholder
+
+**STYLE:** Warm, supportive mental health aesthetic. Calming color palette (soft lavender, sage green, warm cream, gentle coral). Rounded, soft shapes throughout. Friendly, non-clinical typography. Supportive iconography (hearts, hands, peaceful imagery). Non-stigmatizing, encouraging visual tone.
+
+**CONSTRAINTS:**
+• Absolutely no triggering imagery
+• Crisis resources must be immediately visible
+• Language must be non-judgmental and inclusive
+• No diagnostic claims - symptom awareness only
+• Must feel safe and supportive, not clinical
+• Accessible for those in distress (simple language)
+• Include cultural sensitivity in messaging
+
+**SOURCE MATERIAL:** NAMI mental health resources, CDC mental health guidelines, crisis intervention best practices, trauma-informed design principles.
+
+**INTERPRETATION:** Prioritize emotional safety and encouragement above all. If ambiguous, always include pathways to professional support. Design for someone who may be struggling - every element should feel supportive.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info6.webp',
+  },
+  {
+    id: 'info7',
+    title: 'Surgical Procedure Timeline',
+    category: 'Infographics',
+    description: 'Pre-op to post-op patient guide showing preparation, procedure, and recovery milestones.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A surgical patient preparation guide (portrait format, 1080x1350 pixels, print and digital).
+
+**LAYOUT:** Vertical timeline from 2 weeks before surgery to 6 weeks after. Left side: patient actions. Right side: medical team activities. Central timeline with milestone markers. Color zones for: preparation (blue), surgery day (orange), recovery (green).
+
+**COMPONENTS:**
+• Header: "Your Surgery Journey: What to Expect"
+• Pre-surgery section: -2 weeks, -1 week, -1 day preparation steps
+• Fasting instructions with clock icons
+• Medication adjustments timeline
+• Surgery day hour-by-hour overview
+• Recovery room expectations
+• Hospital stay duration indicators
+• Post-discharge care instructions
+• Physical therapy milestone markers
+• Follow-up appointment schedule
+• Warning signs requiring immediate attention
+• Recovery progress indicators (pain levels, mobility)
+• Support person guidance
+
+**STYLE:** Clear, reassuring medical communication design. Professional healthcare palette (clinical blue, recovery green, calm white, accent coral). Clean timeline visualization. Friendly medical iconography. Large, readable text for anxious patients. Organized, predictable layout for stress reduction.
+
+**CONSTRAINTS:**
+• Timeline must be realistic and accurate
+• No graphic surgical imagery
+• Patient actions clearly distinguished from medical team activities
+• Emergency warning signs visually prominent
+• Text readable for pre-surgery anxious patients
+• Include companion/caregiver information
+• Printable for take-home reference
+
+**SOURCE MATERIAL:** Hospital surgical preparation guides, anesthesia patient education, post-operative care protocols, patient experience research.
+
+**INTERPRETATION:** Reduce patient anxiety through predictability and preparation. If ambiguous, provide more detail rather than less - patients prefer knowing what to expect. Emphasize support and recovery success.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info7.webp',
+  },
+  {
+    id: 'info8',
+    title: 'Nutrition Facts Decoder',
+    category: 'Infographics',
+    description: 'Educational guide explaining food labels with daily value percentages and healthy choice indicators.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A nutrition education infographic (portrait format, 1080x1350 pixels, shareable digital format).
+
+**LAYOUT:** Left side: enlarged nutrition label with numbered callouts. Right side: explanation cards for each element. Bottom section: quick tips for healthy choices. Visual flow from label element to explanation to action.
+
+**COMPONENTS:**
+• Header: "Decode Your Food Labels"
+• Enlarged nutrition facts panel with callout numbers
+• Serving size explanation with portion visualization
+• Calories context (daily needs comparison)
+• Daily Value percentage interpretation guide
+• "Limit these" nutrients highlighted (sodium, saturated fat, added sugars)
+• "Get more of" nutrients highlighted (fiber, vitamins, protein)
+• Ingredient list reading tips
+• Hidden sugar names cheat sheet
+• Quick comparison: "high" vs "low" thresholds
+• Healthy choice checkmarks
+• Shopping decision flowchart
+• Practical examples (healthy vs unhealthy comparisons)
+
+**STYLE:** Fresh, approachable nutrition education style. Vibrant but healthy color palette (fresh greens, natural oranges, clean whites, accent berries). Friendly iconography (fruits, vegetables, checkmarks). Clear sans-serif typography. Magazine-style layout. Encouraging, empowering visual tone.
+
+**CONSTRAINTS:**
+• Actual nutrition label format must be accurate
+• No diet culture or weight-focused messaging
+• Balanced approach - not demonizing any food group
+• Readable for various literacy levels
+• Practical, actionable tips only
+• Evidence-based recommendations
+• Inclusive of various dietary needs/restrictions
+
+**SOURCE MATERIAL:** FDA nutrition label guidelines, USDA dietary guidelines, registered dietitian resources, public health nutrition education.
+
+**INTERPRETATION:** Empower informed choices without promoting restriction or shame. If ambiguous, favor balance and moderation messaging. Focus on addition (nutrients to get) rather than only restriction.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info8.webp',
+  },
+  {
+    id: 'info9',
+    title: 'Emergency Room Triage Guide',
+    category: 'Infographics',
+    description: 'Patient-facing triage explainer showing severity levels, wait times, and when to go to ER vs urgent care.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** An emergency care decision guide (portrait format, 1080x1920 pixels, high-contrast for emergency visibility).
+
+**LAYOUT:** Top: critical emergency symptoms (CALL 911). Middle: ER-appropriate conditions. Lower: Urgent care appropriate conditions. Bottom: Primary care/self-care conditions. Clear visual hierarchy from most to least urgent. Color intensity decreasing from top to bottom.
+
+**COMPONENTS:**
+• Bold header: "Where Should You Go?"
+• 911 EMERGENCY section (red): life-threatening symptoms list
+• EMERGENCY ROOM section (orange): serious but stable conditions
+• URGENT CARE section (yellow): prompt attention needed conditions
+• PRIMARY CARE section (green): next-day appointment appropriate
+• SELF-CARE section (blue): rest and monitor at home
+• Wait time expectations for each level
+• Cost comparison indicators (general ranges)
+• Decision-making questions for uncertain cases
+• Insurance/coverage reminders
+• Pediatric vs adult considerations
+• After-hours resource phone numbers
+• "When in doubt, call first" messaging
+
+**STYLE:** High-contrast emergency communication design. Traffic light color coding (red → orange → yellow → green → blue). Bold, sans-serif typography. Simple, recognizable medical icons. High visibility for stressed individuals. Clear hierarchy prioritizing life-threatening conditions.
+
+**CONSTRAINTS:**
+• 911 symptoms must be immediately visible
+• No ambiguity in life-threatening conditions
+• Simple language for panicked readers
+• Large text for elderly or impaired vision
+• Clear action for each category
+• Must not discourage seeking emergency care
+• Accessible in high-stress reading conditions
+
+**SOURCE MATERIAL:** Emergency department triage protocols, CDC emergency symptoms, urgent care vs ER guidelines, patient navigation resources.
+
+**INTERPRETATION:** Prioritize patient safety absolutely. If any ambiguity exists about severity, direct toward higher level of care. Design for the most stressed, frightened reader possible.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info9.webp',
+  },
+  {
+    id: 'info10',
+    title: 'Healthcare Costs Breakdown',
+    category: 'Infographics',
+    description: 'Financial literacy guide showing insurance terms, billing breakdown, and cost-saving strategies.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A healthcare financial literacy infographic (landscape format, 1920x1080 pixels, presentation-ready).
+
+**LAYOUT:** Three-column layout. Column 1: Insurance terminology definitions. Column 2: Medical bill anatomy with callouts. Column 3: Cost-saving strategies. Header with title, footer with resources. Visual hierarchy from understanding → decoding → action.
+
+**COMPONENTS:**
+• Header: "Understanding Your Healthcare Costs"
+• Insurance terms glossary: deductible, copay, coinsurance, out-of-pocket max
+• Visual comparison: HMO vs PPO vs HDHP
+• Sample medical bill with numbered callouts explaining each line
+• "This is NOT a bill" vs "This IS a bill" comparison
+• Negotiation tips for medical bills
+• Payment plan options overview
+• Financial assistance program indicators
+• Preventive care (usually free) highlights
+• Generic vs brand medication savings
+• HSA/FSA usage tips
+• Resource links for billing disputes
+• Warning signs of billing errors
+
+**STYLE:** Clear financial education design. Trustworthy color palette (professional blue, money green, neutral grays, alert red for warnings). Clean grid layout. Iconography for money, insurance, medical. Professional but accessible typography. Empowering, non-intimidating visual tone.
+
+**CONSTRAINTS:**
+• No specific dollar amounts (outdated quickly)
+• Explain concepts without oversimplifying
+• Acknowledge system complexity honestly
+• Include resources for all income levels
+• Avoid political healthcare commentary
+• Focus on actionable information
+• Readable for financial literacy diverse audience
+
+**SOURCE MATERIAL:** Healthcare.gov resources, patient advocacy guides, hospital billing departments, health insurance literacy research.
+
+**INTERPRETATION:** Empower patients in a confusing system without overwhelming them. If ambiguous, provide pathways to expert help rather than DIY solutions. Acknowledge frustration while providing practical tools.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info10.webp',
+  },
+  {
+    id: 'info11',
+    title: 'Chronic Disease Management Cycle',
+    category: 'Infographics',
+    description: 'Circular workflow showing ongoing management of conditions like diabetes with monitoring, medication, and lifestyle factors.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A chronic disease self-management infographic (square format, 1080x1080 pixels, patient education).
+
+**LAYOUT:** Central circular/cyclical diagram showing ongoing management loop. Four quadrants: Monitor → Adjust → Act → Review. Outer ring with specific activities for each phase. Center with condition name and key metric. Surrounding tips and resources.
+
+**COMPONENTS:**
+• Circular management cycle with four phases
+• MONITOR quadrant: blood glucose/blood pressure/symptom tracking icons
+• ADJUST quadrant: medication timing, dosage awareness, doctor communication
+• ACT quadrant: diet, exercise, stress management, sleep
+• REVIEW quadrant: lab results, A1C levels, progress assessment
+• Central hub with target numbers/goals
+• Daily routine checklist sidebar
+• Appointment scheduling reminders
+• Red flag symptoms requiring immediate action
+• Support system indicators (care team, family, support groups)
+• Technology helpers (apps, devices, reminders)
+• Motivational progress tracking suggestions
+
+**STYLE:** Empowering chronic care design. Calming but active color palette (steady blue, growth green, energy coral, balance purple). Circular, continuous visual metaphor. Friendly medical iconography. Supportive, non-preachy typography. Sustainable, marathon-not-sprint visual messaging.
+
+**CONSTRAINTS:**
+• Cycle must feel manageable, not overwhelming
+• Include grace for imperfect adherence
+• Celebrate small wins, not just major goals
+• Avoid fear-based motivation
+• Acknowledge emotional aspects of chronic illness
+• Inclusive of various management approaches
+• Adaptable visual for different chronic conditions
+
+**SOURCE MATERIAL:** Chronic Care Model research, diabetes self-management education, patient activation research, health behavior change science.
+
+**INTERPRETATION:** Support sustainable behavior change, not perfection. If ambiguous, emphasize progress over perfection and self-compassion. Design for the long haul of chronic disease management.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info11.webp',
+  },
+  {
+    id: 'info12',
+    title: 'Telemedicine Visit Guide',
+    category: 'Infographics',
+    description: 'Patient preparation checklist for virtual doctor visits with tech setup, symptom documentation, and privacy tips.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A telemedicine preparation guide (portrait format, 1080x1350 pixels, digital-first design).
+
+**LAYOUT:** Top section: Before your visit preparation. Middle section: During your visit tips. Bottom section: After your visit follow-up. Checklist format with checkbox icons. Tech setup sidebar. Clear visual progression through visit phases.
+
+**COMPONENTS:**
+• Header: "Your Virtual Visit: A Complete Guide"
+• BEFORE section:
+  - Tech checklist (camera, mic, internet, app download)
+  - Private space setup tips
+  - Symptom documentation template
+  - Medication list preparation
+  - Questions to ask list
+  - Insurance card/ID ready reminder
+• DURING section:
+  - Camera positioning tips (lighting, angle)
+  - How to show symptoms virtually
+  - Screen sharing for test results
+  - Note-taking suggestions
+  - Family member participation guidance
+• AFTER section:
+  - Prescription pickup instructions
+  - Follow-up scheduling
+  - When to call back triggers
+  - Lab work coordination
+• Troubleshooting quick fixes sidebar
+
+**STYLE:** Modern digital health design. Tech-forward color palette (clean whites, digital blues, health greens, action oranges). Checklist-style layout. Modern device iconography. Friendly, accessible typography. Confident, prepared patient visual tone.
+
+**CONSTRAINTS:**
+• Include low-tech alternatives for each step
+• Assume varied tech literacy levels
+• Address privacy concerns explicitly
+• Include accessibility considerations
+• Don't assume high-speed internet
+• Practical, not promotional of telemedicine
+• Acknowledge limitations of virtual care
+
+**SOURCE MATERIAL:** Telemedicine best practices, patient digital literacy resources, virtual care platform guidelines, healthcare accessibility research.
+
+**INTERPRETATION:** Prepare patients for success while acknowledging telemedicine isn't for everything. If ambiguous, provide more preparation tips rather than fewer. Design for first-time telemedicine users.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info12.webp',
+  },
+  {
+    id: 'info13',
+    title: 'Startup Funding Stages',
+    category: 'Infographics',
+    description: 'Entrepreneurship roadmap from bootstrapping through Series A-C with investor types and equity considerations.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A startup funding journey infographic (landscape format, 1920x1080 pixels, pitch deck compatible).
+
+**LAYOUT:** Left-to-right progression showing funding stages as ascending steps/platforms. Each stage with investor type, typical amounts, and company milestones. Equity dilution indicator running along bottom. Top bar showing company valuation growth. Timeline markers for typical duration.
+
+**COMPONENTS:**
+• Header: "The Startup Funding Journey"
+• Stage blocks: Bootstrapping → Pre-seed → Seed → Series A → Series B → Series C → IPO/Exit
+• Investor type icons for each stage (founders, angels, VCs, growth equity)
+• Typical funding amounts (ranges) for each stage
+• Company milestones expected at each stage (MVP, product-market fit, scaling)
+• Equity dilution visual (pie charts showing founder ownership decrease)
+• Valuation multiplier indicators
+• Team size expectations at each stage
+• Key metrics investors look for (MRR, growth rate, burn rate)
+• Alternative paths (revenue-based financing, strategic investment)
+• Risk/reward indicators for each stage
+• Time-to-next-round typical durations
+
+**STYLE:** Modern startup/tech aesthetic. Bold, ambitious color palette (startup purple, growth green, money gold, tech blue). Ascending visual metaphor. Clean, modern iconography. Confident sans-serif typography. Aspirational but realistic visual tone.
+
+**CONSTRAINTS:**
+• Funding amounts must be ranges, not specific (market varies)
+• Include alternative funding paths, not just VC
+• Acknowledge most startups don't reach Series C
+• No specific company examples (dating quickly)
+• Balance aspiration with realistic expectations
+• Include equity dilution warnings
+• Readable at presentation distance
+
+**SOURCE MATERIAL:** Startup funding research, venture capital industry data, entrepreneurship education resources, founder surveys.
+
+**INTERPRETATION:** Inform and inspire without creating unrealistic expectations. If ambiguous, include cautionary context alongside aspirational messaging. Design for first-time founders seeking understanding.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info13.webp',
+  },
+  {
+    id: 'info14',
+    title: 'Climate Change Impact Dashboard',
+    category: 'Infographics',
+    description: 'Environmental data visualization showing temperature trends, ice melt, and carbon emissions over time.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A climate data dashboard infographic (landscape format, 1920x1080 pixels, presentation-ready).
+
+**LAYOUT:** Dashboard grid with multiple data visualizations. Top row: headline KPIs (temperature rise, CO2 levels, ice loss). Middle row: trend charts over time. Bottom row: regional impacts and projections. Color intensity indicating severity. Clear data hierarchy.
+
+**COMPONENTS:**
+• Header: "Climate Change: The Data Dashboard"
+• Global temperature anomaly KPI with historical baseline
+• Atmospheric CO2 concentration (current vs pre-industrial)
+• Arctic sea ice extent trend chart
+• Glacier mass loss visualization
+• Sea level rise projections with uncertainty ranges
+• Extreme weather event frequency comparison
+• Regional impact heat map
+• Carbon budget remaining indicator
+• Emissions by sector breakdown
+• Renewable energy adoption trend
+• Paris Agreement targets vs current trajectory
+• Data source citations with dates
+• Methodology notes for transparency
+
+**STYLE:** Scientific data visualization aesthetic. Earth tone palette (ocean blues, forest greens, warning ambers, crisis reds). Clean chart design following data viz best practices. Professional scientific typography. Credible, evidence-based visual tone.
+
+**CONSTRAINTS:**
+• All data must be from credible scientific sources
+• Include uncertainty ranges where appropriate
+• No exaggeration or misleading visual scales
+• Balance urgency with accuracy
+• Include data recency dates
+• Avoid political framing, focus on science
+• Accessible to non-scientists while maintaining rigor
+
+**SOURCE MATERIAL:** IPCC reports, NASA climate data, NOAA measurements, peer-reviewed climate research, national meteorological agencies.
+
+**INTERPRETATION:** Communicate scientific consensus clearly without sensationalism. If ambiguous, defer to mainstream climate science and include uncertainty appropriately. Design for informed public engagement.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info14.webp',
+  },
+  {
+    id: 'info15',
+    title: 'Supply Chain Flow Diagram',
+    category: 'Infographics',
+    description: 'Logistics visualization from raw materials to consumer with touchpoints, lead times, and risk indicators.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A supply chain visualization infographic (landscape format, 1920x800 pixels, business presentation format).
+
+**LAYOUT:** Left-to-right flow showing supply chain stages. Primary flow line connecting major nodes. Secondary flows showing returns/recycling. Information layers: physical flow, information flow, financial flow. Risk indicators at vulnerable points. Lead time markers between stages.
+
+**COMPONENTS:**
+• Header: "End-to-End Supply Chain Visibility"
+• Stage nodes: Raw Materials → Manufacturing → Distribution → Retail → Consumer → Returns
+• Transportation mode icons between stages (ship, truck, air, rail)
+• Warehouse/inventory buffer indicators
+• Lead time markers (days/weeks between stages)
+• Information flow overlay (orders, forecasts, tracking)
+• Financial flow indicators (payments, terms)
+• Risk vulnerability markers (single source, geopolitical, climate)
+• Quality control checkpoints
+• Sustainability/circularity indicators
+• Technology enablers (IoT, blockchain, AI)
+• Bottleneck identification markers
+• Resilience strategy callouts
+
+**STYLE:** Professional business visualization. Corporate color palette (logistics blue, growth green, warning amber, efficiency gray). Clean flow diagram conventions. Business iconography. Professional sans-serif typography. Analytical, strategic visual tone.
+
+**CONSTRAINTS:**
+• Flow must be logically accurate
+• Include both physical and information flows
+• Risk indicators without causing alarm
+• Scalable concept (not specific to one industry)
+• Readable at conference room distance
+• Include modern resilience concepts
+• Balance complexity with clarity
+
+**SOURCE MATERIAL:** Supply chain management best practices, logistics industry research, business school case studies, resilience frameworks.
+
+**INTERPRETATION:** Educate on supply chain complexity while highlighting opportunities for optimization. If ambiguous, favor resilience and visibility themes over pure efficiency. Design for business decision-makers.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info15.webp',
+  },
+  {
+    id: 'info16',
+    title: 'Cybersecurity Threat Landscape',
+    category: 'Infographics',
+    description: 'Security awareness poster showing attack vectors, threat actors, and protection layers for organizations.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A cybersecurity awareness infographic (portrait format, 1080x1920 pixels, corporate training material).
+
+**LAYOUT:** Central protected asset/organization surrounded by threat rings. Inner ring: protection layers (firewall, encryption, access control). Outer rings: threat categories by severity. Attack vector arrows pointing inward. Defense strategy callouts. Bottom section: action items for employees.
+
+**COMPONENTS:**
+• Header: "Know Your Cyber Threats"
+• Central protected core (data, systems, operations)
+• Defense layer ring: firewalls, encryption, MFA, monitoring
+• Threat category sections: malware, phishing, ransomware, insider threats
+• Attack vector arrows with descriptions
+• Threat actor types: nation-state, criminal, hacktivist, insider
+• Common attack methods with recognizable icons
+• "You are the first line of defense" employee section
+• Password best practices mini-guide
+• Phishing recognition tips
+• Incident reporting procedures
+• Quick response steps if compromised
+• Security contact information placeholder
+
+**STYLE:** Tech security aesthetic with urgency. Dark mode color palette (cyber dark, alert red, protect green, warning amber). Shield/defense visual metaphors. Modern tech iconography. Clear, authoritative typography. Alert but not alarmist visual tone.
+
+**CONSTRAINTS:**
+• No specific company vulnerabilities exposed
+• Balance awareness with actionability
+• Avoid creating anxiety without providing solutions
+• Employee actions must be practical
+• Include positive security behaviors, not just threats
+• Accessible to non-technical employees
+• Current threats (avoid dated attack types)
+
+**SOURCE MATERIAL:** CISA cybersecurity resources, industry threat reports, security awareness training best practices, incident response frameworks.
+
+**INTERPRETATION:** Empower employees to be security-aware without creating paranoia. If ambiguous, favor practical actions over threat description. Design for the least technical employee in the organization.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info16.webp',
+  },
+  {
+    id: 'info17',
+    title: 'Product Development Lifecycle',
+    category: 'Infographics',
+    description: 'Agile/product management visualization showing ideation to launch with sprints, user feedback loops, and metrics.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A product development lifecycle infographic (landscape format, 1920x1080 pixels, product team reference).
+
+**LAYOUT:** Circular/iterative lifecycle diagram showing continuous product development. Main cycle: Discover → Define → Design → Develop → Deploy → Measure. Inner feedback loops connecting stages. Sprint indicators within development phase. Metrics dashboard at measure stage linking back to discover.
+
+**COMPONENTS:**
+• Header: "The Product Development Cycle"
+• DISCOVER phase: user research, market analysis, problem identification
+• DEFINE phase: requirements, user stories, prioritization (MoSCoW)
+• DESIGN phase: wireframes, prototypes, user testing
+• DEVELOP phase: sprints, code, QA, iterations
+• DEPLOY phase: release, monitoring, rollback capability
+• MEASURE phase: analytics, user feedback, KPIs
+• Feedback loop arrows connecting measure back to earlier stages
+• Sprint cycle detail within develop phase
+• User feedback integration points throughout
+• Stakeholder touchpoints marked
+• Go/no-go decision gates
+• MVP vs full release indicators
+• Continuous improvement spiral overlay
+
+**STYLE:** Modern product management aesthetic. Tech-forward color palette (product purple, success green, iteration blue, user coral). Circular, iterative visual metaphors. Clean iconography representing activities. Professional but creative typography. Collaborative, agile visual tone.
+
+**CONSTRAINTS:**
+• Cycle must appear continuous, not linear
+• Include feedback loops prominently
+• Agile concepts without dogma
+• Applicable to various product types
+• Roles clearly indicated at each stage
+• Metrics focus throughout, not just at end
+• Readable for cross-functional teams
+
+**SOURCE MATERIAL:** Product management frameworks, agile methodology, design thinking, lean startup principles, product analytics best practices.
+
+**INTERPRETATION:** Emphasize iteration and learning over rigid process. If ambiguous, favor flexibility and user-centricity. Design for cross-functional product teams seeking shared understanding.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info17.webp',
+  },
+  {
+    id: 'info18',
+    title: 'Legal Contract Anatomy',
+    category: 'Infographics',
+    description: 'Business law explainer breaking down contract sections with plain-language explanations and red flag warnings.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A contract literacy infographic (portrait format, 1080x1920 pixels, business education material).
+
+**LAYOUT:** Visual representation of a contract document with numbered sections. Callout boxes explaining each section in plain language. Red flag warnings for concerning clauses. Green checkmarks for standard protections. Side panel with negotiation tips. Bottom section with when to seek legal counsel.
+
+**COMPONENTS:**
+• Header: "Understanding Your Business Contracts"
+• Visual contract representation with section highlights
+• Section explainers: Parties, Recitals, Definitions, Scope, Term, Payment, Confidentiality, IP, Liability, Termination, Dispute Resolution
+• Plain language translation for each legal section
+• Red flag warnings: unlimited liability, one-sided termination, IP grabs
+• Green protections: limitation of liability, mutual termination rights
+• Boilerplate vs negotiable sections indicator
+• Common negotiation points highlighted
+• Questions to ask before signing checklist
+• "Get a lawyer" trigger conditions
+• Industry-specific considerations callout
+• Signature and execution requirements
+
+**STYLE:** Professional legal education design. Trustworthy color palette (legal navy, caution amber, protection green, contract cream). Document-style layout with modern overlays. Professional typography. Authoritative but accessible visual tone. Empowering, not intimidating.
+
+**CONSTRAINTS:**
+• No specific legal advice
+• Clear "consult a lawyer" disclaimers
+• Applicable across jurisdictions generally
+• Plain language throughout
+• Balance protection awareness with not creating fear
+• Practical focus over theoretical legal concepts
+• Readable for non-lawyers in business
+
+**SOURCE MATERIAL:** Business law fundamentals, contract negotiation best practices, small business legal resources, entrepreneurship legal guides.
+
+**INTERPRETATION:** Empower informed contract review without replacing legal counsel. If ambiguous, always direct toward professional legal advice. Design for small business owners and entrepreneurs.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info18.webp',
+  },
+  {
+    id: 'info19',
+    title: 'Renewable Energy Comparison',
+    category: 'Infographics',
+    description: 'Clean energy comparison chart showing solar, wind, hydro, and nuclear with capacity, costs, and environmental impact.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A renewable energy comparison infographic (landscape format, 1920x1080 pixels, educational presentation).
+
+**LAYOUT:** Comparison grid with energy sources as columns. Rows for: capacity factor, levelized cost, land use, carbon footprint, reliability, scalability. Visual indicators (bars, icons, ratings) for each metric. Header with energy transition context. Footer with future outlook.
+
+**COMPONENTS:**
+• Header: "Clean Energy: A Comparative Guide"
+• Energy source columns: Solar, Wind, Hydro, Nuclear, Geothermal, Biomass
+• Capacity factor comparison (percentage bars)
+• Levelized cost of energy (LCOE) comparison
+• Land use requirements visualization
+• Lifecycle carbon emissions comparison
+• Reliability/intermittency indicators
+• Grid integration challenges
+• Job creation potential
+• Geographic suitability maps
+• Storage requirements for each
+• Growth trends and projections
+• Investment requirements
+• Timeline to deployment
+• Complementary combinations highlighted
+
+**STYLE:** Clean energy aesthetic. Environmental color palette (solar yellow, wind blue, hydro teal, nuclear purple, geo orange, bio green). Clean comparison chart design. Nature-tech fusion iconography. Modern, optimistic typography. Forward-looking, solution-oriented visual tone.
+
+**CONSTRAINTS:**
+• All data must be current and credible
+• No advocacy for specific energy source
+• Include honest trade-offs for each
+• Acknowledge regional variations
+• Avoid political energy debates
+• Focus on factual comparison
+• Accessible to general audience
+
+**SOURCE MATERIAL:** IEA energy reports, NREL data, energy economics research, grid integration studies, environmental impact assessments.
+
+**INTERPRETATION:** Inform energy choices without advocating. If ambiguous, present balanced trade-offs and acknowledge context-dependence. Design for citizens and policymakers seeking understanding.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info19.webp',
+  },
+  {
+    id: 'info20',
+    title: 'Personal Finance Roadmap',
+    category: 'Infographics',
+    description: 'Financial wellness guide showing emergency fund, debt payoff, retirement savings with milestone markers.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A personal finance journey infographic (portrait format, 1080x1920 pixels, motivational and educational).
+
+**LAYOUT:** Ascending path/staircase showing financial milestones from bottom to top. Each step with specific goal and action. Side panels with tips and warnings. Progress checkpoints for self-assessment. Celebration markers for achieving goals.
+
+**COMPONENTS:**
+• Header: "Your Financial Wellness Journey"
+• Step 1: Build $1,000 emergency starter fund
+• Step 2: Employer 401(k) match (free money!)
+• Step 3: Pay off high-interest debt (debt avalanche/snowball options)
+• Step 4: Expand emergency fund to 3-6 months expenses
+• Step 5: Max out tax-advantaged retirement accounts
+• Step 6: Invest in taxable accounts
+• Step 7: Pay off remaining debt (mortgage decision point)
+• Milestone celebration icons
+• Warning signs: lifestyle creep, comparison trap
+• Compound interest visualization
+• Time-in-market vs timing-market reminder
+• Automation tips sidebar
+• "Your situation may vary" acknowledgment
+• Financial advisor consultation triggers
+
+**STYLE:** Motivational financial wellness design. Aspirational color palette (money green, gold accents, stable blue, warm neutrals). Ascending journey metaphor. Friendly, encouraging iconography. Approachable typography. Empowering, non-judgmental visual tone.
+
+**CONSTRAINTS:**
+• No specific investment advice
+• Include "this is general guidance" disclaimers
+• Acknowledge different starting points
+• No shame for any financial situation
+• Practical, actionable steps only
+• Celebrate progress, not just end goals
+• Inclusive of various income levels
+
+**SOURCE MATERIAL:** Personal finance best practices, behavioral economics, financial literacy research, debt reduction strategies, retirement planning fundamentals.
+
+**INTERPRETATION:** Motivate financial action without creating shame or overwhelm. If ambiguous, emphasize progress over perfection and celebrate small wins. Design for financial wellness beginners.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info20.webp',
+  },
+  {
+    id: 'info21',
+    title: 'Drug Interaction Warning Chart',
+    category: 'Infographics',
+    description: 'Pharmacology reference showing common medication interactions, severity levels, and patient safety alerts.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A medication interaction reference infographic (portrait format, 1080x1350 pixels, clinical reference quality).
+
+**LAYOUT:** Matrix-style interaction chart with medication categories on both axes. Color-coded interaction severity at intersections. Legend explaining severity levels. Side panel with common dangerous combinations highlighted. Bottom section with patient action recommendations.
+
+**COMPONENTS:**
+• Header: "Know Your Medication Interactions"
+• Medication category axes: blood thinners, blood pressure, diabetes, pain, psychiatric, supplements
+• Interaction matrix with color coding
+• Severity legend: None, Minor, Moderate, Severe, Contraindicated
+• Top 10 dangerous combinations callout box
+• Grapefruit interaction warning (seriously!)
+• Alcohol interaction warnings
+• Supplement interaction alerts (St. John's Wort, etc.)
+• "Always tell your pharmacist" messaging
+• Questions to ask when starting new medication
+• When to seek immediate help symptoms
+• Medication list template for wallet/phone
+• Emergency contact placeholders
+
+**STYLE:** Clinical reference meets patient accessibility. Medical color palette (safe green, caution yellow, moderate orange, severe red, contraindicated purple). Clean matrix design. Medical iconography. Clear, readable typography. Authoritative but accessible visual tone.
+
+**CONSTRAINTS:**
+• No specific dosing information
+• Severity levels must be accurate to clinical standards
+• Emphasize "ask your pharmacist/doctor" throughout
+• Include OTC and supplement interactions
+• No replacement for professional consultation
+• Accessible to patients, not just clinicians
+• Must not create medication anxiety
+
+**SOURCE MATERIAL:** FDA drug interaction databases, clinical pharmacology references, pharmacy patient education, medication safety research.
+
+**INTERPRETATION:** Raise awareness of interactions while directing to professional guidance. If ambiguous, always recommend professional consultation over self-management. Design for patient safety and empowerment.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info21.webp',
+  },
+  {
+    id: 'info22',
+    title: 'Diagnostic Lab Results Explainer',
+    category: 'Infographics',
+    description: 'Patient education guide interpreting common blood work and lab values with normal ranges and health implications.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A lab results interpretation guide (portrait format, 1080x1920 pixels, patient education material).
+
+**LAYOUT:** List of common lab tests with visual range indicators. Each test showing: normal range bar, what high means, what low means. Color zones: low (blue) → normal (green) → high (orange/red). Side panel with common test panel explanations (CBC, BMP, lipid panel). Footer with context reminders.
+
+**COMPONENTS:**
+• Header: "Understanding Your Lab Results"
+• Common tests with range visualizations:
+  - Complete Blood Count (WBC, RBC, hemoglobin, platelets)
+  - Basic Metabolic Panel (glucose, electrolytes, kidney function)
+  - Lipid Panel (cholesterol, triglycerides, HDL, LDL)
+  - Liver enzymes (ALT, AST)
+  - Thyroid (TSH, T3, T4)
+  - A1C (diabetes indicator)
+• Visual range bars with patient-friendly color coding
+• "What high/low might mean" explanations
+• "One abnormal result doesn't mean disease" reassurance
+• Factors that affect results (fasting, medications, time of day)
+• Questions to ask your doctor about results
+• When to be concerned vs when to wait
+• Trend tracking importance (single value vs pattern)
+• Online patient portal navigation tips
+
+**STYLE:** Medical education meets accessible design. Healthcare color palette (clinical blue, healthy green, attention amber, concern red). Range visualization graphics. Friendly medical iconography. Clear, reassuring typography. Educational, non-alarming visual tone.
+
+**CONSTRAINTS:**
+• No diagnostic conclusions from values
+• Always direct to provider for interpretation
+• Include "reference ranges vary by lab" disclaimer
+• Reassure about single abnormal values
+• No medical jargon without explanation
+• Accessible to health literacy diverse audience
+• Must not cause unnecessary health anxiety
+
+**SOURCE MATERIAL:** Clinical laboratory medicine, patient health literacy research, primary care patient education, laboratory reference ranges.
+
+**INTERPRETATION:** Educate patients to be informed participants without enabling self-diagnosis. If ambiguous, always recommend discussing with healthcare provider. Design to reduce, not increase, health anxiety.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info22.webp',
+  },
+  {
+    id: 'info23',
+    title: 'Infection Prevention Protocol',
+    category: 'Infographics',
+    description: 'Healthcare facility poster showing hand hygiene, PPE usage, and isolation precaution levels.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** An infection prevention poster (portrait format, 1080x1350 pixels, hospital wall display).
+
+**LAYOUT:** Three main sections: Hand Hygiene, PPE Selection, Isolation Precautions. Each section with step-by-step visuals. Color-coded precaution levels. Quick reference format for busy healthcare workers. High visibility design for clinical environments.
+
+**COMPONENTS:**
+• Header: "Infection Prevention: Protect Patients, Protect Yourself"
+• Hand Hygiene section:
+  - 5 Moments for Hand Hygiene (WHO)
+  - Proper handwashing technique (20 seconds)
+  - When to use soap vs sanitizer
+  - Common missed spots diagram
+• PPE Selection section:
+  - Standard Precautions baseline
+  - Contact Precautions (gown, gloves)
+  - Droplet Precautions (surgical mask)
+  - Airborne Precautions (N95, negative pressure)
+  - Donning and doffing order
+• Isolation Precautions:
+  - Door sign color coding explanation
+  - Room entry requirements
+  - Visitor guidance
+• Quick reference icons for room doors
+• Reporting exposure protocol
+
+**STYLE:** Clinical/hospital poster design. Medical safety color palette (PPE blue, standard yellow, contact orange, droplet green, airborne purple). Step-by-step instructional graphics. Medical procedure iconography. Clear, sans-serif clinical typography. Authoritative, compliant visual tone.
+
+**CONSTRAINTS:**
+• Must align with CDC/WHO guidelines
+• Quick-reference format for busy staff
+• No ambiguity in PPE requirements
+• High visibility from across room
+• Durable design for clinical posting
+• Multi-language placeholder considerations
+• Updated for current pathogen guidance
+
+**SOURCE MATERIAL:** CDC infection prevention guidelines, WHO hand hygiene protocols, hospital infection control policies, occupational safety standards.
+
+**INTERPRETATION:** Prioritize patient and worker safety with clear, actionable guidance. If ambiguous, err toward more protective measures. Design for quick reference in high-pressure clinical moments.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info23.webp',
+  },
+  {
+    id: 'info24',
+    title: 'AI Ethics Decision Framework',
+    category: 'Infographics',
+    description: 'Technology ethics guide showing bias detection, transparency requirements, and responsible AI deployment checkpoints.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** An AI ethics decision framework infographic (landscape format, 1920x1080 pixels, corporate governance material).
+
+**LAYOUT:** Decision flowchart for AI deployment with ethics checkpoints. Central path from "AI Proposal" to "Responsible Deployment." Branch points for ethical considerations. Risk assessment matrix sidebar. Stakeholder impact analysis section. Governance and oversight requirements.
+
+**COMPONENTS:**
+• Header: "Responsible AI: An Ethics Framework"
+• Initial assessment questions: purpose, necessity, alternatives
+• Bias detection checkpoint with mitigation strategies
+• Transparency requirements: explainability levels, disclosure obligations
+• Privacy impact assessment node
+• Fairness evaluation across demographic groups
+• Human oversight requirements spectrum
+• Accountability assignment matrix
+• Stakeholder impact analysis (who benefits, who might be harmed)
+• Risk severity classification
+• Ongoing monitoring requirements
+• Sunset/review triggers
+• Governance approval gates
+• Documentation requirements checklist
+• Ethical escalation pathway
+
+**STYLE:** Tech ethics meets corporate governance. Thoughtful color palette (responsible blue, caution amber, approved green, risk red, neutral gray). Clean decision flowchart design. Modern tech iconography with human elements. Professional, considered typography. Deliberate, thoughtful visual tone.
+
+**CONSTRAINTS:**
+• Framework must be actionable, not theoretical
+• Include diverse stakeholder perspectives
+• Avoid AI hype or fear-mongering
+• Applicable across AI use cases
+• Include ongoing monitoring, not just initial assessment
+• Balance innovation enablement with risk mitigation
+• Readable for technical and non-technical leaders
+
+**SOURCE MATERIAL:** AI ethics frameworks (IEEE, OECD, EU), responsible AI research, corporate AI governance, algorithmic accountability literature.
+
+**INTERPRETATION:** Enable responsible innovation rather than blocking AI development. If ambiguous, favor transparency and human oversight. Design for cross-functional AI governance teams.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info24.webp',
+  },
+  {
+    id: 'info25',
+    title: 'Clinical Research Study Design',
+    category: 'Infographics',
+    description: 'Medical research methodology explainer showing RCT design, blinding, randomization, and endpoint selection.',
+    promptSnippet: `[PROMPT START]
+**WORK SURFACE:** A clinical research methodology infographic (landscape format, 1920x1080 pixels, academic/training quality).
+
+**LAYOUT:** Flowchart showing study design decisions from research question to results interpretation. Main pathway with branch points for study type selection. Detail panels for key methodological concepts. Bias prevention strategies at each stage. Quality assessment criteria sidebar.
+
+**COMPONENTS:**
+• Header: "Designing Rigorous Clinical Research"
+• Research question formulation (PICO framework)
+• Study type decision tree: observational vs experimental
+• Randomization methods visualization (simple, block, stratified)
+• Blinding levels: open-label, single-blind, double-blind, triple-blind
+• Control group selection (placebo, active comparator, standard of care)
+• Primary vs secondary endpoint selection
+• Sample size calculation factors
+• Inclusion/exclusion criteria considerations
+• Bias types and prevention strategies
+• Intention-to-treat vs per-protocol analysis
+• Statistical significance vs clinical significance
+• CONSORT flow diagram reference
+• Regulatory considerations (IRB, FDA)
+• Publication and reporting standards
+
+**STYLE:** Academic scientific design. Research-quality color palette (academic navy, methodology green, statistical blue, caution amber). Clean flowchart and decision tree graphics. Scientific iconography. Professional academic typography. Rigorous, educational visual tone.
+
+**CONSTRAINTS:**
+• Methodologically accurate and current
+• Balance comprehensiveness with accessibility
+• Include common pitfalls and how to avoid
+• Applicable across therapeutic areas
+• Reference established standards (CONSORT, etc.)
+• Accessible to research trainees, not just experts
+• Include ethical considerations throughout
+
+**SOURCE MATERIAL:** Clinical trial methodology textbooks, FDA guidance documents, CONSORT guidelines, biostatistics best practices, research ethics principles.
+
+**INTERPRETATION:** Educate on rigorous methodology while acknowledging real-world constraints. If ambiguous, favor more rigorous approaches and note trade-offs. Design for clinical researchers seeking to improve study quality.
+[PROMPT END]`,
+    imageUrl: '/style-previews/info25.webp',
+  },
 ];

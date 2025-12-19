@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const VENICE_API_BASE = 'https://api.venice.ai/api/v1';
 const IMAGE_MODEL = 'nano-banana-pro';
-const API_KEY = process.env.VENICE_API_KEY || process.env.VITE_VENICE_API_KEY || 'lnWNeSg0pA_rQUooNpbfpPDBaj2vJnWol5WqKWrIEF';
+const API_KEY = process.env.VENICE_API_KEY || process.env.VITE_VENICE_API_KEY || '-28c7m7CCiJxA20hQH8fHnxTqTwYFxPvfO3LnkTMgP';
 
 // Read constants.ts to extract gallery items
 const constantsPath = path.join(__dirname, '..', 'constants.ts');
