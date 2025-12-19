@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { GALLERY_ITEMS } from '../constants';
 import { Copy, ArrowRight, Search, Filter } from 'lucide-react';
 import { ImagePreviewModal } from './ImagePreviewModal';
@@ -21,7 +21,14 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
   const categories = useMemo(() => {
     const cats = new Set(GALLERY_ITEMS.map(item => item.category));
     return ['All', ...Array.from(cats).sort()];
-  }, []);
+  }, [GALLERY_ITEMS]);
+
+  // If the gallery data changes (e.g. via Fast Refresh), ensure category stays valid
+  useEffect(() => {
+    if (selectedCategory !== 'All' && !categories.includes(selectedCategory)) {
+      setSelectedCategory('All');
+    }
+  }, [categories, selectedCategory]);
 
   // Filter items
   const filteredItems = useMemo(() => {
@@ -31,7 +38,7 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
       const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory, GALLERY_ITEMS]);
 
   return (
     <div className="w-full h-full flex flex-col bg-obsidian-950">
