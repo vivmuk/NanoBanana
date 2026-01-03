@@ -29,10 +29,10 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
 
     const container = messagesContainerRef.current;
     const threshold = 150; // pixels from bottom
-    
+
     // Check if user is near bottom
     const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < threshold;
-    
+
     // Only auto-scroll if user is near bottom, manually scrolled, or forced
     if (isNearBottom || force || shouldAutoScrollRef.current) {
       // Clear any pending scroll
@@ -42,8 +42,8 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
 
       const scroll = () => {
         if (messagesEndRef.current) {
-          messagesEndRef.current.scrollIntoView({ 
-            behavior: immediate ? 'auto' : 'smooth', 
+          messagesEndRef.current.scrollIntoView({
+            behavior: immediate ? 'auto' : 'smooth',
             block: 'end',
             inline: 'nearest'
           });
@@ -99,7 +99,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
     };
 
     window.addEventListener('storage', handleStorageChange);
-    
+
     // Also check periodically (in case of same-tab updates)
     const interval = setInterval(checkApiKey, 1000);
 
@@ -116,7 +116,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
         resetChat();
         await initializeChat();
         setIsInitialized(true);
-        
+
         // Add initial greeting from the system (simulated)
         setMessages([
           {
@@ -134,8 +134,8 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
   // Handle incoming prompt from Gallery
   useEffect(() => {
     if (initialPrompt && isInitialized) {
-        handleSend(initialPrompt);
-        onClearInitialPrompt();
+      handleSend(initialPrompt);
+      onClearInitialPrompt();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialPrompt, isInitialized]);
@@ -158,19 +158,19 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
       // Add a temporary loading message for streaming
       const loadingId = 'loading-' + Date.now();
       let accumulatedContent = '';
-      
+
       setMessages((prev) => [...prev, { id: loadingId, role: 'model', content: '', isThinking: true }]);
 
       // Get current messages (including the new user message) for context
       const currentMessages = [...messages, userMsg];
-      
+
       // Stream the response
       await sendMessage(currentMessages, (chunk: string) => {
         accumulatedContent += chunk;
         // Update the loading message with accumulated content
         setMessages((prev) => {
-          return prev.map(m => 
-            m.id === loadingId 
+          return prev.map(m =>
+            m.id === loadingId
               ? { ...m, content: accumulatedContent, isThinking: false }
               : m
           );
@@ -206,13 +206,13 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
     resetChat();
     await initializeChat();
     setIsInitialized(true);
-      setMessages([
-        {
-          id: 'restart-1',
-          role: 'model',
-          content: "Session reset. I am ready to generate a new prompt.\n\nWhat would you like to create?"
-        }
-      ]);
+    setMessages([
+      {
+        id: 'restart-1',
+        role: 'model',
+        content: "Session reset. I am ready to generate a new prompt.\n\nWhat would you like to create?"
+      }
+    ]);
   };
 
   const extractPromptFromMessage = (content: string): string | null => {
@@ -230,11 +230,11 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
       if (win.aistudio && win.aistudio.hasSelectedApiKey) {
         const hasKey = await win.aistudio.hasSelectedApiKey();
         if (!hasKey) {
-            if (win.aistudio.openSelectKey) {
-                await win.aistudio.openSelectKey();
-                // Guideline: Assume success and proceed to mitigate race condition.
-                // Do not check hasSelectedApiKey() again immediately.
-            }
+          if (win.aistudio.openSelectKey) {
+            await win.aistudio.openSelectKey();
+            // Guideline: Assume success and proceed to mitigate race condition.
+            // Do not check hasSelectedApiKey() again immediately.
+          }
         }
       }
 
@@ -249,20 +249,20 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
       }]);
 
     } catch (error: any) {
-        console.error("Preview generation failed:", error);
-        setMessages(prev => [...prev, {
-            id: Date.now().toString(),
-            role: 'model',
-            content: `**Error Generating Preview:** ${error.message || "Unknown error."}`
-        }]);
+      console.error("Preview generation failed:", error);
+      setMessages(prev => [...prev, {
+        id: Date.now().toString(),
+        role: 'model',
+        content: `**Error Generating Preview:** ${error.message || "Unknown error."}`
+      }]);
     } finally {
-        setIsGeneratingImage(false);
+      setIsGeneratingImage(false);
     }
   };
 
   return (
     <div className="flex flex-col h-full w-full max-w-5xl mx-auto relative font-sans">
-      
+
       {/* API Key Warning Banner */}
       {showApiKeyWarning && !hasApiKey() && (
         <div className="mx-4 md:mx-8 mt-4 bg-yellow-900/20 border border-yellow-800/50 rounded-lg p-4 flex items-start gap-3">
@@ -296,54 +296,54 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
       )}
 
       {/* Messages Area */}
-      <div 
-        ref={messagesContainerRef} 
+      <div
+        ref={messagesContainerRef}
         onScroll={handleScroll}
-        className="flex-1 overflow-y-auto p-4 md:p-8 space-y-2 pb-32 scroll-smooth"
+        className="flex-1 overflow-y-auto p-4 md:p-8 space-y-2 pb-60 scroll-smooth"
       >
         {messages.map((msg) => {
-            const promptCode = extractPromptFromMessage(msg.content);
-            return (
-                <div key={msg.id} className="flex flex-col">
-                    <ChatMessage message={msg} />
-                    {/* Render Generate Button if prompt is detected in this message */}
-                    {!msg.isThinking && msg.role === 'model' && promptCode && (
-                        <div className="ml-16 -mt-4 mb-8">
-                             <button
-                                onClick={() => handleGeneratePreview(promptCode)}
-                                disabled={isGeneratingImage}
-                                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-banana-400 to-banana-500 hover:from-banana-300 hover:to-banana-400 text-obsidian-950 font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
-                             >
-                                {isGeneratingImage ? (
-                                    <>
-                                        <Loader2 className="w-4 h-4 animate-spin" />
-                                        Generating Preview...
-                                    </>
-                                ) : (
-                                    <>
-                                        <ImageIcon className="w-4 h-4" />
-                                        Generate Image Preview
-                                    </>
-                                )}
-                             </button>
-                             <p className="text-xs text-gray-500 mt-2 ml-1 max-w-md">
-                                *Uses Nano Banana Pro model via Venice API.
-                             </p>
-                        </div>
+          const promptCode = extractPromptFromMessage(msg.content);
+          return (
+            <div key={msg.id} className="flex flex-col">
+              <ChatMessage message={msg} />
+              {/* Render Generate Button if prompt is detected in this message */}
+              {!msg.isThinking && msg.role === 'model' && promptCode && (
+                <div className="ml-16 -mt-4 mb-8">
+                  <button
+                    onClick={() => handleGeneratePreview(promptCode)}
+                    disabled={isGeneratingImage}
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-banana-400 to-banana-500 hover:from-banana-300 hover:to-banana-400 text-obsidian-950 font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isGeneratingImage ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Generating Preview...
+                      </>
+                    ) : (
+                      <>
+                        <ImageIcon className="w-4 h-4" />
+                        Generate Image Preview
+                      </>
                     )}
+                  </button>
+                  <p className="text-xs text-gray-500 mt-2 ml-1 max-w-md">
+                    *Uses Nano Banana Pro model via Venice API.
+                  </p>
                 </div>
-            );
+              )}
+            </div>
+          );
         })}
         <div ref={messagesEndRef} />
       </div>
 
       {/* Input Area */}
-      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-obsidian-950 via-obsidian-950 to-transparent pt-10 pb-6 px-4 md:px-8">
-        <div className="relative max-w-4xl mx-auto">
+      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-obsidian-950 via-obsidian-950 to-transparent pt-10 pb-6 px-4 md:px-8 pointer-events-none">
+        <div className="relative max-w-4xl mx-auto pointer-events-auto">
           <div className="absolute inset-0 bg-banana-400/5 blur-xl rounded-full pointer-events-none"></div>
           <div className="flex items-end gap-3 bg-obsidian-900 border border-gray-800 rounded-2xl p-2 shadow-2xl focus-within:border-banana-400/50 focus-within:ring-1 focus-within:ring-banana-400/20 transition-all">
-            
-            <button 
+
+            <button
               onClick={handleRestart}
               className="p-3 text-gray-500 hover:text-banana-400 hover:bg-gray-800 rounded-xl transition-colors"
               title="Restart Session"
@@ -368,18 +368,17 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
             <button
               onClick={() => handleSend(inputText)}
               disabled={isLoading || !inputText.trim()}
-              className={`p-3 rounded-xl transition-all duration-200 ${
-                isLoading || !inputText.trim()
-                  ? 'bg-gray-800 text-gray-600 cursor-not-allowed'
-                  : 'bg-banana-400 text-obsidian-950 hover:bg-banana-300 shadow-[0_0_15px_rgba(255,225,53,0.4)]'
-              }`}
+              className={`p-3 rounded-xl transition-all duration-200 ${isLoading || !inputText.trim()
+                ? 'bg-gray-800 text-gray-600 cursor-not-allowed'
+                : 'bg-banana-400 text-obsidian-950 hover:bg-banana-300 shadow-[0_0_15px_rgba(255,225,53,0.4)]'
+                }`}
             >
               {isLoading ? <StopCircle className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
             </button>
           </div>
           <div className="text-center mt-2">
             <p className="text-[10px] text-gray-600 font-mono uppercase tracking-wider">
-                Powered by Venice AI (qwen3-4b) • Nano Banana Architect v1.0
+              Powered by Venice AI (qwen3-4b) • Nano Banana Architect v1.0
             </p>
           </div>
         </div>

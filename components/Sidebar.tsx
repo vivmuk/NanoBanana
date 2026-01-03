@@ -9,7 +9,7 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ currentView, onChangeView }) => {
   return (
-    <div className="h-20 md:h-full w-full md:w-20 lg:w-64 bg-obsidian-900 border-t md:border-t-0 md:border-r border-gray-800 flex flex-row md:flex-col items-center justify-between md:py-8 z-50">
+    <div className="relative h-20 md:h-full w-full md:w-20 lg:w-64 bg-obsidian-900 border-t md:border-t-0 md:border-r border-gray-800 flex flex-row md:flex-col items-center justify-between md:py-8 z-50">
       
       {/* Brand */}
       <div className="flex items-center gap-3 px-6 md:mb-10 w-full justify-center md:justify-start">
