@@ -11,10 +11,10 @@ export const hasApiKey = (): boolean => {
   if (storedKey && storedKey.trim()) {
     return true;
   }
-  const envKey = import.meta.env.VITE_VENICE_API_KEY || 
-                 import.meta.env.VITE_API_KEY ||
-                 (window as any).__VENICE_API_KEY__ ||
-                 (window as any).__API_KEY__;
+  const envKey = import.meta.env.VITE_VENICE_API_KEY ||
+    import.meta.env.VITE_API_KEY ||
+    (window as any).__VENICE_API_KEY__ ||
+    (window as any).__API_KEY__;
   return !!envKey;
 };
 
@@ -26,12 +26,12 @@ const getApiKey = (): string => {
   }
 
   // Fallback to environment variables (for deployment/development)
-  const apiKey = import.meta.env.VITE_VENICE_API_KEY || 
-                 import.meta.env.VITE_API_KEY ||
-                 // Fallback for Railway/deployment (might be injected differently)
-                 (window as any).__VENICE_API_KEY__ ||
-                 (window as any).__API_KEY__;
-  
+  const apiKey = import.meta.env.VITE_VENICE_API_KEY ||
+    import.meta.env.VITE_API_KEY ||
+    // Fallback for Railway/deployment (might be injected differently)
+    (window as any).__VENICE_API_KEY__ ||
+    (window as any).__API_KEY__;
+
   if (!apiKey) {
     console.error("API_KEY is missing. Please set your API key in Settings.");
     throw new Error("API Key not found. Please go to Settings and add your Venice AI API key.");
@@ -105,7 +105,7 @@ export const sendMessage = async (
 
       buffer += decoder.decode(value, { stream: true });
       const lines = buffer.split('\n');
-      
+
       // Keep the last incomplete line in buffer
       buffer = lines.pop() || '';
 
@@ -120,7 +120,7 @@ export const sendMessage = async (
           try {
             const parsed = JSON.parse(data);
             const delta = parsed.choices?.[0]?.delta?.content;
-            
+
             if (delta) {
               fullResponse += delta;
               onChunk(delta);
@@ -165,13 +165,13 @@ export const generateImage = async (prompt: string): Promise<string> => {
 
   // Clean the prompt - remove markdown code block markers if present
   let cleanPrompt = prompt.trim();
-  
+
   // Remove [PROMPT START] and [PROMPT END] markers
   cleanPrompt = cleanPrompt.replace(/\[PROMPT START\]/gi, '').replace(/\[PROMPT END\]/gi, '');
-  
+
   // Remove markdown code block markers
   cleanPrompt = cleanPrompt.replace(/```markdown/gi, '').replace(/```/g, '').trim();
-  
+
   // Ensure prompt is not too long (nano-banana-pro allows up to 32768 chars, but let's be safe)
   if (cleanPrompt.length > 30000) {
     cleanPrompt = cleanPrompt.substring(0, 30000);
@@ -209,14 +209,29 @@ export const generateImage = async (prompt: string): Promise<string> => {
     }
 
     const data = await response.json();
-    const imageBase64 = data.images?.[0];
-    
-    if (!imageBase64) {
+    console.log("Venice Image Response:", data);
+
+    const imageResult = data.images?.[0];
+
+    if (!imageResult) {
+      console.error("No image data found in response. Full data:", data);
       throw new Error("No image data found in response");
     }
 
+    // Check if it's a URL (starts with http/https)
+    if (imageResult.startsWith('http')) {
+      console.log("Image returned as URL");
+      return imageResult;
+    }
+
+    // Otherwise, assume it's base64 (or empty)
+    // Validate base64 string simple check
+    if (imageResult.length < 100) {
+      console.warn("Received suspicious base64 data (too short):", imageResult);
+    }
+
     // Return as data URL
-    return `data:image/webp;base64,${imageBase64}`;
+    return `data:image/webp;base64,${imageResult}`;
   } catch (error) {
     console.error("Error generating image:", error);
     throw error;
