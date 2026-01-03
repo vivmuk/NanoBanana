@@ -299,7 +299,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
       <div
         ref={messagesContainerRef}
         onScroll={handleScroll}
-        className="flex-1 overflow-y-auto p-4 md:p-8 space-y-2 pb-60 scroll-smooth"
+        className="flex-1 overflow-y-auto p-4 md:p-8 space-y-2 pb-4 scroll-smooth"
       >
         {messages.map((msg) => {
           const promptCode = extractPromptFromMessage(msg.content);
@@ -334,6 +334,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
             </div>
           );
         })}
+        <div className="h-72 w-full flex-shrink-0" id="chat-spacer" />
         <div ref={messagesEndRef} />
       </div>
 
