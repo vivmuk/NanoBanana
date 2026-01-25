@@ -1,6 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --color-banana-300: #FFF7CC;
+  --color-banana-400: #FFE135;
+  --color-banana-500: #FFD700;
+  --color-banana-600: #E6C200;
+  
+  --color-obsidian-800: #1A1A1A;
+  --color-obsidian-900: #0F0F0F;
+  --color-obsidian-950: #050505;
+  
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 
 body {
   background-color: #050505;
