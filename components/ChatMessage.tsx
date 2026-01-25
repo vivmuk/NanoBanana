@@ -52,6 +52,22 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
               </div>
             ) : (
               <div className="prose prose-invert prose-p:my-2 prose-pre:bg-black/50 prose-pre:border prose-pre:border-gray-800 prose-pre:rounded-lg max-w-none">
+                {/* Render image directly if present (avoids markdown parsing issues with long base64) */}
+                {message.imageUrl && (
+                  <div className="mb-4">
+                    <img
+                      src={message.imageUrl}
+                      alt="Generated Preview"
+                      className="max-w-full rounded-xl shadow-lg border border-gray-800"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.error("Image Load Error:", e);
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.insertAdjacentHTML('afterend', '<p class="text-red-400 text-xs italic p-2 border border-red-900/50 bg-red-900/10 rounded">Error loading image.</p>');
+                      }}
+                    />
+                  </div>
+                )}
                 <ReactMarkdown
                   components={{
                     code({ node, className, children, ...props }) {

@@ -3,6 +3,7 @@ export interface Message {
   role: 'user' | 'model';
   content: string;
   isThinking?: boolean;
+  imageUrl?: string; // For generated image previews
 }
 
 export interface GalleryItem {

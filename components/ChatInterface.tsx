@@ -241,11 +241,12 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
       // 2. Generate Image
       const imageDataUrl = await generateImage(promptText);
 
-      // 3. Append Image Message
+      // 3. Append Image Message with separate imageUrl field
       setMessages(prev => [...prev, {
         id: Date.now().toString(),
         role: 'model',
-        content: `**Preview Generated:**\n\n![Generated Image](${imageDataUrl})`
+        content: '**Preview Generated:**',
+        imageUrl: imageDataUrl
       }]);
 
     } catch (error: any) {
