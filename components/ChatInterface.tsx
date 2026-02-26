@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Message } from '../types';
 import { ChatMessage } from './ChatMessage';
-import { sendMessage, initializeChat, resetChat, generateImage, hasApiKey } from '../services/veniceService';
+import { sendMessage, initializeChat, resetChat, generateImage, hasApiKey, IMAGE_MODELS, DEFAULT_IMAGE_MODEL } from '../services/veniceService';
 import { Send, RefreshCw, StopCircle, Image as ImageIcon, Loader2, AlertCircle, Settings } from 'lucide-react';
 import { AppView } from '../types';
 
@@ -18,6 +18,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
   const [showApiKeyWarning, setShowApiKeyWarning] = useState(!hasApiKey());
+  const [selectedImageModel, setSelectedImageModel] = useState(DEFAULT_IMAGE_MODEL);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const shouldAutoScrollRef = useRef(true);
@@ -239,7 +240,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
       }
 
       // 2. Generate Image
-      const imageDataUrl = await generateImage(promptText);
+      const imageDataUrl = await generateImage(promptText, selectedImageModel);
 
       // 3. Append Image Message with separate imageUrl field
       setMessages(prev => [...prev, {
@@ -309,7 +310,24 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
               <ChatMessage message={msg} />
               {/* Render Generate Button if prompt is detected in this message */}
               {!msg.isThinking && msg.role === 'model' && promptCode && (
-                <div className="ml-16 -mt-4 mb-8">
+                <div className="ml-16 -mt-4 mb-8 space-y-2">
+                  {/* Model toggle */}
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    {IMAGE_MODELS.map((model) => (
+                      <button
+                        key={model.id}
+                        onClick={() => setSelectedImageModel(model.id)}
+                        title={model.description}
+                        className={`px-3 py-1 rounded-lg text-xs font-semibold border transition-all ${
+                          selectedImageModel === model.id
+                            ? 'bg-banana-400/15 border-banana-400/60 text-banana-400'
+                            : 'bg-gray-900 border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-200'
+                        }`}
+                      >
+                        {model.name}
+                      </button>
+                    ))}
+                  </div>
                   <button
                     onClick={() => handleGeneratePreview(promptCode)}
                     disabled={isGeneratingImage}
@@ -327,8 +345,8 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
                       </>
                     )}
                   </button>
-                  <p className="text-xs text-gray-500 mt-2 ml-1 max-w-md">
-                    *Uses Nano Banana Pro model via Venice API.
+                  <p className="text-xs text-gray-500 ml-1 max-w-md">
+                    *Uses {IMAGE_MODELS.find(m => m.id === selectedImageModel)?.name ?? selectedImageModel} via Venice API.
                   </p>
                 </div>
               )}
