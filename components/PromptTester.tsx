@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Copy, Check, Download, Play, Loader2, Image as ImageIcon } from 'lucide-react';
-import { generateImage } from '../services/veniceService';
+import { generateImage, IMAGE_MODELS, DEFAULT_IMAGE_MODEL } from '../services/veniceService';
 
 export const PromptTester: React.FC = () => {
   const [promptText, setPromptText] = useState('');
@@ -8,6 +8,8 @@ export const PromptTester: React.FC = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [selectedModel, setSelectedModel] = useState(DEFAULT_IMAGE_MODEL);
+  const [usedModel, setUsedModel] = useState<string | null>(null);
 
   // Try to extract prompt from localStorage or clipboard on mount
   useEffect(() => {
@@ -53,8 +55,9 @@ export const PromptTester: React.FC = () => {
     setGeneratedImage(null);
 
     try {
-      const imageDataUrl = await generateImage(promptText);
+      const imageDataUrl = await generateImage(promptText, selectedModel);
       setGeneratedImage(imageDataUrl);
+      setUsedModel(selectedModel);
     } catch (err: any) {
       setError(err.message || 'Failed to generate image. Please check your API key.');
       console.error('Image generation error:', err);
@@ -80,6 +83,27 @@ export const PromptTester: React.FC = () => {
             Paste your generated prompt here to test it with Nano Banana Pro via Venice API. 
             Copy, download, or generate an image preview.
           </p>
+        </div>
+
+        {/* Model Selector */}
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-300">Image Model</label>
+          <div className="flex gap-2 flex-wrap">
+            {IMAGE_MODELS.map((model) => (
+              <button
+                key={model.id}
+                onClick={() => setSelectedModel(model.id)}
+                className={`flex flex-col items-start px-4 py-3 rounded-xl border text-left transition-all ${
+                  selectedModel === model.id
+                    ? 'bg-banana-400/15 border-banana-400/60 text-banana-400'
+                    : 'bg-gray-900 border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-200'
+                }`}
+              >
+                <span className="text-sm font-semibold">{model.name}</span>
+                <span className="text-xs mt-0.5 opacity-70">{model.description}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Prompt Input Area */}
@@ -165,7 +189,7 @@ export const PromptTester: React.FC = () => {
               />
               <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
                 <ImageIcon className="w-4 h-4" />
-                <span>Generated using Nano Banana Pro via Venice API</span>
+                <span>Generated using {IMAGE_MODELS.find(m => m.id === usedModel)?.name ?? usedModel} via Venice API</span>
               </div>
             </div>
           </div>

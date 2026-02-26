@@ -3,7 +3,27 @@ import { Message } from '../types';
 
 const VENICE_API_BASE = 'https://api.venice.ai/api/v1';
 const TEXT_MODEL = 'qwen3-4b';
-const IMAGE_MODEL = 'nano-banana-pro';
+
+export interface ImageModelInfo {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export const IMAGE_MODELS: ImageModelInfo[] = [
+  {
+    id: 'nano-banana-pro',
+    name: 'Nano Banana Pro',
+    description: 'Original model — ultra-fast single-step generation',
+  },
+  {
+    id: 'nano-banana-2',
+    name: 'Nano Banana 2',
+    description: 'Next-gen model — resolution-based pricing (1K/2K/4K)',
+  },
+];
+
+export const DEFAULT_IMAGE_MODEL = IMAGE_MODELS[0].id;
 
 // Helper function to check if API key exists
 export const hasApiKey = (): boolean => {
@@ -160,7 +180,7 @@ export const sendMessage = async (
   }
 };
 
-export const generateImage = async (prompt: string): Promise<string> => {
+export const generateImage = async (prompt: string, modelId: string = DEFAULT_IMAGE_MODEL): Promise<string> => {
   const apiKey = getApiKey();
 
   // Clean the prompt - remove markdown code block markers if present
@@ -185,11 +205,11 @@ export const generateImage = async (prompt: string): Promise<string> => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: IMAGE_MODEL,
+        model: modelId,
         prompt: cleanPrompt,
         width: 1024,
         height: 1024,
-        steps: 1, // nano-banana-pro has max 1 step according to API docs
+        steps: 1,
         format: 'webp',
         return_binary: false,
         safe_mode: false
