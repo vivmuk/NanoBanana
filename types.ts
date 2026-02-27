@@ -18,6 +18,7 @@ export interface GalleryItem {
 export enum AppView {
   CHAT = 'CHAT',
   GALLERY = 'GALLERY',
+  CUSTOM_CREATIONS = 'CUSTOM_CREATIONS',
   INFO = 'INFO',
   PROMPT_TESTER = 'PROMPT_TESTER',
   SETTINGS = 'SETTINGS',

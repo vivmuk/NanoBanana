@@ -262,3 +262,105 @@ export const resetChat = () => {
   // Venice doesn't maintain server-side sessions, so nothing to reset
 };
 
+// Vision model used for image text extraction
+const VISION_MODEL = 'llama-3.2-11b-vision-instruct';
+
+/**
+ * Send an image (as a data URL) to Venice's vision model and extract any text found in it.
+ */
+export const analyzeImageForText = async (imageDataUrl: string): Promise<string> => {
+  const apiKey = getApiKey();
+
+  const response = await fetch(`${VENICE_API_BASE}/chat/completions`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: VISION_MODEL,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'image_url',
+              image_url: { url: imageDataUrl },
+            },
+            {
+              type: 'text',
+              text: 'Extract all visible text from this image. List each distinct piece of text on its own line, preserving the original wording exactly. If there is no text, respond with "No text found in image."',
+            },
+          ],
+        },
+      ],
+      max_tokens: 2000,
+      temperature: 0.1,
+      venice_parameters: {
+        strip_thinking_response: true,
+        include_venice_system_prompt: false,
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.error?.message || `Vision API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.choices?.[0]?.message?.content?.trim() || 'No text found in image.';
+};
+
+/**
+ * Generate a new image using an existing image as a starting point (img2img).
+ * Supported by Nano Banana 2 via the init_image parameter.
+ */
+export const generateImageWithBase = async (
+  prompt: string,
+  initImageDataUrl: string,
+  strength: number = 0.75,
+  modelId: string = 'nano-banana-2'
+): Promise<string> => {
+  const apiKey = getApiKey();
+
+  // Strip the data URL prefix — API expects raw base64
+  const base64Data = initImageDataUrl.includes(',')
+    ? initImageDataUrl.split(',')[1]
+    : initImageDataUrl;
+
+  const response = await fetch(`${VENICE_API_BASE}/image/generate`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: modelId,
+      prompt,
+      init_image: base64Data,
+      init_image_strength: strength,
+      width: 1024,
+      height: 1024,
+      format: 'webp',
+      return_binary: false,
+      safe_mode: false,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    let errorData: any;
+    try { errorData = JSON.parse(errorText); } catch { errorData = { error: { message: errorText } }; }
+    throw new Error(errorData.error?.message || `API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const imageResult = data.images?.[0];
+  if (!imageResult) throw new Error('No image data found in response');
+
+  return imageResult.startsWith('http')
+    ? imageResult
+    : `data:image/webp;base64,${imageResult}`;
+};
+

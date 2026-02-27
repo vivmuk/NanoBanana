@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { GALLERY_ITEMS } from '../constants';
-import { Copy, ArrowRight, Search, Filter } from 'lucide-react';
+import { Copy, Check, ArrowRight, Search, Filter } from 'lucide-react';
 import { ImagePreviewModal } from './ImagePreviewModal';
 
 interface StyleGalleryProps {
@@ -10,6 +10,7 @@ interface StyleGalleryProps {
 export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const [previewImage, setPreviewImage] = useState<{
     imageUrl: string;
     title: string;
@@ -163,15 +164,23 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
                             <span>Build</span>
                             <ArrowRight className="w-3 h-3" />
                         </button>
-                        <button 
+                        <button
                             onClick={() => {
                                 navigator.clipboard.writeText(item.promptSnippet);
-                                // Optional: You could show a toast here
+                                setCopiedId(item.id);
+                                setTimeout(() => setCopiedId(null), 2000);
                             }}
-                            className="flex-none p-2 bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white rounded-lg transition-colors border border-gray-700"
-                            title="Copy snippet"
+                            className={`flex-none p-2 rounded-lg transition-all duration-200 border ${
+                                copiedId === item.id
+                                    ? 'bg-green-500/20 text-green-400 border-green-500/40 scale-110'
+                                    : 'bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white border-gray-700'
+                            }`}
+                            title={copiedId === item.id ? 'Copied!' : 'Copy prompt snippet'}
                         >
-                            <Copy className="w-4 h-4" />
+                            {copiedId === item.id
+                                ? <Check className="w-4 h-4" />
+                                : <Copy className="w-4 h-4" />
+                            }
                         </button>
                     </div>
                   </div>

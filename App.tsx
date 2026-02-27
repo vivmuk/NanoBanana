@@ -5,6 +5,7 @@ import { StyleGallery } from './components/StyleGallery';
 import { InfoSection } from './components/InfoSection';
 import { PromptTester } from './components/PromptTester';
 import { ApiKeySettings } from './components/ApiKeySettings';
+import { CustomCreations } from './components/CustomCreations';
 import { AppView } from './types';
 
 function App() {
@@ -40,6 +41,12 @@ function App() {
         return (
           <div className="flex-1 h-full w-full animate-in fade-in slide-in-from-right-4 duration-300">
             <StyleGallery onSelectPrompt={handleSelectPrompt} />
+          </div>
+        );
+      case AppView.CUSTOM_CREATIONS:
+        return (
+          <div className="flex-1 h-full w-full animate-in fade-in slide-in-from-right-4 duration-300">
+            <CustomCreations onSelectPrompt={handleSelectPrompt} />
           </div>
         );
       case AppView.INFO:

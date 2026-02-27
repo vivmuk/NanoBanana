@@ -1,5 +1,43 @@
 import React, { useState, useEffect } from 'react';
-import { Settings, Key, Eye, EyeOff, Check, X, AlertCircle } from 'lucide-react';
+import { Settings, Key, Eye, EyeOff, Check, X, AlertCircle, Clock, Zap } from 'lucide-react';
+
+const CHANGELOG = [
+  {
+    version: '1.2.0',
+    date: 'Feb 2026',
+    label: 'Current',
+    changes: [
+      'Build button now brings prompt to chat textarea for review & editing before sending',
+      'Copy button in Style Gallery shows animated green checkmark on success',
+      'New Custom Creations tab: build fully tailored prompts from scratch',
+      'Custom Creations — Image Editor: upload PNG/WebP, extract text with vision AI, edit & regenerate via Nano Banana 2',
+      'Settings: added version history & changelog',
+    ],
+  },
+  {
+    version: '1.1.0',
+    date: 'Jan 2026',
+    label: null,
+    changes: [
+      'Style Gallery with 165+ curated styles across multiple categories',
+      'Category filtering and full-text search in gallery',
+      'Architect Chat with real-time streaming responses',
+      'Prompt Tester for direct image generation',
+      'Model toggle: Nano Banana Pro vs. Nano Banana 2',
+    ],
+  },
+  {
+    version: '1.0.0',
+    date: 'Dec 2025',
+    label: null,
+    changes: [
+      'Initial release of Nano Banana Architect',
+      'Core 8-area Prompt Canvas system',
+      'Venice AI integration for text & image generation',
+      'API key management with localStorage persistence',
+    ],
+  },
+];
 
 export const ApiKeySettings: React.FC = () => {
   const [apiKey, setApiKey] = useState('');
@@ -209,10 +247,60 @@ export const ApiKeySettings: React.FC = () => {
         {/* Security Note */}
         <div className="bg-obsidian-900/50 border border-gray-800/50 rounded-lg p-4">
           <p className="text-xs text-gray-500 leading-relaxed">
-            <strong className="text-gray-400">Security:</strong> Your API key is stored locally in your browser's localStorage. 
-            It is never sent to our servers except when making API requests to Venice AI. 
+            <strong className="text-gray-400">Security:</strong> Your API key is stored locally in your browser's localStorage.
+            It is never sent to our servers except when making API requests to Venice AI.
             Make sure to keep your API key secure and never share it publicly.
           </p>
+        </div>
+
+        {/* ── Version & Changelog ── */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-banana-400/10 rounded-lg flex items-center justify-center">
+              <Clock className="w-4 h-4 text-banana-400" />
+            </div>
+            <h3 className="text-lg font-bold text-white">
+              Version <span className="text-banana-400">History</span>
+            </h3>
+          </div>
+
+          <div className="space-y-4">
+            {CHANGELOG.map((release) => (
+              <div
+                key={release.version}
+                className={`bg-obsidian-900 border rounded-xl p-5 space-y-3 ${
+                  release.label === 'Current'
+                    ? 'border-banana-400/30 shadow-[0_0_15px_rgba(255,225,53,0.05)]'
+                    : 'border-gray-800'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1.5">
+                      <Zap className={`w-4 h-4 ${release.label === 'Current' ? 'text-banana-400' : 'text-gray-600'}`} />
+                      <span className={`font-bold font-mono text-sm ${release.label === 'Current' ? 'text-banana-400' : 'text-gray-300'}`}>
+                        v{release.version}
+                      </span>
+                    </div>
+                    {release.label && (
+                      <span className="px-2 py-0.5 bg-banana-400/20 text-banana-300 text-[10px] font-bold rounded-full border border-banana-400/30 uppercase tracking-wider">
+                        {release.label}
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-xs text-gray-500 font-mono">{release.date}</span>
+                </div>
+                <ul className="space-y-1.5">
+                  {release.changes.map((change, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-gray-400">
+                      <Check className="w-3 h-3 text-green-500/70 mt-0.5 shrink-0" />
+                      <span>{change}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
