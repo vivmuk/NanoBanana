@@ -262,6 +262,156 @@ export const resetChat = () => {
   // Venice doesn't maintain server-side sessions, so nothing to reset
 };
 
+// ------------------------------------------------------------------
+// Visual Refinement Pipeline — kimi-k2-5 for vision + text
+// ------------------------------------------------------------------
+const KIMI_MODEL = 'kimi-k2-5';
+
+export interface CritiqueResult {
+  problems: string[];
+  suggestions: string;
+  score: number;
+}
+
+/**
+ * Use kimi-k2-5 to turn a user's plain-language description into a
+ * detailed Nano Banana image generation prompt.
+ */
+export const generateInitialImagePrompt = async (description: string): Promise<string> => {
+  const apiKey = getApiKey();
+
+  const response = await fetch(`${VENICE_API_BASE}/chat/completions`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: KIMI_MODEL,
+      messages: [
+        {
+          role: 'system',
+          content: 'You are an expert AI image prompt engineer for Nano Banana Pro. Convert user descriptions into detailed, structured image generation prompts. Include subject, composition, lighting, color palette, style, and technical quality descriptors. Return ONLY the prompt text — no explanations, no markdown fences.',
+        },
+        {
+          role: 'user',
+          content: `Create a detailed image generation prompt for this description:\n\n"${description}"`,
+        },
+      ],
+      max_tokens: 2000,
+      temperature: 0.7,
+      venice_parameters: { strip_thinking_response: true, include_venice_system_prompt: false },
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    throw new Error(err.error?.message || `Prompt generation error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.choices?.[0]?.message?.content?.trim() || description;
+};
+
+/**
+ * Send a draft image to kimi-k2-5 (vision) and receive a structured critique.
+ */
+export const critiqueDraftImage = async (
+  imageDataUrl: string,
+  originalPrompt: string,
+): Promise<CritiqueResult> => {
+  const apiKey = getApiKey();
+
+  const response = await fetch(`${VENICE_API_BASE}/chat/completions`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: KIMI_MODEL,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            { type: 'image_url', image_url: { url: imageDataUrl } },
+            {
+              type: 'text',
+              text: `You are a visual design critic analyzing an AI-generated image.\n\nThe original prompt was:\n"${originalPrompt}"\n\nAnalyze this image carefully and respond with ONLY a valid JSON object in exactly this format:\n{\n  "score": <integer 1-10>,\n  "problems": ["specific problem 1", "specific problem 2", "specific problem 3"],\n  "suggestions": "A concise paragraph describing the key improvements needed."\n}\n\nBe specific and actionable. Identify real visual flaws in composition, lighting, color, clarity, and adherence to the prompt.`,
+            },
+          ],
+        },
+      ],
+      max_tokens: 1500,
+      temperature: 0.2,
+      venice_parameters: { strip_thinking_response: true, include_venice_system_prompt: false },
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    throw new Error(err.error?.message || `Vision critique error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const content: string = data.choices?.[0]?.message?.content?.trim() || '';
+
+  try {
+    const jsonMatch = content.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0]);
+      return {
+        problems: Array.isArray(parsed.problems) ? parsed.problems : [content],
+        suggestions: typeof parsed.suggestions === 'string' ? parsed.suggestions : '',
+        score: typeof parsed.score === 'number' ? Math.max(1, Math.min(10, parsed.score)) : 5,
+      };
+    }
+  } catch (_) { /* fall through to default */ }
+
+  return { problems: [content || 'No specific issues identified.'], suggestions: '', score: 5 };
+};
+
+/**
+ * Use kimi-k2-5 to create a refined prompt that addresses the critique
+ * and optionally incorporates the user's own instruction.
+ */
+export const refineImagePrompt = async (
+  originalPrompt: string,
+  problems: string[],
+  suggestions: string,
+  userInstruction: string,
+): Promise<string> => {
+  const apiKey = getApiKey();
+
+  const problemsText = problems.map((p, i) => `${i + 1}. ${p}`).join('\n');
+  const instructionLine = userInstruction.trim()
+    ? `\n\nUser's specific instruction: "${userInstruction.trim()}"`
+    : '';
+
+  const response = await fetch(`${VENICE_API_BASE}/chat/completions`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: KIMI_MODEL,
+      messages: [
+        {
+          role: 'system',
+          content: 'You are an expert AI image prompt engineer. Improve image generation prompts based on visual critique. Maintain the original concept while fixing identified issues. Return ONLY the improved prompt text — no explanations, no markdown.',
+        },
+        {
+          role: 'user',
+          content: `Original prompt:\n"${originalPrompt}"\n\nVisual critique problems:\n${problemsText}\n\nCritique summary: ${suggestions}${instructionLine}\n\nWrite an improved image generation prompt that addresses all the problems above.`,
+        },
+      ],
+      max_tokens: 3000,
+      temperature: 0.5,
+      venice_parameters: { strip_thinking_response: true, include_venice_system_prompt: false },
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    throw new Error(err.error?.message || `Prompt refinement error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.choices?.[0]?.message?.content?.trim() || originalPrompt;
+};
+
 // Vision model used for image text extraction
 const VISION_MODEL = 'qwen3-vl-235b-a22b';
 

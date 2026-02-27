@@ -6,8 +6,9 @@ import { InfoSection } from './components/InfoSection';
 import { PromptTester } from './components/PromptTester';
 import { ApiKeySettings } from './components/ApiKeySettings';
 import { CustomCreations } from './components/CustomCreations';
+import { VisualRefinement } from './components/VisualRefinement';
 import { AppView } from './types';
-import { MessageSquare, LayoutGrid, Wand2, BookOpen, Play, Settings, Zap } from 'lucide-react';
+import { MessageSquare, LayoutGrid, Wand2, Play, Settings, Zap, Sparkles } from 'lucide-react';
 
 const VIEW_TITLES: Record<AppView, string> = {
   [AppView.CHAT]: 'Architect Chat',
@@ -15,6 +16,7 @@ const VIEW_TITLES: Record<AppView, string> = {
   [AppView.CUSTOM_CREATIONS]: 'Custom Creations',
   [AppView.INFO]: 'Manual & Guide',
   [AppView.PROMPT_TESTER]: 'Prompt Tester',
+  [AppView.VISUAL_REFINEMENT]: 'AI Refine',
   [AppView.SETTINGS]: 'Settings',
 };
 
@@ -22,7 +24,7 @@ const MOBILE_NAV_ITEMS = [
   { view: AppView.CHAT, icon: MessageSquare, label: 'Chat' },
   { view: AppView.GALLERY, icon: LayoutGrid, label: 'Gallery' },
   { view: AppView.CUSTOM_CREATIONS, icon: Wand2, label: 'Create' },
-  { view: AppView.INFO, icon: BookOpen, label: 'Guide' },
+  { view: AppView.VISUAL_REFINEMENT, icon: Sparkles, label: 'Refine' },
   { view: AppView.PROMPT_TESTER, icon: Play, label: 'Test' },
   { view: AppView.SETTINGS, icon: Settings, label: 'Settings' },
 ] as const;
@@ -78,6 +80,12 @@ function App() {
         return (
           <div className="flex-1 h-full w-full animate-in fade-in slide-in-from-left-4 duration-300">
             <PromptTester />
+          </div>
+        );
+      case AppView.VISUAL_REFINEMENT:
+        return (
+          <div className="flex-1 h-full w-full animate-in fade-in zoom-in-95 duration-300">
+            <VisualRefinement />
           </div>
         );
       case AppView.SETTINGS:
