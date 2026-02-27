@@ -308,6 +308,28 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
         onScroll={handleScroll}
         className="flex-1 overflow-y-auto p-4 md:p-8 space-y-2 pb-4 scroll-smooth"
       >
+        {/* Quick-start suggestions — only shown before first user message */}
+        {messages.length === 1 && !isLoading && (
+          <div className="flex flex-wrap gap-2 px-0 pt-1 pb-2">
+            {[
+              'A comic book page about a robot chef',
+              'A luxury skincare product packaging',
+              'A neon-lit cyberpunk street scene',
+              'A vintage travel poster for Mars',
+              'An infographic about ocean plastic',
+              'A gaming app store screenshot',
+            ].map((suggestion) => (
+              <button
+                key={suggestion}
+                onClick={() => setInputText(suggestion)}
+                className="text-xs px-3 py-2 bg-obsidian-900 border border-gray-700 hover:border-banana-400/40 hover:text-banana-300 text-gray-400 rounded-lg transition-all duration-200 text-left"
+              >
+                {suggestion}
+              </button>
+            ))}
+          </div>
+        )}
+
         {messages.map((msg) => {
           const promptCode = extractPromptFromMessage(msg.content);
           return (
@@ -315,7 +337,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
               <ChatMessage message={msg} />
               {/* Render Generate Button if prompt is detected in this message */}
               {!msg.isThinking && msg.role === 'model' && promptCode && (
-                <div className="ml-16 -mt-4 mb-8 space-y-2">
+                <div className="ml-10 md:ml-16 -mt-4 mb-8 space-y-2">
                   {/* Model toggle */}
                   <div className="flex items-center gap-1.5 flex-wrap">
                     {IMAGE_MODELS.map((model) => (
@@ -388,7 +410,13 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
               placeholder="Describe your idea..."
               className="flex-1 bg-transparent border-none text-gray-200 placeholder-gray-500 resize-none max-h-32 py-3 px-2 focus:ring-0 text-base font-sans"
               rows={1}
+              maxLength={2000}
             />
+            {inputText.length > 0 && (
+              <span className="self-end pb-3 pr-1 text-[10px] text-gray-600 font-mono shrink-0">
+                {inputText.length}/2000
+              </span>
+            )}
 
             <button
               onClick={() => handleSend(inputText)}

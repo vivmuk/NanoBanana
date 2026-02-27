@@ -3,9 +3,22 @@ import { Settings, Key, Eye, EyeOff, Check, X, AlertCircle, Clock, Zap } from 'l
 
 const CHANGELOG = [
   {
-    version: '1.2.0',
+    version: '1.3.0',
     date: 'Feb 2026',
     label: 'Current',
+    changes: [
+      'Completely redesigned mobile UI with fixed bottom navigation bar',
+      'New mobile top header showing app brand and current view name',
+      'Bottom nav shows icons + labels with a banana-yellow active indicator',
+      'Character counter added to the Architect Chat input (2000 char limit)',
+      'Quick-start suggestion chips in chat for instant inspiration',
+      'Safe-area inset support for iOS notch and home indicator',
+    ],
+  },
+  {
+    version: '1.2.0',
+    date: 'Feb 2026',
+    label: null,
     changes: [
       'Build button now brings prompt to chat textarea for review & editing before sending',
       'Copy button in Style Gallery shows animated green checkmark on success',
