@@ -263,7 +263,7 @@ export const resetChat = () => {
 };
 
 // Vision model used for image text extraction
-const VISION_MODEL = 'grok-41-fast';
+const VISION_MODEL = 'qwen3-vl-235b-a22b';
 
 /**
  * Send an image (as a data URL) to Venice's vision model and extract any text found in it.
@@ -271,45 +271,59 @@ const VISION_MODEL = 'grok-41-fast';
 export const analyzeImageForText = async (imageDataUrl: string): Promise<string> => {
   const apiKey = getApiKey();
 
-  const response = await fetch(`${VENICE_API_BASE}/chat/completions`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: VISION_MODEL,
-      messages: [
-        {
-          role: 'user',
-          content: [
-            {
-              type: 'image_url',
-              image_url: { url: imageDataUrl },
-            },
-            {
-              type: 'text',
-              text: 'Extract all visible text from this image. List each distinct piece of text on its own line, preserving the original wording exactly. If there is no text, respond with "No text found in image."',
-            },
-          ],
-        },
-      ],
-      max_tokens: 2000,
-      temperature: 0.1,
-      venice_parameters: {
-        strip_thinking_response: true,
-        include_venice_system_prompt: false,
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000); // 30 s hard timeout
+
+  try {
+    const response = await fetch(`${VENICE_API_BASE}/chat/completions`, {
+      signal: controller.signal,
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
       },
-    }),
-  });
+      body: JSON.stringify({
+        model: VISION_MODEL,
+        messages: [
+          {
+            role: 'user',
+            content: [
+              {
+                type: 'image_url',
+                image_url: { url: imageDataUrl },
+              },
+              {
+                type: 'text',
+                text: 'Extract all visible text from this image. List each distinct piece of text on its own line, preserving the original wording exactly. If there is no text, respond with "No text found in image."',
+              },
+            ],
+          },
+        ],
+        max_tokens: 2000,
+        temperature: 0.1,
+        venice_parameters: {
+          strip_thinking_response: true,
+          include_venice_system_prompt: false,
+        },
+      }),
+    });
 
-  if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}));
-    throw new Error(errorData.error?.message || `Vision API error: ${response.status}`);
+    clearTimeout(timeout);
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error?.message || `Vision API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.choices?.[0]?.message?.content?.trim() || 'No text found in image.';
+  } catch (err: any) {
+    clearTimeout(timeout);
+    if (err.name === 'AbortError') {
+      throw new Error(`Vision model timed out after 30 s. The model "${VISION_MODEL}" may not be available on Venice.`);
+    }
+    throw err;
   }
-
-  const data = await response.json();
-  return data.choices?.[0]?.message?.content?.trim() || 'No text found in image.';
 };
 
 /**
