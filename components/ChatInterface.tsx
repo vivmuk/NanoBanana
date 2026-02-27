@@ -132,11 +132,16 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialPrompt, onC
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Run once on mount
 
-  // Handle incoming prompt from Gallery
+  // Handle incoming prompt from Gallery — place in textarea so user can review/edit before sending
   useEffect(() => {
     if (initialPrompt && isInitialized) {
-      handleSend(initialPrompt);
+      setInputText(initialPrompt);
       onClearInitialPrompt();
+      // Focus the textarea so the user can immediately edit/send
+      setTimeout(() => {
+        const ta = document.querySelector<HTMLTextAreaElement>('textarea[placeholder="Describe your idea..."]');
+        ta?.focus();
+      }, 100);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialPrompt, isInitialized]);
