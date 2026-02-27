@@ -263,7 +263,7 @@ export const resetChat = () => {
 };
 
 // Vision model used for image text extraction
-const VISION_MODEL = 'llama-3.2-11b-vision-instruct';
+const VISION_MODEL = 'grok-4-1-fast';
 
 /**
  * Send an image (as a data URL) to Venice's vision model and extract any text found in it.
