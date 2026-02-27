@@ -3,7 +3,8 @@ export interface Message {
   role: 'user' | 'model';
   content: string;
   isThinking?: boolean;
-  imageUrl?: string; // For generated image previews
+  imageUrl?: string;
+  comparisonImages?: { modelId: string; modelName: string; imageUrl: string }[];
 }
 
 export interface GalleryItem {
@@ -13,6 +14,28 @@ export interface GalleryItem {
   description: string;
   promptSnippet: string;
   imageUrl: string;
+}
+
+export interface AspectRatioOption {
+  label: string;
+  width: number;
+  height: number;
+}
+
+export interface ResolutionTier {
+  label: string;
+  base: number;
+  usd: number;
+}
+
+export interface PromptHistoryItem {
+  id: string;
+  prompt: string;
+  timestamp: number;
+  modelId: string;
+  aspectRatioLabel: string;
+  resolutionLabel: string;
+  imageUrl?: string;
 }
 
 export enum AppView {

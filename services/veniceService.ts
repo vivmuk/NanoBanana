@@ -1,5 +1,5 @@
 import { SYSTEM_INSTRUCTION } from '../constants';
-import { Message } from '../types';
+import { Message, AspectRatioOption, ResolutionTier, PromptHistoryItem } from '../types';
 
 const VENICE_API_BASE = 'https://api.venice.ai/api/v1';
 const TEXT_MODEL = 'qwen3-4b';
@@ -24,6 +24,65 @@ export const IMAGE_MODELS: ImageModelInfo[] = [
 ];
 
 export const DEFAULT_IMAGE_MODEL = IMAGE_MODELS[0].id;
+
+// --- Aspect Ratios (base dimensions at 1K / 1024px max side) ---
+export const ASPECT_RATIOS: AspectRatioOption[] = [
+  { label: '1:1',  width: 1024, height: 1024 },
+  { label: '16:9', width: 1024, height: 576  },
+  { label: '9:16', width: 576,  height: 1024 },
+  { label: '4:3',  width: 1024, height: 768  },
+  { label: '3:4',  width: 768,  height: 1024 },
+];
+
+// --- Resolution tiers for nano-banana-2 ---
+export const RESOLUTION_TIERS: ResolutionTier[] = [
+  { label: '1K', base: 1024, usd: 0.08 },
+  { label: '2K', base: 2048, usd: 0.16 },
+  { label: '4K', base: 4096, usd: 0.32 },
+];
+
+export const UPSCALE_TIERS = [
+  { label: '2×', scale: 2 as const, usd: 0.02 },
+  { label: '4×', scale: 4 as const, usd: 0.08 },
+];
+
+/** Scale 1K base dimensions up to the chosen resolution tier. */
+export function getScaledDimensions(
+  ar: AspectRatioOption,
+  tier: ResolutionTier
+): { width: number; height: number } {
+  const scale = tier.base / 1024;
+  return { width: ar.width * scale, height: ar.height * scale };
+}
+
+/** Returns cost in USD for nano-banana-2 at a given resolution, or null for other models. */
+export function estimateCost(modelId: string, resolutionLabel: string): number | null {
+  if (modelId !== 'nano-banana-2') return null;
+  return RESOLUTION_TIERS.find(t => t.label === resolutionLabel)?.usd ?? null;
+}
+
+// --- Prompt History (localStorage) ---
+const HISTORY_KEY = 'nb_prompt_history';
+const MAX_HISTORY = 20;
+
+export const savePromptToHistory = (item: PromptHistoryItem): void => {
+  try {
+    const existing = getPromptHistory();
+    const updated = [item, ...existing.filter(h => h.id !== item.id)].slice(0, MAX_HISTORY);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(updated));
+  } catch { /* localStorage quota exceeded or unavailable */ }
+};
+
+export const getPromptHistory = (): PromptHistoryItem[] => {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+};
+
+export const clearPromptHistory = (): void => {
+  localStorage.removeItem(HISTORY_KEY);
+};
 
 // Helper function to check if API key exists
 export const hasApiKey = (): boolean => {
@@ -180,7 +239,12 @@ export const sendMessage = async (
   }
 };
 
-export const generateImage = async (prompt: string, modelId: string = DEFAULT_IMAGE_MODEL): Promise<string> => {
+export const generateImage = async (
+  prompt: string,
+  modelId: string = DEFAULT_IMAGE_MODEL,
+  width: number = 1024,
+  height: number = 1024
+): Promise<string> => {
   const apiKey = getApiKey();
 
   // Clean the prompt - remove markdown code block markers if present
@@ -207,8 +271,8 @@ export const generateImage = async (prompt: string, modelId: string = DEFAULT_IM
       body: JSON.stringify({
         model: modelId,
         prompt: cleanPrompt,
-        width: 1024,
-        height: 1024,
+        width,
+        height,
         steps: 1,
         format: 'webp',
         return_binary: false,
@@ -256,6 +320,39 @@ export const generateImage = async (prompt: string, modelId: string = DEFAULT_IM
     console.error("Error generating image:", error);
     throw error;
   }
+};
+
+export const upscaleImage = async (
+  imageData: string,
+  scale: 2 | 4,
+  prompt: string = ''
+): Promise<string> => {
+  const apiKey = getApiKey();
+  // Strip data URL prefix if present for API submission
+  const base64 = imageData.startsWith('data:')
+    ? imageData.split(',')[1]
+    : imageData;
+
+  const response = await fetch(`${VENICE_API_BASE}/image/upscale`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ model: 'nano-banana-2', image: base64, scale, prompt }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    let msg = `Upscale API error: ${response.status}`;
+    try { msg = JSON.parse(errorText).error?.message || msg; } catch { /* */ }
+    throw new Error(msg);
+  }
+
+  const data = await response.json();
+  const result = data.images?.[0];
+  if (!result) throw new Error('No upscaled image returned');
+  return result.startsWith('http') ? result : `data:image/webp;base64,${result}`;
 };
 
 export const resetChat = () => {

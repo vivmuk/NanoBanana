@@ -1,7 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { GALLERY_ITEMS } from '../constants';
-import { Copy, ArrowRight, Search, Filter } from 'lucide-react';
+import { Copy, ArrowRight, Search, Filter, Sparkles, Loader2 } from 'lucide-react';
 import { ImagePreviewModal } from './ImagePreviewModal';
+import { generateImage } from '../services/veniceService';
 
 interface StyleGalleryProps {
   onSelectPrompt: (prompt: string) => void;
@@ -16,12 +17,24 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
     description: string;
     category: string;
   } | null>(null);
+  // Track live-generate state per card: itemId → 'loading' | imageUrl | 'error'
+  const [liveImages, setLiveImages] = useState<Record<string, string | 'loading' | 'error'>>({});
 
   // Extract unique categories
   const categories = useMemo(() => {
     const cats = new Set(GALLERY_ITEMS.map(item => item.category));
     return ['All', ...Array.from(cats).sort()];
   }, [GALLERY_ITEMS]);
+
+  const handleLiveGenerate = async (itemId: string, promptSnippet: string) => {
+    setLiveImages(prev => ({ ...prev, [itemId]: 'loading' }));
+    try {
+      const url = await generateImage(promptSnippet);
+      setLiveImages(prev => ({ ...prev, [itemId]: url }));
+    } catch {
+      setLiveImages(prev => ({ ...prev, [itemId]: 'error' }));
+    }
+  };
 
   // If the gallery data changes (e.g. via Fast Refresh), ensure category stays valid
   useEffect(() => {
@@ -116,33 +129,46 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
                   className="group relative bg-obsidian-900 border border-gray-800 rounded-xl overflow-hidden hover:border-banana-400/40 transition-all duration-300 hover:shadow-xl flex flex-col h-[320px]"
                 >
                   {/* Image Area */}
-                  <div 
-                    className="relative h-40 overflow-hidden bg-gray-900 flex-shrink-0 cursor-pointer"
-                    onClick={() => setPreviewImage({
-                      imageUrl: item.imageUrl,
-                      title: item.title,
-                      description: item.description,
-                      category: item.category
-                    })}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 to-transparent z-10 opacity-60" />
-                    <img 
-                      src={item.imageUrl} 
-                      alt={item.title} 
-                      loading="lazy"
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-100" 
-                    />
-                    <div className="absolute top-3 left-3 z-20">
-                       <span className="text-[10px] font-bold font-mono text-obsidian-950 bg-banana-400/90 px-2 py-0.5 rounded shadow-sm">
-                        {item.category}
-                      </span>
-                    </div>
-                    <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
-                      <span className="text-xs font-semibold text-white bg-banana-400/90 text-obsidian-950 px-3 py-1.5 rounded-lg shadow-lg">
-                        Click to preview
-                      </span>
-                    </div>
-                  </div>
+                  {(() => {
+                    const live = liveImages[item.id];
+                    const displayUrl = (live && live !== 'loading' && live !== 'error') ? live : item.imageUrl;
+                    return (
+                      <div
+                        className="relative h-40 overflow-hidden bg-gray-900 flex-shrink-0 cursor-pointer"
+                        onClick={() => setPreviewImage({ imageUrl: displayUrl, title: item.title, description: item.description, category: item.category })}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 to-transparent z-10 opacity-60" />
+                        <img
+                          src={displayUrl}
+                          alt={item.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-100"
+                        />
+                        <div className="absolute top-3 left-3 z-20">
+                          <span className="text-[10px] font-bold font-mono text-obsidian-950 bg-banana-400/90 px-2 py-0.5 rounded shadow-sm">
+                            {item.category}
+                          </span>
+                        </div>
+                        {live === 'loading' && (
+                          <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/50">
+                            <Loader2 className="w-6 h-6 animate-spin text-banana-400" />
+                          </div>
+                        )}
+                        {live === 'error' && (
+                          <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/50">
+                            <span className="text-xs text-red-400 font-mono">Error</span>
+                          </div>
+                        )}
+                        {(!live || live === 'error') && live !== 'loading' && (
+                          <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+                            <span className="text-xs font-semibold text-white bg-banana-400/90 text-obsidian-950 px-3 py-1.5 rounded-lg shadow-lg">
+                              Click to preview
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
 
                   {/* Content Area */}
                   <div className="p-4 flex-1 flex flex-col justify-between">
@@ -156,22 +182,29 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
                     </div>
 
                     <div className="mt-4 flex gap-2">
-                        <button 
-                             onClick={() => onSelectPrompt(`I want to create something like the ${item.title}: ${item.description}`)}
-                             className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 bg-gray-800 hover:bg-banana-400 hover:text-obsidian-950 text-gray-300 rounded-lg text-xs font-bold transition-all group-hover:bg-banana-400 group-hover:text-obsidian-950"
+                        <button
+                          onClick={() => onSelectPrompt(`I want to create something like the ${item.title}: ${item.description}`)}
+                          className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 bg-gray-800 hover:bg-banana-400 hover:text-obsidian-950 text-gray-300 rounded-lg text-xs font-bold transition-all group-hover:bg-banana-400 group-hover:text-obsidian-950"
                         >
-                            <span>Build</span>
-                            <ArrowRight className="w-3 h-3" />
+                          <span>Build</span>
+                          <ArrowRight className="w-3 h-3" />
                         </button>
-                        <button 
-                            onClick={() => {
-                                navigator.clipboard.writeText(item.promptSnippet);
-                                // Optional: You could show a toast here
-                            }}
-                            className="flex-none p-2 bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white rounded-lg transition-colors border border-gray-700"
-                            title="Copy snippet"
+                        <button
+                          onClick={() => handleLiveGenerate(item.id, item.promptSnippet)}
+                          disabled={liveImages[item.id] === 'loading'}
+                          className="flex-none p-2 bg-gray-800 hover:bg-purple-900/60 text-gray-400 hover:text-purple-300 rounded-lg transition-colors border border-gray-700 hover:border-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                          title="Live generate with snippet"
                         >
-                            <Copy className="w-4 h-4" />
+                          {liveImages[item.id] === 'loading'
+                            ? <Loader2 className="w-4 h-4 animate-spin" />
+                            : <Sparkles className="w-4 h-4" />}
+                        </button>
+                        <button
+                          onClick={() => navigator.clipboard.writeText(item.promptSnippet)}
+                          className="flex-none p-2 bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white rounded-lg transition-colors border border-gray-700"
+                          title="Copy snippet"
+                        >
+                          <Copy className="w-4 h-4" />
                         </button>
                     </div>
                   </div>

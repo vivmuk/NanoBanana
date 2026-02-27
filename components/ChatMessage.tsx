@@ -1,10 +1,47 @@
 import React, { useState } from 'react';
 import { Message } from '../types';
-import { User, Bot, Sparkles, Copy, Check } from 'lucide-react';
+import { User, Bot, Sparkles, Copy, Check, Download } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 interface ChatMessageProps {
   message: Message;
+}
+
+function downloadImage(src: string, filename = 'nano-banana-preview.webp') {
+  const a = document.createElement('a');
+  a.href = src;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function ImageWithDownload({ src, alt, className }: { src: string; alt: string; className?: string }) {
+  return (
+    <div className="relative group/img">
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        loading="lazy"
+        onError={(e) => {
+          console.error('Image Load Error:', e);
+          e.currentTarget.style.display = 'none';
+          e.currentTarget.insertAdjacentHTML(
+            'afterend',
+            '<p class="text-red-400 text-xs italic p-2 border border-red-900/50 bg-red-900/10 rounded">Error loading image.</p>'
+          );
+        }}
+      />
+      <button
+        onClick={() => downloadImage(src)}
+        className="absolute top-2 right-2 p-1.5 bg-black/60 hover:bg-black/80 text-white rounded-lg opacity-0 group-hover/img:opacity-100 transition-opacity"
+        title="Download image"
+      >
+        <Download className="w-4 h-4" />
+      </button>
+    </div>
+  );
 }
 
 export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
@@ -52,28 +89,39 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
               </div>
             ) : (
               <div className="prose prose-invert prose-p:my-2 prose-pre:bg-black/50 prose-pre:border prose-pre:border-gray-800 prose-pre:rounded-lg max-w-none">
-                {/* Render image directly if present (avoids markdown parsing issues with long base64) */}
+
+                {/* Single image with download button */}
                 {message.imageUrl && (
                   <div className="mb-4">
-                    <img
+                    <ImageWithDownload
                       src={message.imageUrl}
                       alt="Generated Preview"
                       className="max-w-full rounded-xl shadow-lg border border-gray-800"
-                      loading="lazy"
-                      onError={(e) => {
-                        console.error("Image Load Error:", e);
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.insertAdjacentHTML('afterend', '<p class="text-red-400 text-xs italic p-2 border border-red-900/50 bg-red-900/10 rounded">Error loading image.</p>');
-                      }}
                     />
                   </div>
                 )}
+
+                {/* Comparison: two images side by side */}
+                {message.comparisonImages && message.comparisonImages.length > 0 && (
+                  <div className="mb-4 flex gap-3">
+                    {message.comparisonImages.map((ci) => (
+                      <div key={ci.modelId} className="flex-1 min-w-0 space-y-1">
+                        <p className="text-[10px] font-mono text-center text-gray-500 uppercase tracking-wider">{ci.modelName}</p>
+                        <ImageWithDownload
+                          src={ci.imageUrl}
+                          alt={`Preview — ${ci.modelName}`}
+                          className="w-full rounded-xl shadow-lg border border-gray-800"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <ReactMarkdown
                   components={{
                     code({ node, className, children, ...props }) {
                       const match = /language-(\w+)/.exec(className || '')
                       const codeText = String(children).replace(/\n$/, '');
-                      // Use a hash of the code content as ID for consistent state
                       const codeId = `code-${message.id}-${codeText.slice(0, 20).replace(/\s/g, '')}`;
                       const isCopied = copiedId === codeId;
 
@@ -118,8 +166,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
                           className={`max-w-full rounded-xl shadow-lg border border-gray-800 ${className || ''}`}
                           loading="lazy"
                           onError={(e) => {
-                            console.error("Image Load Error:", e);
-                            console.error("Image Source:", props.src);
+                            console.error('Image Load Error:', e);
                             e.currentTarget.style.display = 'none';
                             e.currentTarget.insertAdjacentHTML('afterend', '<p class="text-red-400 text-xs italic p-2 border border-red-900/50 bg-red-900/10 rounded">Error loading image. Please check console.</p>');
                           }}
