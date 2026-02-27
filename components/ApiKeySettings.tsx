@@ -3,9 +3,23 @@ import { Settings, Key, Eye, EyeOff, Check, X, AlertCircle, Clock, Zap } from 'l
 
 const CHANGELOG = [
   {
-    version: '1.2.0',
+    version: '1.3.0',
     date: 'Feb 2026',
     label: 'Current',
+    changes: [
+      'New "AI Refine" tab — 5-stage pipeline: describe → draft → critique → refine → final',
+      'kimi-k2-5 vision model analyzes draft images and returns a scored JSON critique',
+      'kimi-k2-5 text model auto-generates an improved prompt from the critique',
+      'Users can add custom instructions before the final generation',
+      'All image generation via Nano Banana 2 at 1K (1024 × 1024) · download button',
+      'Mobile UI: fixed bottom nav, top header, iOS safe-area support',
+      'Chat: quick-start chips, 2000-char counter · Gallery: 2-col mobile grid',
+    ],
+  },
+  {
+    version: '1.2.0',
+    date: 'Feb 2026',
+    label: null,
     changes: [
       'Build button now brings prompt to chat textarea for review & editing before sending',
       'Copy button in Style Gallery shows animated green checkmark on success',

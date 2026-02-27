@@ -45,21 +45,24 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
     <div className="w-full h-full flex flex-col bg-obsidian-950">
       
       {/* Sticky Header Section */}
-      <div className="flex-none p-4 md:p-8 bg-obsidian-950/95 backdrop-blur z-20 sticky top-0 border-b border-gray-800">
+      <div className="flex-none p-3 md:p-8 bg-obsidian-950/95 backdrop-blur z-20 sticky top-0 border-b border-gray-800">
         <div className="max-w-7xl mx-auto space-y-6">
           
           {/* Title & Description */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-4">
+            <div className="space-y-1 md:space-y-2">
+              <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight">
                 Style <span className="text-banana-400">Universe</span>
               </h2>
-              <p className="text-gray-400 text-sm md:text-base max-w-xl">
-                Browse {GALLERY_ITEMS.length}+ curated styles for Nano Banana Pro. 
+              <p className="text-gray-400 text-xs md:text-base max-w-xl hidden md:block">
+                Browse {GALLERY_ITEMS.length}+ curated styles for Nano Banana Pro.
                 Select a style to start building your prompt.
               </p>
+              <p className="text-gray-400 text-xs md:hidden">
+                {GALLERY_ITEMS.length}+ curated styles — tap to build a prompt
+              </p>
             </div>
-            
+
             {/* Search Bar */}
             <div className="relative w-full md:w-80">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -110,15 +113,15 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
                </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6 pb-20">
               {filteredItems.map((item) => (
-                <div 
-                  key={item.id} 
-                  className="group relative bg-obsidian-900 border border-gray-800 rounded-xl overflow-hidden hover:border-banana-400/40 transition-all duration-300 hover:shadow-xl flex flex-col h-[320px]"
+                <div
+                  key={item.id}
+                  className="group relative bg-obsidian-900 border border-gray-800 rounded-xl overflow-hidden hover:border-banana-400/40 transition-all duration-300 hover:shadow-xl flex flex-col h-[280px] md:h-[320px]"
                 >
                   {/* Image Area */}
-                  <div 
-                    className="relative h-40 overflow-hidden bg-gray-900 flex-shrink-0 cursor-pointer"
+                  <div
+                    className="relative h-32 md:h-40 overflow-hidden bg-gray-900 flex-shrink-0 cursor-pointer"
                     onClick={() => setPreviewImage({
                       imageUrl: item.imageUrl,
                       title: item.title,
@@ -146,9 +149,9 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
                   </div>
 
                   {/* Content Area */}
-                  <div className="p-4 flex-1 flex flex-col justify-between">
+                  <div className="p-3 md:p-4 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 className="text-lg font-bold text-gray-100 leading-tight mb-1 group-hover:text-banana-300 transition-colors">
+                        <h3 className="text-sm md:text-lg font-bold text-gray-100 leading-tight mb-1 group-hover:text-banana-300 transition-colors line-clamp-1">
                           {item.title}
                         </h3>
                         <p className="text-gray-400 text-xs line-clamp-2">
@@ -156,7 +159,7 @@ export const StyleGallery: React.FC<StyleGalleryProps> = ({ onSelectPrompt }) =>
                         </p>
                     </div>
 
-                    <div className="mt-4 flex gap-2">
+                    <div className="mt-2 md:mt-4 flex gap-1.5 md:gap-2">
                         <button 
                              onClick={() => onSelectPrompt(`I want to create something like the ${item.title}: ${item.description}`)}
                              className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 bg-gray-800 hover:bg-banana-400 hover:text-obsidian-950 text-gray-300 rounded-lg text-xs font-bold transition-all group-hover:bg-banana-400 group-hover:text-obsidian-950"
